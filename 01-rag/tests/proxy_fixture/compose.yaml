@@ -1,0 +1,60 @@
+# Entorno efímero para pruebas locales; credenciales no reutilizables fuera de pruebas.
+services:
+  db:
+    image: pgvector/pgvector:0.8.0-pg16
+    environment:
+      POSTGRES_USER: ragtest
+      POSTGRES_PASSWORD: fixture-only-password
+      POSTGRES_DB: ragtest
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ragtest -d ragtest"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    networks: [internal]
+  model:
+    image: python:3.12-slim
+    command: ["python", "/fixture/mock_ollama.py"]
+    volumes:
+      - ./mock_ollama.py:/fixture/mock_ollama.py:ro
+    networks: [internal]
+  init:
+    build:
+      context: ../..
+    environment:
+      DATABASE_URL: postgresql://ragtest:fixture-only-password@db:5432/ragtest
+    command: ["init"]
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [internal]
+  api:
+    build:
+      context: ../..
+    entrypoint: ["python", "-m", "uvicorn"]
+    command: ["rag.asgi:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--no-access-log", "--no-proxy-headers", "--no-server-header", "--limit-concurrency", "16"]
+    environment:
+      DATABASE_URL: postgresql://ragtest:fixture-only-password@db:5432/ragtest
+      RAG_WRITE_TOKEN: test_write_token_only_000000000000000000
+      RAG_READ_TOKEN: test_read_token_only_0000000000000000000
+      RAG_EMBED_MODEL: fixture-embeddings
+      RAG_GENERATION_MODEL: fixture-generation
+      OLLAMA_BASE_URL: http://model:11434
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    networks: [internal]
+  proxy:
+    image: nginx:1.27-alpine
+    ports:
+      - "127.0.0.1:${RAG_PROXY_TEST_PORT:-18443}:8443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./proxy_params_rag.conf:/etc/nginx/proxy_params_rag.conf:ro
+      - ${RAG_TEST_TLS_DIR:?Define RAG_TEST_TLS_DIR}:/certs:ro
+    depends_on: [api]
+    networks: [internal, edge]
+networks:
+  internal:
+    internal: true
+  edge: {}

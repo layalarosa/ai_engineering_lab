@@ -1,0 +1,12 @@
+[
+  {"id":"overlap", "question":"¿Por qué se repite contexto entre fragmentos consecutivos?", "expected_document_id":"fragmentacion", "expected_answer":"Para conservar contexto entre fragmentos y ayudar con información en los límites."},
+  {"id":"splitting", "question":"¿Cómo se manejan documentos largos antes de recuperarlos?", "expected_document_id":"fragmentacion", "expected_answer":"Se dividen en fragmentos más pequeños."},
+  {"id":"vector", "question":"¿Qué forma numérica puede adoptar un texto?", "expected_document_id":"embeddings", "expected_answer":"Un embedding es una representación numérica del texto generada por un modelo."},
+  {"id":"angle", "question":"¿Cómo se comparan las direcciones de dos vectores?", "expected_document_id":"embeddings", "expected_answer":"Con similitud coseno."},
+  {"id":"storage", "question":"¿Cómo evitar recalcular los vectores en cada consulta?", "expected_document_id":"persistencia", "expected_answer":"Persistiéndolos para reutilizarlos."},
+  {"id":"postgres", "question":"¿Qué extensión permite guardar y consultar vectores en PostgreSQL?", "expected_document_id":"persistencia", "expected_answer":"pgvector."},
+  {"id":"geography", "question":"¿Cuál es la capital de Bolivia?", "expected_document_id":null, "expected_answer":"No hay información suficiente en el corpus."},
+  {"id":"algorithm", "question":"¿Qué parámetros HNSW se deben configurar en pgvector?", "expected_document_id":null, "expected_answer":"El corpus no especifica parámetros HNSW."},
+  {"id":"dimensions", "question":"¿Cuántas dimensiones debe tener un embedding?", "expected_document_id":null, "expected_answer":"El corpus no especifica una cantidad de dimensiones."},
+  {"id":"performance", "question":"¿Qué velocidad de consulta garantiza PostgreSQL con pgvector?", "expected_document_id":null, "expected_answer":"El corpus no contiene una garantía de velocidad."}
+]

@@ -1,0 +1,6 @@
+[
+  {"id": "chunking", "question": "¿Para qué sirve el solapamiento al fragmentar documentos?", "expected_source": "eval_data/fragmentacion.txt", "expected_answer": "Conserva contexto entre fragmentos y ayuda con información situada en los límites."},
+  {"id": "embedding", "question": "¿Qué representa un embedding de texto?", "expected_source": "eval_data/embeddings.txt", "expected_answer": "Una representación numérica del texto producida por un modelo."},
+  {"id": "pgvector", "question": "¿Qué permite hacer pgvector con embeddings?", "expected_source": "eval_data/persistencia.txt", "expected_answer": "Almacenarlos y buscar por distancia vectorial en PostgreSQL."},
+  {"id": "sin_respuesta", "question": "¿Cuál es la capital de Bolivia?", "expected_source": null, "expected_answer": "El corpus no contiene esa información; debe reconocer que no puede responder con el contexto."}
+]

@@ -1,0 +1,1 @@
+La fragmentación divide documentos largos en fragmentos más pequeños. El solapamiento conserva parte del contexto entre fragmentos consecutivos y puede ayudar a recuperar información situada en sus límites.

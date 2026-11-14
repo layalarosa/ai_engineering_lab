@@ -1,0 +1,8 @@
+# Sobrescritura exclusiva de pruebas; no usar como configuración compartida.
+services:
+  model:
+    environment:
+      FIXTURE_DELAY_SECONDS: '0.4'
+  proxy:
+    volumes:
+      - ./nginx_load.conf:/etc/nginx/nginx.conf:ro

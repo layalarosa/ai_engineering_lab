@@ -1,0 +1,1 @@
+PostgreSQL con la extensión pgvector puede almacenar embeddings y ejecutar búsquedas por distancia vectorial. La persistencia permite reutilizar vectores sin calcularlos de nuevo para cada consulta.

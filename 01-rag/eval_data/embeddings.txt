@@ -1,0 +1,1 @@
+Un embedding es una representación numérica de texto generada por un modelo. La similitud coseno compara la dirección de dos vectores y permite ordenar candidatos por cercanía.

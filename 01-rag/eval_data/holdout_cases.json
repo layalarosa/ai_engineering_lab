@@ -1,0 +1,12 @@
+[
+  {"id":"held_boundaries", "question":"¿Qué técnica preserva información cuando se corta un documento?", "expected_document_id":"fragmentacion", "expected_answer":"El solapamiento conserva parte del contexto entre fragmentos."},
+  {"id":"held_long", "question":"¿En qué se transforma un archivo extenso para poder procesarlo por partes?", "expected_document_id":"fragmentacion", "expected_answer":"En fragmentos más pequeños."},
+  {"id":"held_cosine", "question":"¿Qué mide la similitud coseno entre vectores?", "expected_document_id":"embeddings", "expected_answer":"Compara sus direcciones."},
+  {"id":"held_model", "question":"¿Cómo se obtiene una representación vectorial del lenguaje?", "expected_document_id":"embeddings", "expected_answer":"Un modelo genera una representación numérica del texto."},
+  {"id":"held_vector_db", "question":"¿Dónde se pueden guardar embeddings y buscar por distancia?", "expected_document_id":"persistencia", "expected_answer":"En PostgreSQL mediante pgvector."},
+  {"id":"held_reuse", "question":"¿Para qué guardar vectores después de generarlos?", "expected_document_id":"persistencia", "expected_answer":"Para reutilizarlos sin recalcularlos en cada consulta."},
+  {"id":"held_country", "question":"¿En qué continente está Japón?", "expected_document_id":null, "expected_answer":"El corpus no contiene información geográfica."},
+  {"id":"held_training", "question":"¿Con qué datos se entrenó el modelo de embeddings?", "expected_document_id":null, "expected_answer":"El corpus no especifica datos de entrenamiento."},
+  {"id":"held_security", "question":"¿Cómo se cifran los embeddings guardados en PostgreSQL?", "expected_document_id":null, "expected_answer":"El corpus no especifica el cifrado de embeddings."},
+  {"id":"held_overlap_size", "question":"¿Cuántos caracteres debe tener el solapamiento?", "expected_document_id":null, "expected_answer":"El corpus no especifica un tamaño de solapamiento."}
+]
