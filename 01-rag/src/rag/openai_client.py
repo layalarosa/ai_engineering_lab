@@ -1,9 +1,9 @@
 """Cliente HTTP mínimo de embeddings y Responses de OpenAI."""
 import json
 import math
-import os
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+from .secret_config import read_secret
 
 MAX_RESPONSE_BYTES = 16_000_000
 
@@ -13,7 +13,10 @@ class OpenAIError(RuntimeError):
 
 
 def _post(endpoint, body):
-    key = os.environ.get("OPENAI_API_KEY", "").strip()
+    try:
+        key = read_secret("OPENAI_API_KEY").strip()
+    except ValueError as exc:
+        raise OpenAIError("No se pudo cargar la clave de OpenAI") from exc
     if not key:
         raise OpenAIError("Configura OPENAI_API_KEY para usar OpenAI")
     request = Request("https://api.openai.com/v1/" + endpoint, data=json.dumps(body).encode("utf-8"),

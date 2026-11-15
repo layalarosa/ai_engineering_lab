@@ -45,6 +45,9 @@ jobs:
         run: python -m unittest discover -s tests -v
         env:
           RAG_TEST_DATABASE_URL: postgresql://rag:ci-test-only@localhost:5432/rag_test
+      - name: Comprobar permisos y restauración en una base aislada
+        if: matrix.python == '3.12'
+        run: python tests/postgres_fixture/run.py
       - name: Construir imagen de RAG
         if: matrix.python == '3.12'
         run: docker build -t rag-ci .

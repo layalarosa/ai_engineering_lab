@@ -1,0 +1,2 @@
+# Solo para pruebas de interoperabilidad; el servidor sigue sin dependencias externas.
+mcp==2.3.0

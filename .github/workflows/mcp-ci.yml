@@ -1,0 +1,47 @@
+name: MCP CI
+
+on:
+  push:
+    paths: ['01-rag/**', '02-mcp/**', '.github/workflows/mcp-ci.yml']
+  pull_request:
+    paths: ['01-rag/**', '02-mcp/**', '.github/workflows/mcp-ci.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    defaults:
+      run:
+        working-directory: 02-mcp
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: 02-mcp/requirements-interop.txt
+      - name: Instalar SDK para pruebas de interoperabilidad
+        run: python -m pip install -r requirements-interop.txt
+      - name: Pruebas unitarias e integración HTTP local
+        run: python -m unittest discover -s tests -v
+      - name: Interoperabilidad con el SDK oficial
+        run: python -m unittest discover -s interop -v
+      - name: Empaquetar y comprobar el archivo ejecutable
+        run: |
+          python build.py
+          python tests/artifact_smoke.py --zipapp dist/mcp_lab.pyz
+      - name: Construir y comprobar la imagen Docker
+        if: matrix.python == '3.12'
+        run: |
+          docker build -t ai-engineering-lab-mcp:ci .
+          python tests/artifact_smoke.py --image ai-engineering-lab-mcp:ci
+      - name: Verificar contrato entre MCP y RAG
+        if: matrix.python == '3.12'
+        timeout-minutes: 15
+        run: python interop/container_fixture/run.py

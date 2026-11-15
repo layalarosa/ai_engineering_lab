@@ -1,12 +1,14 @@
-param([int]$Port = 18443, [switch]$Load)
+param([int]$Port = 18443, [switch]$Load, [switch]$Sustained, [switch]$Timeout)
 $ErrorActionPreference = 'Stop'
 if ($Port -lt 1 -or $Port -gt 65535) { throw 'El puerto debe estar entre 1 y 65535.' }
+if (@($Load, $Sustained, $Timeout).Where({ $_.IsPresent }).Count -gt 1) { throw 'Selecciona un solo modo de prueba.' }
 $root = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 $composeFile = Join-Path $PSScriptRoot 'compose.yaml'
 $loadFile = Join-Path $PSScriptRoot 'compose.load.yaml'
 $project = 'ragproxy' + [guid]::NewGuid().ToString('N').Substring(0, 12)
 $composeArgs = @('compose', '-p', $project, '-f', $composeFile)
-if ($Load) { $composeArgs += @('-f', $loadFile) }
+if ($Load -or $Sustained) { $composeArgs += @('-f', $loadFile) }
+if ($Timeout) { $composeArgs += @('-f', (Join-Path $PSScriptRoot 'compose.timeout.yaml')) }
 $certDir = Join-Path $env:TEMP ('rag-proxy-cert-' + [guid]::NewGuid().ToString('N'))
 $oldTlsDir = $env:RAG_TEST_TLS_DIR
 $oldPort = $env:RAG_PROXY_TEST_PORT
@@ -26,6 +28,10 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'No se pudo iniciar el entorno aislado.' }
     if ($Load) {
         & (Join-Path $root '.venv/Scripts/python.exe') (Join-Path $PSScriptRoot 'load_probe.py') --ca (Join-Path $certDir 'cert.pem') --port $Port --project $project
+    } elseif ($Sustained) {
+        & (Join-Path $root '.venv/Scripts/python.exe') (Join-Path $PSScriptRoot 'sustained_probe.py') --ca (Join-Path $certDir 'cert.pem') --port $Port --project $project
+    } elseif ($Timeout) {
+        & (Join-Path $root '.venv/Scripts/python.exe') (Join-Path $PSScriptRoot 'timeout_probe.py') --ca (Join-Path $certDir 'cert.pem') --port $Port
     } else {
         & (Join-Path $root '.venv/Scripts/python.exe') (Join-Path $PSScriptRoot 'smoke_tls.py') --ca (Join-Path $certDir 'cert.pem') --port $Port
     }

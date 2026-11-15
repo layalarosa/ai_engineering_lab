@@ -2,13 +2,16 @@
 
 RAG (Retrieval-Augmented Generation) recupera fragmentos relevantes de una fuente de información y los incorpora al contexto de un modelo para responder preguntas. Separa el conocimiento documental del modelo, pero la calidad de la respuesta depende de la ingesta, la recuperación y el contexto seleccionado.
 
+Consulta el [estado y las limitaciones actuales](docs/estado-y-pendientes.md) para una visión resumida. Las secciones posteriores conservan las etapas de aprendizaje y sus ejemplos.
+
 ## Primera etapa: fragmentación
 
 Comenzamos con una función pura que divide texto en fragmentos de caracteres con solapamiento. El solapamiento conserva parte del contexto en los límites. Es una aproximación deliberadamente simple: los caracteres no equivalen a tokens y pueden cortar frases. Más adelante evaluaremos alternativas con documentos reales.
 
-No se necesitan dependencias externas. Desde este directorio, con Python 3.10 o superior:
+La función de fragmentación usa la biblioteca estándar. Para ejecutar la suite completa desde este directorio con Python 3.10 o superior, instala primero las dependencias:
 
 ```powershell
+python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ```
 
@@ -17,10 +20,6 @@ La función recibe texto, tamaño máximo y solapamiento; devuelve una lista ord
 ## Arquitectura prevista
 
 Una canalización sencilla separará ingesta, fragmentación, embeddings, almacenamiento/búsqueda y generación. Inicialmente se implementarán funciones pequeñas y contratos claros; se introducirán adaptadores para PostgreSQL/pgvector y proveedores de modelos cuando se necesiten. Cada etapa podrá probarse por separado. Ollama será la opción local y OpenAI una alternativa configurable. No se incorporan servicios ni frameworks antes de tener una necesidad verificable.
-
-## Próxima etapa propuesta
-
-Leer documentos de texto desde disco y construir una ingesta verificable, antes de incorporar embeddings y búsqueda vectorial.
 
 ## Segunda etapa: ingesta de texto
 
@@ -291,3 +290,24 @@ El perfil opcional de carga usa un proveedor simulado con demora fija, datos sin
 ```
 
 El informe muestra estados, tiempos y el tamaño de muestra; p95 y p99 se omiten cuando hay menos de 20 y 100 respuestas exitosas respectivamente. La [ejecución observada](tests/proxy_fixture/load_findings.md) mostró rechazos por el límite de dos peticiones por IP y recuperación de ambos servicios simulados. Es una prueba breve y no determina capacidad sostenida ni un SLO; el perfil de carga no debe utilizarse como configuración de despliegue compartido.
+
+## Vigésima segunda etapa: carga breve con varias IP y timeout
+
+Los siguientes modos crean un proyecto Compose temporal, usan un certificado local de prueba y eliminan sus contenedores y volúmenes al terminar:
+
+```powershell
+.\tests\proxy_fixture\run.ps1 -Sustained
+.\tests\proxy_fixture\run.ps1 -Timeout
+```
+
+`-Sustained` inicia tres clientes en contenedores separados durante una ventana de 12 segundos, con dos hilos cada uno. Los clientes se conectan únicamente al proxy del entorno de prueba; el proveedor es simulado. El informe separa 200, 429 y 503, calcula latencias de respuestas exitosas y muestrea CPU y memoria con `docker stats`. La tasa de este perfil se eleva solo para el experimento. `-Timeout` usa otro perfil: un proveedor simulado lento y un plazo de lectura de dos segundos en el proxy. Comprueba el 504 y una operación posterior; no demuestra la cancelación del trabajo subyacente.
+
+Los [resultados observados](tests/proxy_fixture/sustained_findings.md) describen las condiciones y sus límites. Es una prueba sostenida **breve**, con datos sintéticos y sin modelo real; no define capacidad, estabilidad prolongada ni un SLO de producción. Los scripts no forman parte de CI y no ejecutan carga contra OpenAI ni otros servicios externos.
+
+## Vigésima tercera etapa: permisos, secretos y restauración
+
+La [guía de operaciones de base de datos](docs/database-operations.md) describe la separación entre administración y el rol de ejecución, secretos montados mediante variables `_FILE` y la prueba de copia y restauración en bases temporales. La política SQL se limita a las tablas de RAG y requiere revisión antes de utilizarla fuera de una base dedicada. La prueba no crea un sistema de copias de producción ni modifica bases existentes.
+
+## Vigésima cuarta etapa: verificación en CI y revisión
+
+El flujo de CI incluye la prueba portable de permisos y restauración en un contenedor nuevo, además de las pruebas de la aplicación. El mismo verificador puede ejecutarse localmente con `python tests/postgres_fixture/run.py` desde `01-rag`, con Docker activo y las dependencias instaladas. No utiliza una base existente ni requiere un modelo. La [revisión del estado](docs/estado-y-pendientes.md) recoge el alcance y los puntos aún abiertos antes de un uso compartido.

@@ -14,4 +14,4 @@ Los proyectos posteriores se crearán cuando comience su desarrollo. La integrac
 
 ## Orden de trabajo
 
-Comenzamos exclusivamente por [RAG](01-rag/README.md). Cada etapa se revisará antes de avanzar a la siguiente.
+Se desarrolló primero [RAG](01-rag/README.md), cuyos límites y pendientes están documentados. [MCP](02-mcp/README.md) cuenta con un servidor stdio didáctico y pruebas limitadas con el SDK oficial de Python. Cada etapa se revisará antes de avanzar a la siguiente.

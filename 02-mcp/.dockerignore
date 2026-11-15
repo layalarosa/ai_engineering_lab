@@ -1,0 +1,6 @@
+*
+!src/
+!src/__main__.py
+!src/mcp_lab/
+!src/mcp_lab/*.py
+!build.py

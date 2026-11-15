@@ -4,6 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "proxy_fixture"))
 from load_probe import quantile, summarize
+from sustained_probe import summarize_resources
 
 
 class LoadSummaryTests(unittest.TestCase):
@@ -19,3 +20,10 @@ class LoadSummaryTests(unittest.TestCase):
         self.assertEqual(quantile(list(range(1, 101)), .95), 95)
         self.assertEqual(quantile(list(range(1, 101)), .99), 99)
         self.assertIsNone(quantile([], .5))
+
+    def test_resource_summary_handles_units_and_missing_data(self):
+        samples = [{"containers": [{"name": "project-api-1", "cpu": "3.50%", "memory": "512MiB / 2GiB"}]},
+                   {"containers": [{"name": "project-api-1", "cpu": "1.00%", "memory": "1GiB / 2GiB"}]}]
+        summary = summarize_resources(samples)
+        self.assertEqual(summary["api"], {"samples": 2, "peak_cpu_percent": 3.5, "peak_memory_mib": 1024.0})
+        self.assertIsNone(summary["db"]["peak_memory_mib"])

@@ -1,0 +1,78 @@
+services:
+  db:
+    image: pgvector/pgvector:0.8.0-pg16
+    environment:
+      POSTGRES_USER: fixture
+      POSTGRES_PASSWORD: fixture-only-password
+      POSTGRES_DB: fixture
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fixture -d fixture"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    networks: [lab]
+  model:
+    image: python:3.12-slim
+    command: ["python", "/fixture/model.py"]
+    volumes:
+      - type: bind
+        source: ./model.py
+        target: /fixture/model.py
+        read_only: true
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:11434/health', timeout=2)"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    networks: [lab]
+  init:
+    image: ${MCP_FIXTURE_RAG_IMAGE:?}
+    environment:
+      DATABASE_URL: postgresql://fixture:fixture-only-password@db:5432/fixture
+    command: ["init"]
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [lab]
+  api:
+    image: ${MCP_FIXTURE_RAG_IMAGE:?}
+    build:
+      context: ../../../01-rag
+    entrypoint: ["python", "-m", "rag.api"]
+    environment:
+      DATABASE_URL: postgresql://fixture:fixture-only-password@db:5432/fixture
+      RAG_READ_TOKEN_FILE: /run/secrets/read
+      RAG_WRITE_TOKEN_FILE: /run/secrets/write
+      RAG_EMBED_MODEL: fixture-embeddings
+      RAG_GENERATION_MODEL: fixture-generation
+      OLLAMA_BASE_URL: http://model:11434
+    volumes:
+      - type: bind
+        source: ${MCP_FIXTURE_READ:?}
+        target: /run/secrets/read
+        read_only: true
+      - type: bind
+        source: ${MCP_FIXTURE_WRITE:?}
+        target: /run/secrets/write
+        read_only: true
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1', 8080), 2).close()"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    depends_on:
+      init:
+        condition: service_completed_successfully
+      model:
+        condition: service_healthy
+    networks: [lab]
+  mcp:
+    profiles: [client]
+    image: ${MCP_FIXTURE_MCP_IMAGE:?}
+    build:
+      context: ../..
+networks:
+  lab:
+    internal: true

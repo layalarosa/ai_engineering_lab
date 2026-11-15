@@ -1,0 +1,23 @@
+# Solo para la prueba opcional con Ollama del equipo en Docker Desktop.
+services:
+  model:
+    image: nginx:1.27-alpine
+    command: ["nginx", "-g", "daemon off;"]
+    volumes:
+      - type: bind
+        source: ./nginx-ollama.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+    healthcheck:
+      test: ["CMD-SHELL", "nginx -t -q"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    networks: [lab, ollama_egress]
+  api:
+    environment:
+      RAG_EMBED_MODEL: ${MCP_FIXTURE_EMBED_MODEL:?}
+      RAG_GENERATION_MODEL: ${MCP_FIXTURE_GENERATION_MODEL:?}
+networks:
+  # Solo el intermediario se une a esta red con salida; API y MCP no.
+  ollama_egress: {}

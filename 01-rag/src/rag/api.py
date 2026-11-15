@@ -16,6 +16,7 @@ from . import ollama, openai_client
 from .answer import MAX_QUESTION_CHARS, answer_question
 from .ingestion import MAX_DOCUMENT_BYTES, ingest_text
 from .observability import Trace
+from .secret_config import read_secret
 from .store import replace_document, search
 
 ID_PATTERN = re.compile(r"/v1/documents/([A-Za-z0-9_-]{1,64})\Z")
@@ -41,10 +42,10 @@ class Settings:
         gen_provider = env.get("RAG_GENERATION_PROVIDER", provider)
         if provider not in ("ollama", "openai") or gen_provider not in ("ollama", "openai"):
             raise ValueError("Proveedor inválido")
-        write, read = env.get("RAG_WRITE_TOKEN", ""), env.get("RAG_READ_TOKEN", "")
+        write, read = read_secret("RAG_WRITE_TOKEN"), read_secret("RAG_READ_TOKEN")
         if any(not t.isascii() or len(t) < 32 or not re.fullmatch(r"[A-Za-z0-9_-]+", t) for t in (write, read)) or hmac.compare_digest(write, read):
             raise ValueError("Configura dos credenciales diferentes de al menos 32 caracteres ASCII URL-safe")
-        dsn, model, gen_model = env.get("DATABASE_URL", ""), env.get("RAG_EMBED_MODEL", ""), env.get("RAG_GENERATION_MODEL", "")
+        dsn, model, gen_model = read_secret("DATABASE_URL"), env.get("RAG_EMBED_MODEL", ""), env.get("RAG_GENERATION_MODEL", "")
         if not all(x.strip() for x in (dsn, model, gen_model)) or (provider == "ollama" and model.startswith("openai:")):
             raise ValueError("Falta la base o un modelo válido")
         threshold = env.get("RAG_MIN_SCORE", "")
@@ -54,7 +55,7 @@ class Settings:
         url = env.get("OLLAMA_BASE_URL", "http://localhost:11434")
         if "ollama" in (provider, gen_provider):
             ollama._validate_connection(url, 120)
-        if "openai" in (provider, gen_provider) and not env.get("OPENAI_API_KEY", "").strip():
+        if "openai" in (provider, gen_provider) and not read_secret("OPENAI_API_KEY").strip():
             raise ValueError("Falta OPENAI_API_KEY")
         return cls(dsn, write, read, provider, model, gen_provider, gen_model, url, score)
 

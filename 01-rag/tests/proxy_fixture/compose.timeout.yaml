@@ -1,0 +1,8 @@
+# Perfil para provocar el plazo del proxy en un proveedor simulado.
+services:
+  model:
+    environment:
+      FIXTURE_DELAY_SECONDS: '1.3'
+  proxy:
+    volumes:
+      - ./proxy_params_timeout.conf:/etc/nginx/proxy_params_rag.conf:ro
