@@ -1,0 +1,1198 @@
+{
+  "version": 1,
+  "snapshots": [
+    {
+      "id": "s01",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El telescopio usa aumento de 40 veces."
+        },
+        {
+          "role": "assistant",
+          "content": "Anotado."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "optica/aumento"
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La muestra tiene textura granular."
+        },
+        {
+          "role": "assistant",
+          "content": "De acuerdo."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "muestra/textura"
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La ventana del taller mira al este."
+        },
+        {
+          "role": "assistant",
+          "content": "Bien."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "taller/orientacion"
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El motor de prueba gira a 800 rpm."
+        },
+        {
+          "role": "user",
+          "content": "Corrección: el motor de prueba gira a 900 rpm."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "motor/velocidad"
+        },
+        {
+          "posicion": 2,
+          "clave": "motor/velocidad",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La muestra está a 10 grados."
+        },
+        {
+          "role": "user",
+          "content": "Corrección: está a 12 grados."
+        },
+        {
+          "role": "user",
+          "content": "Corrección final: está a 15 grados."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "muestra/temperatura"
+        },
+        {
+          "posicion": 2,
+          "clave": "muestra/temperatura",
+          "sustituye_posicion": 1
+        },
+        {
+          "posicion": 3,
+          "clave": "muestra/temperatura",
+          "sustituye_posicion": 2
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El barco atraca en el muelle A."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido."
+        },
+        {
+          "role": "user",
+          "content": "Cambio: el barco atraca en el muelle C."
+        },
+        {
+          "role": "user",
+          "content": "El agua está tranquila."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "puerto/muelle"
+        },
+        {
+          "posicion": 3,
+          "clave": "puerto/muelle",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La señal usa canal 4."
+        },
+        {
+          "role": "user",
+          "content": "La señal usa ancho de banda 20."
+        },
+        {
+          "role": "user",
+          "content": "Cambio: el canal ahora es 7."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "radio/canal"
+        },
+        {
+          "posicion": 2,
+          "clave": "radio/ancho"
+        },
+        {
+          "posicion": 3,
+          "clave": "radio/canal",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La puerta pesa 30 kilos."
+        },
+        {
+          "role": "user",
+          "content": "La puerta mide dos metros."
+        },
+        {
+          "role": "user",
+          "content": "Corrección: la puerta pesa 35 kilos."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "puerta/peso"
+        },
+        {
+          "posicion": 2,
+          "clave": "puerta/altura"
+        },
+        {
+          "posicion": 3,
+          "clave": "puerta/peso",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El proyecto usa licencia MIT."
+        },
+        {
+          "role": "user",
+          "content": "El proyecto mantiene documentación en español."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "proyecto/licencia"
+        },
+        {
+          "posicion": 2,
+          "clave": "proyecto/idioma"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La responsable del turno es Alicia."
+        },
+        {
+          "role": "user",
+          "content": "La responsable del turno es Beatriz."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "turno/responsable"
+        },
+        {
+          "posicion": 2,
+          "clave": "turno/responsable"
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La alarma se activa al amanecer."
+        },
+        {
+          "role": "user",
+          "content": "La alarma se activa al amanecer."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "alarma/activacion"
+        },
+        {
+          "posicion": 2,
+          "clave": "alarma/activacion"
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El cartón es blanco."
+        },
+        {
+          "role": "user",
+          "content": "Corrección: es verde."
+        },
+        {
+          "role": "user",
+          "content": "Corrección: es violeta."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "carton/color"
+        },
+        {
+          "posicion": 2,
+          "clave": "carton/color",
+          "sustituye_posicion": 1
+        },
+        {
+          "posicion": 3,
+          "clave": "carton/color",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El programa tiene una versión estable."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "programa/version"
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Las semillas están en un sobre."
+        },
+        {
+          "role": "assistant",
+          "content": "Bien."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "semillas/ubicacion"
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La partitura es para violín."
+        },
+        {
+          "role": "assistant",
+          "content": "De acuerdo."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "partitura/instrumento"
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La escultura fue tallada en granito."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido."
+        }
+      ],
+      "records": []
+    },
+    {
+      "id": "s17",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El código vigente del prototipo es K2."
+        },
+        {
+          "role": "user",
+          "content": "Antes se usaba K1, que ya no está vigente."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "prototipo/codigo"
+        },
+        {
+          "posicion": 2,
+          "clave": "prototipo/codigo",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s18",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La exposición incluye una maqueta."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "exposicion/fecha"
+        }
+      ]
+    },
+    {
+      "id": "s19",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La ruta escolar empezaba en la plaza."
+        },
+        {
+          "role": "user",
+          "content": "Cambio: ahora empieza en la estación."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "ruta/origen"
+        },
+        {
+          "posicion": 2,
+          "clave": "ruta/origen",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s20",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El invernadero tiene techo de vidrio."
+        },
+        {
+          "role": "user",
+          "content": "El invernadero tiene suelo de piedra."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "invernadero/techo"
+        },
+        {
+          "posicion": 2,
+          "clave": "invernadero/suelo"
+        }
+      ]
+    },
+    {
+      "id": "s21",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El mapa era azul."
+        },
+        {
+          "role": "user",
+          "content": "Corrección: el mapa actual es de color amarillo brillante."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "mapa/color"
+        },
+        {
+          "posicion": 2,
+          "clave": "mapa/color",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s22",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La etiqueta es Q\u0000R."
+        },
+        {
+          "role": "assistant",
+          "content": "Recibido."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "etiqueta/valor"
+        }
+      ]
+    },
+    {
+      "id": "s23",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El ala está pintada de rojo."
+        },
+        {
+          "role": "user",
+          "content": "El ala mide tres metros."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "ala/color"
+        },
+        {
+          "posicion": 2,
+          "clave": "ala/longitud",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s24",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El patrón es espiral 🌀."
+        },
+        {
+          "role": "assistant",
+          "content": "Correcto."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "figura/patron"
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "h01",
+      "snapshot": "s01",
+      "category": "vigente",
+      "family": "optica_aumento",
+      "text": "¿Qué aumento usa el telescopio?",
+      "intention": {
+        "modo": "actual",
+        "clave": "optica/aumento"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h02",
+      "snapshot": "s02",
+      "category": "vigente",
+      "family": "laboratorio_textura",
+      "text": "¿Qué textura tiene la muestra?",
+      "intention": {
+        "modo": "actual",
+        "clave": "muestra/textura"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h03",
+      "snapshot": "s03",
+      "category": "vigente",
+      "family": "arquitectura_orientacion",
+      "text": "¿Hacia dónde mira la ventana del taller?",
+      "intention": {
+        "modo": "actual",
+        "clave": "taller/orientacion"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h04",
+      "snapshot": "s04",
+      "category": "cadenas",
+      "family": "motor_velocidad",
+      "text": "¿A cuántas rpm gira ahora el motor?",
+      "intention": {
+        "modo": "actual",
+        "clave": "motor/velocidad"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h05",
+      "snapshot": "s05",
+      "category": "cadenas",
+      "family": "muestra_termica",
+      "text": "¿Cuál es la temperatura actual de la muestra?",
+      "intention": {
+        "modo": "actual",
+        "clave": "muestra/temperatura"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h06",
+      "snapshot": "s06",
+      "category": "cadenas",
+      "family": "puerto_atraque",
+      "text": "¿En qué muelle atraca ahora el barco?",
+      "intention": {
+        "modo": "actual",
+        "clave": "puerto/muelle"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h07",
+      "snapshot": "s07",
+      "category": "claves",
+      "family": "radio_banda",
+      "text": "¿Qué ancho de banda usa la señal?",
+      "intention": {
+        "modo": "actual",
+        "clave": "radio/ancho"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h08",
+      "snapshot": "s08",
+      "category": "claves",
+      "family": "arquitectura_altura",
+      "text": "¿Qué altura tiene la puerta?",
+      "intention": {
+        "modo": "actual",
+        "clave": "puerta/altura"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h09",
+      "snapshot": "s09",
+      "category": "claves",
+      "family": "licencia_proyecto",
+      "text": "¿Qué licencia usa el proyecto?",
+      "intention": {
+        "modo": "actual",
+        "clave": "proyecto/licencia"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h10",
+      "snapshot": "s10",
+      "category": "ambiguo",
+      "family": "asignacion_turno",
+      "text": "¿Quién es responsable del turno?",
+      "intention": {
+        "modo": "actual",
+        "clave": "turno/responsable"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h11",
+      "snapshot": "s11",
+      "category": "ambiguo",
+      "family": "alarma_repetida",
+      "text": "¿Cuándo se activa la alarma?",
+      "intention": {
+        "modo": "actual",
+        "clave": "alarma/activacion"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h12",
+      "snapshot": "s12",
+      "category": "ambiguo",
+      "family": "carton_ramas",
+      "text": "¿Cuál es el color actual del cartón?",
+      "intention": {
+        "modo": "actual",
+        "clave": "carton/color"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h13",
+      "snapshot": "s13",
+      "category": "sin_respuesta",
+      "family": "programa_checksum",
+      "text": "¿Cuál es la suma de verificación del programa?",
+      "intention": {
+        "modo": "actual",
+        "clave": "programa/checksum"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h14",
+      "snapshot": "s14",
+      "category": "sin_respuesta",
+      "family": "semillas_caducidad",
+      "text": "¿Cuándo caducan las semillas?",
+      "intention": {
+        "modo": "actual",
+        "clave": "semillas/caducidad"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h15",
+      "snapshot": "s15",
+      "category": "sin_respuesta",
+      "family": "partitura_compositor",
+      "text": "¿Quién compuso la partitura?",
+      "intention": {
+        "modo": "actual",
+        "clave": "partitura/compositor"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h16",
+      "snapshot": "s16",
+      "category": "metadatos",
+      "family": "escultura_material",
+      "text": "¿De qué material es la escultura?",
+      "intention": {
+        "modo": "actual",
+        "clave": "escultura/material"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h17",
+      "snapshot": "s17",
+      "category": "metadatos",
+      "family": "prototipo_codigo",
+      "text": "¿Cuál es el código vigente del prototipo?",
+      "intention": {
+        "modo": "actual",
+        "clave": "prototipo/codigo"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h18",
+      "snapshot": "s18",
+      "category": "metadatos",
+      "family": "exposicion_fecha",
+      "text": "¿Cuál es la fecha de la exposición?",
+      "intention": {
+        "modo": "actual",
+        "clave": "exposicion/fecha"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h19",
+      "snapshot": "s19",
+      "category": "intencion_presupuesto",
+      "family": "ruta_origen_historico",
+      "text": "¿Dónde empezaba antes la ruta?",
+      "intention": {
+        "modo": "no_soportado"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h20",
+      "snapshot": "s20",
+      "category": "intencion_presupuesto",
+      "family": "invernadero_materiales",
+      "text": "¿De qué son el techo y el suelo?",
+      "intention": {
+        "modo": "no_soportado"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h21",
+      "snapshot": "s21",
+      "category": "intencion_presupuesto",
+      "family": "mapa_presupuesto",
+      "text": "¿De qué color es el mapa actual?",
+      "intention": {
+        "modo": "actual",
+        "clave": "mapa/color"
+      },
+      "max_chars": 16,
+      "max_messages": 2
+    },
+    {
+      "id": "h22",
+      "snapshot": "s22",
+      "category": "limites",
+      "family": "etiqueta_nul",
+      "text": "¿Qué valor tiene la etiqueta?",
+      "intention": {
+        "modo": "actual",
+        "clave": "etiqueta/valor"
+      },
+      "max_chars": 20,
+      "max_messages": 2
+    },
+    {
+      "id": "h23",
+      "snapshot": "s23",
+      "category": "limites",
+      "family": "ala_referencia_cruzada",
+      "text": "¿Qué longitud tiene el ala?",
+      "intention": {
+        "modo": "actual",
+        "clave": "ala/longitud"
+      },
+      "max_chars": 140,
+      "max_messages": 2
+    },
+    {
+      "id": "h24",
+      "snapshot": "s24",
+      "category": "limites",
+      "family": "figura_unicode",
+      "text": "¿Cuál es el patrón de la figura?",
+      "intention": {
+        "modo": "actual",
+        "clave": "figura/patron"
+      },
+      "max_chars": 30,
+      "max_messages": 2
+    }
+  ],
+  "judgments": [
+    {
+      "query_id": "h01",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La fuente única identifica el aumento."
+    },
+    {
+      "query_id": "h02",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La textura de la muestra está registrada."
+    },
+    {
+      "query_id": "h03",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La ubicación cardinal está en el mensaje de origen."
+    },
+    {
+      "query_id": "h04",
+      "labels": [
+        "desactualizado",
+        "relevante"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        2
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La segunda velocidad sustituye explícitamente la primera."
+    },
+    {
+      "query_id": "h05",
+      "labels": [
+        "desactualizado",
+        "desactualizado",
+        "relevante"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        3
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La cadena finaliza en la tercera lectura."
+    },
+    {
+      "query_id": "h06",
+      "labels": [
+        "desactualizado",
+        "otro",
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        3
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La corrección apunta al muelle nuevo."
+    },
+    {
+      "query_id": "h07",
+      "labels": [
+        "otro",
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        2
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "Actualizar el canal no sustituye el ancho de banda."
+    },
+    {
+      "query_id": "h08",
+      "labels": [
+        "otro",
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        2
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La corrección de peso no afecta la altura."
+    },
+    {
+      "query_id": "h09",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "Las dos claves identifican atributos distintos."
+    },
+    {
+      "query_id": "h10",
+      "labels": [
+        "relevante",
+        "relevante"
+      ],
+      "expected_status": "evidencia_ambigua",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "Ambas afirmaciones carecen de vínculo de sustitución."
+    },
+    {
+      "query_id": "h11",
+      "labels": [
+        "relevante",
+        "relevante"
+      ],
+      "expected_status": "evidencia_ambigua",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "Las dos raíces duplicadas no se fusionan automáticamente."
+    },
+    {
+      "query_id": "h12",
+      "labels": [
+        "desactualizado",
+        "relevante",
+        "relevante"
+      ],
+      "expected_status": "evidencia_ambigua",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "Dos correcciones ramificadas producen dos hojas."
+    },
+    {
+      "query_id": "h13",
+      "labels": [
+        "otro",
+        "otro"
+      ],
+      "expected_status": "sin_evidencia_registrada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "No se da ninguna suma de verificación."
+    },
+    {
+      "query_id": "h14",
+      "labels": [
+        "otro",
+        "otro"
+      ],
+      "expected_status": "sin_evidencia_registrada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "No se proporciona una fecha de caducidad."
+    },
+    {
+      "query_id": "h15",
+      "labels": [
+        "otro",
+        "otro"
+      ],
+      "expected_status": "sin_evidencia_registrada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "El historial no identifica un compositor."
+    },
+    {
+      "query_id": "h16",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "sin_evidencia_registrada",
+      "expected_positions": [],
+      "metadata_quality": "incompletos",
+      "resoluble": true,
+      "rationale": "El mensaje pertinente no tiene registro de origen."
+    },
+    {
+      "query_id": "h17",
+      "labels": [
+        "relevante",
+        "desactualizado"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        2
+      ],
+      "metadata_quality": "falsos",
+      "resoluble": true,
+      "rationale": "El vínculo falso invierte el sentido de la corrección."
+    },
+    {
+      "query_id": "h18",
+      "labels": [
+        "otro",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "falsos",
+      "resoluble": false,
+      "rationale": "El registro asigna falsamente una fecha a un mensaje que no la contiene."
+    },
+    {
+      "query_id": "h19",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "intencion_no_soportada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "La intención histórica está fuera del contrato."
+    },
+    {
+      "query_id": "h20",
+      "labels": [
+        "relevante",
+        "relevante"
+      ],
+      "expected_status": "intencion_no_soportada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "La pregunta necesita dos atributos distintos."
+    },
+    {
+      "query_id": "h21",
+      "labels": [
+        "desactualizado",
+        "relevante"
+      ],
+      "expected_status": "presupuesto_insuficiente",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "El mensaje vigente excede el presupuesto de caracteres."
+    },
+    {
+      "query_id": "h22",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "El mensaje incluye NUL y debe preservarse."
+    },
+    {
+      "query_id": "h23",
+      "labels": [
+        "otro",
+        "relevante"
+      ],
+      "expected_status": "entrada_invalida",
+      "expected_positions": [],
+      "metadata_quality": "invalidos",
+      "resoluble": false,
+      "rationale": "El vínculo intenta sustituir un registro de otra clave."
+    },
+    {
+      "query_id": "h24",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "El texto tiene acento descompuesto y un emoji."
+    }
+  ]
+}

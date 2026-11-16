@@ -1,0 +1,10 @@
+# La instantánea de correcciones compara bytes: conservar sus finales de línea.
+experiments/corrections/*.json text eol=crlf
+experiments/corrections/*.py text eol=lf
+experiments/corrections/*.md text eol=lf
+docs/corrections-abstention-design.md text eol=lf
+experiments/retrieval/run.py text eol=lf
+src/memory_lab/__init__.py text eol=lf
+src/memory_lab/memory.py text eol=lf
+tests/test_corrections_prototype.py text eol=lf
+tests/test_corrections_holdout_evaluator.py text eol=lf

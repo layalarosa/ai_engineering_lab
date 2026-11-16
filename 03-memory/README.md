@@ -148,7 +148,8 @@ de medición adecuado y se reservará espacio para el resto de la petición.
     test_retrieval_experiment.py # validación del experimento y métricas
     postgres_fixture/run.py # PostgreSQL temporal y rol de prueba
   experiments/retrieval/    # corpus, ejecutor y resultados sintéticos
-  experiments/corrections/  # prototipo y casos de desarrollo; sin evaluación reservada
+  experiments/corrections/  # prototipo y evaluación sintética de correcciones
+  experiments/provenance/   # demostración aislada con política simulada
 ```
 
 El código es independiente de `01-rag` y `02-mcp`: no importa sus módulos ni
@@ -329,8 +330,15 @@ laboratorio.
    comparó ambos métodos sobre datos sintéticos; la búsqueda léxica existe solo
    en el experimento y no supera todos los criterios de adopción. El
    [diseño de correcciones y abstención](docs/corrections-abstention-design.md)
-   describe un prototipo local con metadatos explícitos, probado solo con casos
-   de desarrollo; aún no existe evaluación reservada.
+   describe un prototipo local con metadatos explícitos. La
+   [evaluación reservada sintética](experiments/corrections/HELDOUT.md) no es
+   ciega y muestra que el prototipo no cumple todos los criterios acordados.
+   El [diseño de procedencia](docs/provenance-design.md) explora cómo crear
+   afirmaciones atribuibles sin asumir que sus metadatos demuestran la verdad;
+   la [demostración en proceso](experiments/provenance/README.md) usa una
+   política simulada y no implementa autenticación ni persistencia reales. El
+   [diseño PostgreSQL experimental](docs/provenance-postgres-design.md) propone
+   pruebas temporales y una ruta de copia; todavía no está implementado.
 2. **Considerar resúmenes y hechos persistentes.** Un resumen puede omitir o
    inventar información; harían falta procedencia, control de versiones,
    evaluación y una política explícita para correcciones y eliminación. No se
