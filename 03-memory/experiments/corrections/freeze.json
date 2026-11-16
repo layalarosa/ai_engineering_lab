@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "creado_utc": "2026-11-16T15:58:02.345120+00:00",
+  "python": "3.10.11",
+  "alcance": "desarrollo; casos reservados aun no creados",
+  "sha256": {
+    "docs/corrections-abstention-design.md": "d3273c4ae7b7da56710834847adedba55c793b150fb63c22502a0e57d9c6a2ce",
+    "experiments/corrections/DEVELOPMENT.md": "4a67f15159db04a38bcfe8e9519b441675b78c03b80a945a8082e46e24c6d409",
+    "experiments/corrections/development.json": "7f3e3626825d474ee73495ffd6fd473f9339abdefb2fa74448dbfeb95130de54",
+    "experiments/corrections/development-results.json": "84b14711979c67a266c6d82edb075135538691979ed7dbb43b10be5738859b1d",
+    "experiments/corrections/prototype.py": "7d6827eeecc55dc07a0dbca22bf2fdbacb6f7674a71524634a5c58b031468c6f",
+    "experiments/corrections/run.py": "8fad976144789da8cbd5a886a97bfd63e9f7d9ca032adfb2bc0c7e7fab656a89",
+    "experiments/corrections/verify_freeze.py": "f057d90899e8179d8aa8a417676bb8cbec6ec8cb0c2036a1a3aef70bc4313b34",
+    "experiments/retrieval/run.py": "ebd5d14f41fae876eec753d3cd963c4955a7d6fd7f748f5d874dc777d866ebb7",
+    "src/memory_lab/__init__.py": "52a910d38c2b07d099a70a82dde8254927468437c7bfabeeb37c3337ac8301ed",
+    "src/memory_lab/memory.py": "773175970a4aa91bb99b3be5513a615921bb518427461b9871ab2c823a8d1f5d",
+    "tests/test_corrections_prototype.py": "d0585e68ae838cf63fec920752fde41df873bf9d3213e0f052e40d575e1a5330"
+  }
+}

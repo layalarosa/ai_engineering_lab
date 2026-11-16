@@ -1,0 +1,1159 @@
+{
+  "version": 1,
+  "snapshots": [
+    {
+      "id": "s01",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi fruta preferida es mango."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "perfil/fruta"
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi editor elegido es Vim."
+        },
+        {
+          "role": "user",
+          "content": "La silla es negra."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "trabajo/editor"
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "El museo abre el sábado."
+        },
+        {
+          "role": "user",
+          "content": "Gracias."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "museo/apertura"
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La reunión será el lunes."
+        },
+        {
+          "role": "user",
+          "content": "Corrección: la reunión será el miércoles."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "evento/dia"
+        },
+        {
+          "posicion": 2,
+          "clave": "evento/dia",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El paquete pesaba dos kilos."
+        },
+        {
+          "role": "user",
+          "content": "Corrección: pesa tres kilos."
+        },
+        {
+          "role": "user",
+          "content": "Otra corrección: pesa cuatro kilos."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "paquete/peso"
+        },
+        {
+          "posicion": 2,
+          "clave": "paquete/peso",
+          "sustituye_posicion": 1
+        },
+        {
+          "posicion": 3,
+          "clave": "paquete/peso",
+          "sustituye_posicion": 2
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La contraseña de ejemplo es azul."
+        },
+        {
+          "role": "assistant",
+          "content": "Anotado."
+        },
+        {
+          "role": "user",
+          "content": "Cambio: la contraseña de ejemplo es verde."
+        },
+        {
+          "role": "user",
+          "content": "La caja es gris."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "ejemplo/clave"
+        },
+        {
+          "posicion": 3,
+          "clave": "ejemplo/clave",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi trabajo es ceramista."
+        },
+        {
+          "role": "user",
+          "content": "Prefiero té."
+        },
+        {
+          "role": "user",
+          "content": "Cambio de trabajo: ahora trabajo en jardinería."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "perfil/trabajo"
+        },
+        {
+          "posicion": 2,
+          "clave": "perfil/bebida"
+        },
+        {
+          "posicion": 3,
+          "clave": "perfil/trabajo",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La biblioteca abre a las nueve."
+        },
+        {
+          "role": "user",
+          "content": "La biblioteca cierra el domingo."
+        },
+        {
+          "role": "user",
+          "content": "Corrección: abre a las diez."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "biblioteca/apertura"
+        },
+        {
+          "posicion": 2,
+          "clave": "biblioteca/cierre"
+        },
+        {
+          "posicion": 3,
+          "clave": "biblioteca/apertura",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi destino es Quito."
+        },
+        {
+          "role": "user",
+          "content": "Mi destino es Sucre."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "viaje/destino"
+        },
+        {
+          "posicion": 2,
+          "clave": "viaje/destino"
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Prefiero naranja."
+        },
+        {
+          "role": "user",
+          "content": "Prefiero naranja."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "perfil/color"
+        },
+        {
+          "posicion": 2,
+          "clave": "perfil/color"
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La tarea termina el lunes."
+        },
+        {
+          "role": "user",
+          "content": "Cambio: termina el martes."
+        },
+        {
+          "role": "user",
+          "content": "Cambio: termina el viernes."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "tarea/fecha"
+        },
+        {
+          "posicion": 2,
+          "clave": "tarea/fecha",
+          "sustituye_posicion": 1
+        },
+        {
+          "posicion": 3,
+          "clave": "tarea/fecha",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El piano está afinado."
+        },
+        {
+          "role": "user",
+          "content": "Mi escritorio es pequeño."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "piano/estado"
+        },
+        {
+          "posicion": 2,
+          "clave": "escritorio/tamano"
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Tengo una entrada para el cine."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "cine/entrada"
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi sombrero es de lana."
+        },
+        {
+          "role": "assistant",
+          "content": "Bien."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "sombrero/material"
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi postre favorito es flan."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido."
+        }
+      ],
+      "records": []
+    },
+    {
+      "id": "s17",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi ruta vigente es A."
+        },
+        {
+          "role": "user",
+          "content": "Antes mi ruta era B, ya no la uso."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "viaje/ruta"
+        },
+        {
+          "posicion": 2,
+          "clave": "viaje/ruta",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s18",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El tejido de la bufanda es seda."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "bufanda/material"
+        }
+      ]
+    },
+    {
+      "id": "s19",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Primero elegí el martes."
+        },
+        {
+          "role": "user",
+          "content": "Cambio: elegí el jueves."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "clase/dia"
+        },
+        {
+          "posicion": 2,
+          "clave": "clase/dia",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s20",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La camisa es roja."
+        },
+        {
+          "role": "user",
+          "content": "El sombrero es negro."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "ropa/camisa"
+        },
+        {
+          "posicion": 2,
+          "clave": "ropa/sombrero"
+        }
+      ]
+    },
+    {
+      "id": "s21",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Clave: azul."
+        },
+        {
+          "role": "user",
+          "content": "Cambio: la clave de ejemplo ahora es verde brillante."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "objeto/clave"
+        },
+        {
+          "posicion": 2,
+          "clave": "objeto/clave",
+          "sustituye_posicion": 1
+        }
+      ]
+    },
+    {
+      "id": "s22",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Código X\u0000Y."
+        },
+        {
+          "role": "assistant",
+          "content": "ok"
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "objeto/codigo"
+        }
+      ]
+    },
+    {
+      "id": "s23",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La caja es de madera."
+        },
+        {
+          "role": "user",
+          "content": "La caja es de metal."
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "caja/material",
+          "sustituye_posicion": 2
+        },
+        {
+          "posicion": 2,
+          "clave": "caja/material"
+        }
+      ]
+    },
+    {
+      "id": "s24",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi símbolo es 😀."
+        },
+        {
+          "role": "assistant",
+          "content": "ok"
+        }
+      ],
+      "records": [
+        {
+          "posicion": 1,
+          "clave": "perfil/simbolo"
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "d01",
+      "snapshot": "s01",
+      "category": "vigente",
+      "text": "¿Qué fruta prefiero?",
+      "intention": {
+        "modo": "actual",
+        "clave": "perfil/fruta"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d02",
+      "snapshot": "s02",
+      "category": "vigente",
+      "text": "¿Qué editor elegí?",
+      "intention": {
+        "modo": "actual",
+        "clave": "trabajo/editor"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d03",
+      "snapshot": "s03",
+      "category": "vigente",
+      "text": "¿Qué día abre el museo?",
+      "intention": {
+        "modo": "actual",
+        "clave": "museo/apertura"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d04",
+      "snapshot": "s04",
+      "category": "cadenas",
+      "text": "¿Qué día es la reunión actual?",
+      "intention": {
+        "modo": "actual",
+        "clave": "evento/dia"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d05",
+      "snapshot": "s05",
+      "category": "cadenas",
+      "text": "¿Cuánto pesa el paquete ahora?",
+      "intention": {
+        "modo": "actual",
+        "clave": "paquete/peso"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d06",
+      "snapshot": "s06",
+      "category": "cadenas",
+      "text": "¿Cuál es la contraseña de ejemplo actual?",
+      "intention": {
+        "modo": "actual",
+        "clave": "ejemplo/clave"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d07",
+      "snapshot": "s07",
+      "category": "claves",
+      "text": "¿Cuál es mi trabajo actual?",
+      "intention": {
+        "modo": "actual",
+        "clave": "perfil/trabajo"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d08",
+      "snapshot": "s07",
+      "category": "claves",
+      "text": "¿Qué bebida prefiero?",
+      "intention": {
+        "modo": "actual",
+        "clave": "perfil/bebida"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d09",
+      "snapshot": "s09",
+      "category": "claves",
+      "text": "¿Cuándo cierra la biblioteca?",
+      "intention": {
+        "modo": "actual",
+        "clave": "biblioteca/cierre"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d10",
+      "snapshot": "s10",
+      "category": "ambiguo",
+      "text": "¿Cuál es mi destino?",
+      "intention": {
+        "modo": "actual",
+        "clave": "viaje/destino"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d11",
+      "snapshot": "s11",
+      "category": "ambiguo",
+      "text": "¿Qué color prefiero?",
+      "intention": {
+        "modo": "actual",
+        "clave": "perfil/color"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d12",
+      "snapshot": "s12",
+      "category": "ambiguo",
+      "text": "¿Cuándo termina la tarea?",
+      "intention": {
+        "modo": "actual",
+        "clave": "tarea/fecha"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d13",
+      "snapshot": "s13",
+      "category": "sin_respuesta",
+      "text": "¿Cuánto cuesta el piano?",
+      "intention": {
+        "modo": "actual",
+        "clave": "piano/precio"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d14",
+      "snapshot": "s14",
+      "category": "sin_respuesta",
+      "text": "¿A qué hora empieza la película?",
+      "intention": {
+        "modo": "actual",
+        "clave": "cine/hora"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d15",
+      "snapshot": "s15",
+      "category": "sin_respuesta",
+      "text": "¿Qué talla tiene mi sombrero?",
+      "intention": {
+        "modo": "actual",
+        "clave": "sombrero/talla"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d16",
+      "snapshot": "s16",
+      "category": "metadatos",
+      "text": "¿Qué postre prefiero?",
+      "intention": {
+        "modo": "actual",
+        "clave": "perfil/postre"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d17",
+      "snapshot": "s17",
+      "category": "metadatos",
+      "text": "¿Cuál es mi ruta vigente?",
+      "intention": {
+        "modo": "actual",
+        "clave": "viaje/ruta"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d18",
+      "snapshot": "s18",
+      "category": "metadatos",
+      "text": "¿De qué material es la bufanda?",
+      "intention": {
+        "modo": "no_soportado"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d19",
+      "snapshot": "s19",
+      "category": "intencion_presupuesto",
+      "text": "¿Qué día había elegido antes?",
+      "intention": {
+        "modo": "no_soportado"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d20",
+      "snapshot": "s20",
+      "category": "intencion_presupuesto",
+      "text": "¿De qué color son camisa y sombrero?",
+      "intention": {
+        "modo": "no_soportado"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d21",
+      "snapshot": "s21",
+      "category": "intencion_presupuesto",
+      "text": "¿Cuál es la clave actual?",
+      "intention": {
+        "modo": "actual",
+        "clave": "objeto/clave"
+      },
+      "max_chars": 15,
+      "max_messages": 2
+    },
+    {
+      "id": "d22",
+      "snapshot": "s22",
+      "category": "limites",
+      "text": "¿Cuál es el código?",
+      "intention": {
+        "modo": "actual",
+        "clave": "objeto/codigo"
+      },
+      "max_chars": 12,
+      "max_messages": 2
+    },
+    {
+      "id": "d23",
+      "snapshot": "s23",
+      "category": "limites",
+      "text": "¿De qué es la caja?",
+      "intention": {
+        "modo": "actual",
+        "clave": "caja/material"
+      },
+      "max_chars": 120,
+      "max_messages": 2
+    },
+    {
+      "id": "d24",
+      "snapshot": "s24",
+      "category": "limites",
+      "text": "¿Cuál es mi símbolo?",
+      "intention": {
+        "modo": "actual",
+        "clave": "perfil/simbolo"
+      },
+      "max_chars": 16,
+      "max_messages": 2
+    }
+  ],
+  "judgments": [
+    {
+      "query_id": "d01",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La única fuente registrada indica la fruta."
+    },
+    {
+      "query_id": "d02",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "El editor tiene una sola fuente."
+    },
+    {
+      "query_id": "d03",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La fuente sintética incluye un mensaje de asistente autorizado por los metadatos."
+    },
+    {
+      "query_id": "d04",
+      "labels": [
+        "desactualizado",
+        "relevante"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        2
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La corrección explícita sustituye al lunes."
+    },
+    {
+      "query_id": "d05",
+      "labels": [
+        "desactualizado",
+        "desactualizado",
+        "relevante"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        3
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "Dos vínculos sucesivos terminan en cuatro kilos."
+    },
+    {
+      "query_id": "d06",
+      "labels": [
+        "desactualizado",
+        "otro",
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        3
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La fuente vigente no es el último mensaje del historial."
+    },
+    {
+      "query_id": "d07",
+      "labels": [
+        "desactualizado",
+        "otro",
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        3
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La corrección afecta al trabajo, no a la bebida."
+    },
+    {
+      "query_id": "d08",
+      "labels": [
+        "otro",
+        "relevante",
+        "otro",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        2
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La misma instantánea se consulta por otra clave."
+    },
+    {
+      "query_id": "d09",
+      "labels": [
+        "otro",
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        2
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "Una corrección de apertura no cambia el día de cierre."
+    },
+    {
+      "query_id": "d10",
+      "labels": [
+        "relevante",
+        "relevante"
+      ],
+      "expected_status": "evidencia_ambigua",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "Hay dos fuentes independientes, sin vínculo de sustitución."
+    },
+    {
+      "query_id": "d11",
+      "labels": [
+        "relevante",
+        "relevante"
+      ],
+      "expected_status": "evidencia_ambigua",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "Los textos duplicados siguen siendo dos raíces independientes."
+    },
+    {
+      "query_id": "d12",
+      "labels": [
+        "desactualizado",
+        "relevante",
+        "relevante"
+      ],
+      "expected_status": "evidencia_ambigua",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "Dos ramas sustituyen la misma raíz."
+    },
+    {
+      "query_id": "d13",
+      "labels": [
+        "otro",
+        "otro"
+      ],
+      "expected_status": "sin_evidencia_registrada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "No se indica precio aunque se menciona el piano."
+    },
+    {
+      "query_id": "d14",
+      "labels": [
+        "otro",
+        "otro"
+      ],
+      "expected_status": "sin_evidencia_registrada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "No existe la hora de inicio."
+    },
+    {
+      "query_id": "d15",
+      "labels": [
+        "otro",
+        "otro"
+      ],
+      "expected_status": "sin_evidencia_registrada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "El material no indica la talla."
+    },
+    {
+      "query_id": "d16",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "sin_evidencia_registrada",
+      "expected_positions": [],
+      "metadata_quality": "incompletos",
+      "resoluble": true,
+      "rationale": "El texto pertinente no tiene registro."
+    },
+    {
+      "query_id": "d17",
+      "labels": [
+        "relevante",
+        "desactualizado"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        2
+      ],
+      "metadata_quality": "falsos",
+      "resoluble": true,
+      "rationale": "El vínculo falso presenta el dato histórico como sustitución."
+    },
+    {
+      "query_id": "d18",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "intencion_no_soportada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "La intención fue clasificada erróneamente como no soportada."
+    },
+    {
+      "query_id": "d19",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "intencion_no_soportada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "Una pregunta histórica no está soportada."
+    },
+    {
+      "query_id": "d20",
+      "labels": [
+        "relevante",
+        "relevante"
+      ],
+      "expected_status": "intencion_no_soportada",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "La pregunta exige dos datos."
+    },
+    {
+      "query_id": "d21",
+      "labels": [
+        "desactualizado",
+        "relevante"
+      ],
+      "expected_status": "presupuesto_insuficiente",
+      "expected_positions": [],
+      "metadata_quality": "correctos",
+      "resoluble": false,
+      "rationale": "La fuente vigente es más larga que el presupuesto."
+    },
+    {
+      "query_id": "d22",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "El mensaje relevante contiene NUL."
+    },
+    {
+      "query_id": "d23",
+      "labels": [
+        "otro",
+        "relevante"
+      ],
+      "expected_status": "entrada_invalida",
+      "expected_positions": [],
+      "metadata_quality": "invalidos",
+      "resoluble": false,
+      "rationale": "Un vínculo apunta hacia una posición posterior."
+    },
+    {
+      "query_id": "d24",
+      "labels": [
+        "relevante",
+        "otro"
+      ],
+      "expected_status": "seleccionado",
+      "expected_positions": [
+        1
+      ],
+      "metadata_quality": "correctos",
+      "resoluble": true,
+      "rationale": "Emoji y caracteres se conservan sin normalización."
+    }
+  ]
+}

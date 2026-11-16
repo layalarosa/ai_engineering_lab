@@ -1,0 +1,1012 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "rec-dev-01",
+      "split": "desarrollo",
+      "category": "reciente",
+      "family": "taza",
+      "query": "¿De qué color es mi taza?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "El último mensaje precisa el color de la taza.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El mantel es blanco.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Mi taza es azul.",
+          "label": "relevante"
+        }
+      ]
+    },
+    {
+      "id": "rec-dev-02",
+      "split": "desarrollo",
+      "category": "reciente",
+      "family": "tren",
+      "query": "¿A qué hora sale el tren?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "La hora de salida está en el mensaje reciente.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El andén está abierto.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "De acuerdo.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "El tren sale a las ocho.",
+          "label": "relevante"
+        }
+      ]
+    },
+    {
+      "id": "rec-dev-03",
+      "split": "desarrollo",
+      "category": "reciente",
+      "family": "libro",
+      "query": "¿Qué libro elegí?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "El título elegido aparece en el último mensaje.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Tengo una estantería.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Elegí el libro Solaris.",
+          "label": "relevante"
+        }
+      ]
+    },
+    {
+      "id": "rec-dev-04",
+      "split": "desarrollo",
+      "category": "reciente",
+      "family": "gato",
+      "query": "¿Cómo se llama mi gato?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "El nombre del gato está al final.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Vivo cerca del parque.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Mi gato se llama Nube.",
+          "label": "relevante"
+        }
+      ]
+    },
+    {
+      "id": "rec-res-01",
+      "split": "reservado",
+      "category": "reciente",
+      "family": "jardin",
+      "query": "¿Qué planta riego hoy?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "La planta indicada está al final.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "El jardín tiene sombra.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Hoy riego el helecho.",
+          "label": "relevante"
+        }
+      ]
+    },
+    {
+      "id": "rec-res-02",
+      "split": "reservado",
+      "category": "reciente",
+      "family": "concierto",
+      "query": "¿Dónde es el concierto?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "La ubicación del concierto aparece al final.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Tengo una entrada.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "El concierto es en el teatro.",
+          "label": "relevante"
+        }
+      ]
+    },
+    {
+      "id": "ant-dev-01",
+      "split": "desarrollo",
+      "category": "antiguo",
+      "family": "idioma",
+      "query": "¿Qué idioma estudio?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "El idioma aparece antes de varias distracciones.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Estudio japonés.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Hoy hay sol.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Gracias.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "ant-dev-02",
+      "split": "desarrollo",
+      "category": "antiguo",
+      "family": "instrumento",
+      "query": "¿Qué instrumento toco?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "El instrumento se mencionó al inicio.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Toco el piano.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "De acuerdo.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "La ventana está abierta.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "ant-dev-03",
+      "split": "desarrollo",
+      "category": "antiguo",
+      "family": "mascota",
+      "query": "¿Qué mascota tengo?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "La mascota es mencionada al comienzo.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi mascota es un conejo.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "La mesa es redonda.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "ant-dev-04",
+      "split": "desarrollo",
+      "category": "antiguo",
+      "family": "comida",
+      "query": "¿Qué comida prefiero?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "La preferencia está antes de las distracciones.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Prefiero comida mexicana.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Anotado.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Hace frío.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Claro.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "ant-res-01",
+      "split": "reservado",
+      "category": "antiguo",
+      "family": "bicicleta",
+      "query": "¿De qué color es mi bicicleta?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "El color de la bicicleta aparece al principio.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi bicicleta es verde.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "La nube es gris.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "ant-res-02",
+      "split": "reservado",
+      "category": "antiguo",
+      "family": "montana",
+      "query": "¿Qué montaña quiero visitar?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "La montaña aparece antes de las distracciones.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quiero visitar la montaña Illimani.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Claro.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Tengo una mochila.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "cor-dev-01",
+      "split": "desarrollo",
+      "category": "correccion",
+      "family": "lenguaje",
+      "query": "¿Qué lenguaje prefiero usar ahora?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "La preferencia de C# corrige explícitamente Python.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Prefiero usar Python.",
+          "label": "desactualizado"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Ahora prefiero usar C#.",
+          "label": "relevante"
+        },
+        {
+          "role": "user",
+          "content": "Hoy hace calor.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "De acuerdo.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "cor-dev-02",
+      "split": "desarrollo",
+      "category": "correccion",
+      "family": "cita",
+      "query": "¿Qué día es la cita ahora?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "El jueves sustituye al martes.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La cita será el martes.",
+          "label": "desactualizado"
+        },
+        {
+          "role": "user",
+          "content": "Cambio: la cita será el jueves.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Anotado.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "cor-dev-03",
+      "split": "desarrollo",
+      "category": "correccion",
+      "family": "bebida",
+      "query": "¿Qué bebida quiero ahora?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "El té sustituye al café.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quiero café como bebida.",
+          "label": "desactualizado"
+        },
+        {
+          "role": "user",
+          "content": "Cambio: ahora quiero té como bebida.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "cor-dev-04",
+      "split": "desarrollo",
+      "category": "correccion",
+      "family": "mascota_nombre",
+      "query": "¿Cómo se llama mi perro ahora?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "Luna sustituye al nombre Sol.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi perro se llama Sol.",
+          "label": "desactualizado"
+        },
+        {
+          "role": "user",
+          "content": "Corregí el nombre: mi perro se llama Luna.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "cor-res-01",
+      "split": "reservado",
+      "category": "correccion",
+      "family": "envio",
+      "query": "¿Cuál es la dirección de envío actual?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "La dirección sur sustituye a la dirección norte.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La dirección de envío es calle Norte 3.",
+          "label": "desactualizado"
+        },
+        {
+          "role": "user",
+          "content": "Cambio: la dirección de envío es calle Sur 8.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "La caja es pequeña.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "cor-res-02",
+      "split": "reservado",
+      "category": "correccion",
+      "family": "musica",
+      "query": "¿Qué género musical prefiero ahora?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "El jazz sustituye explícitamente al rock.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi género musical preferido es rock.",
+          "label": "desactualizado"
+        },
+        {
+          "role": "user",
+          "content": "Cambio de preferencia: mi género musical preferido es jazz.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "De acuerdo.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "La radio está encendida.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "var-dev-01",
+      "split": "desarrollo",
+      "category": "variacion",
+      "family": "coche",
+      "query": "¿Qué vehículo conduzco?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "Automóvil expresa el vehículo con otra palabra.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Conduzco un automóvil rojo.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Está lloviendo.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "var-dev-02",
+      "split": "desarrollo",
+      "category": "variacion",
+      "family": "almuerzo",
+      "query": "¿Qué comí al mediodía?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "Almuerzo corresponde a comida de mediodía.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi almuerzo fue sopa.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Es una tarde tranquila.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "var-dev-03",
+      "split": "desarrollo",
+      "category": "variacion",
+      "family": "accent",
+      "query": "¿Qué música escucho?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "La misma palabra aparece con acento descompuesto.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Escucho música clásica.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Claro.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "La lámpara está prendida.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "var-dev-04",
+      "split": "desarrollo",
+      "category": "variacion",
+      "family": "hogar",
+      "query": "¿Dónde está mi hogar?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "Casa es una paráfrasis de hogar.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi casa está junto al río.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Vi una película.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "var-res-01",
+      "split": "reservado",
+      "category": "variacion",
+      "family": "calzado",
+      "query": "¿Qué calzado compré?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "Zapatos es una clase de calzado.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Compré zapatos marrones.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "La bolsa es grande.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "var-res-02",
+      "split": "reservado",
+      "category": "variacion",
+      "family": "temperatura",
+      "query": "¿Cómo está el clima?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "Frío describe el clima sin repetir la palabra.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hoy hace frío.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Mi mochila pesa poco.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "sin-dev-01",
+      "split": "desarrollo",
+      "category": "sin_respuesta",
+      "family": "hora_cena",
+      "query": "¿A qué hora ceno?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "No hay ninguna hora de cena.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "La cena fue deliciosa.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Tengo hambre.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "sin-dev-02",
+      "split": "desarrollo",
+      "category": "sin_respuesta",
+      "family": "capital",
+      "query": "¿Cuál es la capital de mi país?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "No se identifica ningún país ni capital.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Visité una ciudad.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "El mapa está guardado.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "sin-dev-03",
+      "split": "desarrollo",
+      "category": "sin_respuesta",
+      "family": "zapatos",
+      "query": "¿Cuántos zapatos tengo?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "No se menciona una cantidad de zapatos.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Los zapatos son azules.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "La caja está cerrada.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "sin-dev-04",
+      "split": "desarrollo",
+      "category": "sin_respuesta",
+      "family": "altura",
+      "query": "¿Cuál es mi altura?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "No se ha indicado una altura.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Me gusta caminar.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "De acuerdo.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "Hoy tengo tiempo.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "sin-res-01",
+      "split": "reservado",
+      "category": "sin_respuesta",
+      "family": "viaje_fecha",
+      "query": "¿En qué fecha viajaré?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "No se proporciona una fecha de viaje.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quiero viajar a la costa.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Bien.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "El bolso está listo.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "sin-res-02",
+      "split": "reservado",
+      "category": "sin_respuesta",
+      "family": "precio",
+      "query": "¿Cuál es el precio de mi entrada?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "No se proporciona un precio.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Compré una entrada para el teatro.",
+          "label": "otro"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "El teatro tiene luces.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "lim-dev-01",
+      "split": "desarrollo",
+      "category": "limites",
+      "family": "duplicados",
+      "query": "¿Cuál es mi clave de ejemplo?",
+      "max_chars": 120,
+      "max_messages": 2,
+      "rationale": "Ambas copias sintéticas son relevantes y son mensajes separados.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Clave de ejemplo: alfa.",
+          "label": "relevante"
+        },
+        {
+          "role": "user",
+          "content": "Clave de ejemplo: alfa.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Listo.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "lim-dev-02",
+      "split": "desarrollo",
+      "category": "limites",
+      "family": "nul",
+      "query": "¿Cuál es mi código?",
+      "max_chars": 40,
+      "max_messages": 2,
+      "rationale": "El mensaje conserva un NUL y contiene el código.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mi código es A\u0000B.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "lim-dev-03",
+      "split": "desarrollo",
+      "category": "limites",
+      "family": "ultimo_largo",
+      "query": "¿Cuál es la clave?",
+      "max_chars": 12,
+      "max_messages": 2,
+      "rationale": "El mensaje más reciente excede el presupuesto; la clave anterior cabe.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "clave azul",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Un mensaje reciente demasiado largo para el límite.",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "lim-dev-04",
+      "split": "desarrollo",
+      "category": "limites",
+      "family": "corte",
+      "query": "¿Qué color elegí?",
+      "max_chars": 12,
+      "max_messages": 2,
+      "rationale": "El color relevante cabe, pero hay un mensaje intermedio más largo.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "color azul",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Esto es bastante más largo.",
+          "label": "otro"
+        },
+        {
+          "role": "user",
+          "content": "ok",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "lim-res-01",
+      "split": "reservado",
+      "category": "limites",
+      "family": "emoji",
+      "query": "¿Cuál es mi símbolo?",
+      "max_chars": 11,
+      "max_messages": 2,
+      "rationale": "El símbolo con emoji conserva sus puntos de código.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "símbolo 😀",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "ok",
+          "label": "otro"
+        }
+      ]
+    },
+    {
+      "id": "lim-res-02",
+      "split": "reservado",
+      "category": "limites",
+      "family": "varios_hechos",
+      "query": "¿Qué mesa y silla elegí?",
+      "max_chars": 40,
+      "max_messages": 2,
+      "rationale": "Se necesitan ambos mensajes para cubrir las dos elecciones.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Mesa: roble.",
+          "label": "relevante"
+        },
+        {
+          "role": "user",
+          "content": "Silla: azul.",
+          "label": "relevante"
+        },
+        {
+          "role": "assistant",
+          "content": "Listo.",
+          "label": "otro"
+        }
+      ]
+    }
+  ]
+}

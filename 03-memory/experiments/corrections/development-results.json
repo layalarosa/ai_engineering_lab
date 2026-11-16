@@ -1,0 +1,2460 @@
+{
+  "particion": "desarrollo",
+  "casos": 24,
+  "sha256_corpus": "7f3e3626825d474ee73495ffd6fd473f9339abdefb2fa74448dbfeb95130de54",
+  "sha256_prototipo": "7d6827eeecc55dc07a0dbca22bf2fdbacb6f7674a71524634a5c58b031468c6f",
+  "sha256_ejecutor": "8fad976144789da8cbd5a886a97bfd63e9f7d9ca032adfb2bc0c7e7fab656a89",
+  "resultados_esperados": {
+    "coinciden": 24,
+    "total": 24
+  },
+  "coste_metadatos": {
+    "instantaneas": 23,
+    "registros_en_instantaneas": 40,
+    "tiempo_creacion": "no medido; registros sint\u00e9ticos preparados manualmente",
+    "nota": "La candidata recibe intenci\u00f3n y registros adicionales; no se mide latencia de producci\u00f3n."
+  },
+  "metodos": {
+    "recencia": {
+      "estados": {
+        "seleccionado": 23,
+        "ultimo_mensaje_supera_presupuesto": 1
+      },
+      "casos_validos": 23,
+      "errores_validos": 1,
+      "seleccion_util": {
+        "numerador": 11,
+        "denominador": 14,
+        "valor": 0.7857142857142857
+      },
+      "abstencion_con_evidencia": {
+        "numerador": 0,
+        "denominador": 20,
+        "valor": 0.0
+      },
+      "abstencion_con_evidencia_por_estado": {},
+      "seleccion_sin_evidencia": {
+        "numerador": 3,
+        "denominador": 3,
+        "valor": 1.0
+      },
+      "seleccion_desactualizada": {
+        "numerador": 3,
+        "denominador": 23,
+        "valor": 0.13043478260869565
+      },
+      "seleccion_desactualizada_por_metadatos": {
+        "correctos": {
+          "numerador": 2,
+          "denominador": 21,
+          "valor": 0.09523809523809523
+        },
+        "incompletos": {
+          "numerador": 0,
+          "denominador": 1,
+          "valor": 0.0
+        },
+        "falsos": {
+          "numerador": 1,
+          "denominador": 1,
+          "valor": 1.0
+        }
+      },
+      "cobertura_media": {
+        "valor": 0.8421052631578947,
+        "denominador": 19
+      },
+      "precision_media": {
+        "valor": 0.45454545454545453,
+        "denominador": 22,
+        "salidas_vacias_excluidas": 0
+      },
+      "entradas_invalidas_rechazadas": null
+    },
+    "lexica": {
+      "estados": {
+        "seleccionado": 22,
+        "sin_coincidencias": 2
+      },
+      "casos_validos": 23,
+      "errores_validos": 0,
+      "seleccion_util": {
+        "numerador": 14,
+        "denominador": 14,
+        "valor": 1.0
+      },
+      "abstencion_con_evidencia": {
+        "numerador": 1,
+        "denominador": 20,
+        "valor": 0.05
+      },
+      "abstencion_con_evidencia_por_estado": {
+        "sin_coincidencias": 1
+      },
+      "seleccion_sin_evidencia": {
+        "numerador": 2,
+        "denominador": 3,
+        "valor": 0.6666666666666666
+      },
+      "seleccion_desactualizada": {
+        "numerador": 7,
+        "denominador": 23,
+        "valor": 0.30434782608695654
+      },
+      "seleccion_desactualizada_por_metadatos": {
+        "correctos": {
+          "numerador": 6,
+          "denominador": 21,
+          "valor": 0.2857142857142857
+        },
+        "incompletos": {
+          "numerador": 0,
+          "denominador": 1,
+          "valor": 0.0
+        },
+        "falsos": {
+          "numerador": 1,
+          "denominador": 1,
+          "valor": 1.0
+        }
+      },
+      "cobertura_media": {
+        "valor": 0.875,
+        "denominador": 20
+      },
+      "precision_media": {
+        "valor": 0.6904761904761905,
+        "denominador": 21,
+        "salidas_vacias_excluidas": 2
+      },
+      "entradas_invalidas_rechazadas": null
+    },
+    "estructurada": {
+      "estados": {
+        "seleccionado": 12,
+        "evidencia_ambigua": 3,
+        "sin_evidencia_registrada": 4,
+        "intencion_no_soportada": 3,
+        "presupuesto_insuficiente": 1,
+        "entrada_invalida": 1
+      },
+      "casos_validos": 23,
+      "errores_validos": 0,
+      "seleccion_util": {
+        "numerador": 11,
+        "denominador": 14,
+        "valor": 0.7857142857142857
+      },
+      "abstencion_con_evidencia": {
+        "numerador": 8,
+        "denominador": 20,
+        "valor": 0.4
+      },
+      "abstencion_con_evidencia_por_estado": {
+        "evidencia_ambigua": 3,
+        "sin_evidencia_registrada": 1,
+        "intencion_no_soportada": 3,
+        "presupuesto_insuficiente": 1
+      },
+      "seleccion_sin_evidencia": {
+        "numerador": 0,
+        "denominador": 3,
+        "valor": 0.0
+      },
+      "seleccion_desactualizada": {
+        "numerador": 1,
+        "denominador": 23,
+        "valor": 0.043478260869565216
+      },
+      "seleccion_desactualizada_por_metadatos": {
+        "correctos": {
+          "numerador": 0,
+          "denominador": 21,
+          "valor": 0.0
+        },
+        "incompletos": {
+          "numerador": 0,
+          "denominador": 1,
+          "valor": 0.0
+        },
+        "falsos": {
+          "numerador": 1,
+          "denominador": 1,
+          "valor": 1.0
+        }
+      },
+      "cobertura_media": {
+        "valor": 0.55,
+        "denominador": 20
+      },
+      "precision_media": {
+        "valor": 0.9166666666666666,
+        "denominador": 12,
+        "salidas_vacias_excluidas": 11
+      },
+      "entradas_invalidas_rechazadas": {
+        "numerador": 1,
+        "denominador": 1,
+        "valor": 1.0
+      }
+    }
+  },
+  "categorias": {
+    "ambiguo": {
+      "recencia": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 1.0,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "lexica": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 1,
+          "denominador": 3,
+          "valor": 0.3333333333333333
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 1,
+            "denominador": 3,
+            "valor": 0.3333333333333333
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 0.8333333333333334,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.8333333333333334,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "estructurada": {
+        "estados": {
+          "evidencia_ambigua": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia_por_estado": {
+          "evidencia_ambigua": 3
+        },
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 0.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": null,
+          "denominador": 0,
+          "salidas_vacias_excluidas": 3
+        },
+        "entradas_invalidas_rechazadas": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        }
+      }
+    },
+    "cadenas": {
+      "recencia": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 2,
+          "denominador": 3,
+          "valor": 0.6666666666666666
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 2,
+            "denominador": 3,
+            "valor": 0.6666666666666666
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.5,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "lexica": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 3,
+            "denominador": 3,
+            "valor": 1.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.5,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "estructurada": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 1.0,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        }
+      }
+    },
+    "claves": {
+      "recencia": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 2,
+          "denominador": 3,
+          "valor": 0.6666666666666666
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 0.6666666666666666,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.3333333333333333,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "lexica": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 1,
+          "denominador": 3,
+          "valor": 0.3333333333333333
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 1,
+            "denominador": 3,
+            "valor": 0.3333333333333333
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.6666666666666666,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "estructurada": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 1.0,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        }
+      }
+    },
+    "intencion_presupuesto": {
+      "recencia": {
+        "estados": {
+          "seleccionado": 2,
+          "ultimo_mensaje_supera_presupuesto": 1
+        },
+        "casos_validos": 3,
+        "errores_validos": 1,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 2
+        },
+        "precision_media": {
+          "valor": 0.75,
+          "denominador": 2,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "lexica": {
+        "estados": {
+          "sin_coincidencias": 1,
+          "seleccionado": 2
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 1,
+          "denominador": 3,
+          "valor": 0.3333333333333333
+        },
+        "abstencion_con_evidencia_por_estado": {
+          "sin_coincidencias": 1
+        },
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 1,
+          "denominador": 3,
+          "valor": 0.3333333333333333
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 1,
+            "denominador": 3,
+            "valor": 0.3333333333333333
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 0.3333333333333333,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.5,
+          "denominador": 2,
+          "salidas_vacias_excluidas": 1
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "estructurada": {
+        "estados": {
+          "intencion_no_soportada": 2,
+          "presupuesto_insuficiente": 1
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia_por_estado": {
+          "intencion_no_soportada": 2,
+          "presupuesto_insuficiente": 1
+        },
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 0.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": null,
+          "denominador": 0,
+          "salidas_vacias_excluidas": 3
+        },
+        "entradas_invalidas_rechazadas": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        }
+      }
+    },
+    "limites": {
+      "recencia": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 2,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 2,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 2,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 2,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 2,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 0.0,
+          "denominador": 2
+        },
+        "precision_media": {
+          "valor": 0.0,
+          "denominador": 2,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "lexica": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 2,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 2,
+          "denominador": 2,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 2,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 2,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 2,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 2
+        },
+        "precision_media": {
+          "valor": 1.0,
+          "denominador": 2,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "estructurada": {
+        "estados": {
+          "seleccionado": 2,
+          "entrada_invalida": 1
+        },
+        "casos_validos": 2,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 2,
+          "denominador": 2,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 2,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 2,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 2,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 2
+        },
+        "precision_media": {
+          "valor": 1.0,
+          "denominador": 2,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": {
+          "numerador": 1,
+          "denominador": 1,
+          "valor": 1.0
+        }
+      }
+    },
+    "metadatos": {
+      "recencia": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 1,
+          "denominador": 3,
+          "valor": 0.3333333333333333
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 1,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 1,
+            "valor": 0.0
+          },
+          "falsos": {
+            "numerador": 1,
+            "denominador": 1,
+            "valor": 1.0
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.5,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "lexica": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 1,
+          "denominador": 3,
+          "valor": 0.3333333333333333
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 1,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 1,
+            "valor": 0.0
+          },
+          "falsos": {
+            "numerador": 1,
+            "denominador": 1,
+            "valor": 1.0
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.8333333333333334,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "estructurada": {
+        "estados": {
+          "sin_evidencia_registrada": 1,
+          "seleccionado": 1,
+          "intencion_no_soportada": 1
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 2,
+          "denominador": 3,
+          "valor": 0.6666666666666666
+        },
+        "abstencion_con_evidencia_por_estado": {
+          "sin_evidencia_registrada": 1,
+          "intencion_no_soportada": 1
+        },
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 1,
+          "denominador": 3,
+          "valor": 0.3333333333333333
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 1,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 1,
+            "valor": 0.0
+          },
+          "falsos": {
+            "numerador": 1,
+            "denominador": 1,
+            "valor": 1.0
+          }
+        },
+        "cobertura_media": {
+          "valor": 0.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.0,
+          "denominador": 1,
+          "salidas_vacias_excluidas": 2
+        },
+        "entradas_invalidas_rechazadas": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        }
+      }
+    },
+    "sin_respuesta": {
+      "recencia": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": null,
+          "denominador": 0
+        },
+        "precision_media": {
+          "valor": 0.0,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "lexica": {
+        "estados": {
+          "seleccionado": 2,
+          "sin_coincidencias": 1
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 2,
+          "denominador": 3,
+          "valor": 0.6666666666666666
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": null,
+          "denominador": 0
+        },
+        "precision_media": {
+          "valor": 0.0,
+          "denominador": 2,
+          "salidas_vacias_excluidas": 1
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "estructurada": {
+        "estados": {
+          "sin_evidencia_registrada": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": null,
+          "denominador": 0
+        },
+        "precision_media": {
+          "valor": null,
+          "denominador": 0,
+          "salidas_vacias_excluidas": 3
+        },
+        "entradas_invalidas_rechazadas": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        }
+      }
+    },
+    "vigente": {
+      "recencia": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 0.5,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "lexica": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 1.0,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": null
+      },
+      "estructurada": {
+        "estados": {
+          "seleccionado": 3
+        },
+        "casos_validos": 3,
+        "errores_validos": 0,
+        "seleccion_util": {
+          "numerador": 3,
+          "denominador": 3,
+          "valor": 1.0
+        },
+        "abstencion_con_evidencia": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "abstencion_con_evidencia_por_estado": {},
+        "seleccion_sin_evidencia": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        },
+        "seleccion_desactualizada": {
+          "numerador": 0,
+          "denominador": 3,
+          "valor": 0.0
+        },
+        "seleccion_desactualizada_por_metadatos": {
+          "correctos": {
+            "numerador": 0,
+            "denominador": 3,
+            "valor": 0.0
+          },
+          "incompletos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          },
+          "falsos": {
+            "numerador": 0,
+            "denominador": 0,
+            "valor": null
+          }
+        },
+        "cobertura_media": {
+          "valor": 1.0,
+          "denominador": 3
+        },
+        "precision_media": {
+          "valor": 1.0,
+          "denominador": 3,
+          "salidas_vacias_excluidas": 0
+        },
+        "entradas_invalidas_rechazadas": {
+          "numerador": 0,
+          "denominador": 0,
+          "valor": null
+        }
+      }
+    }
+  },
+  "comparacion_emparejada": {
+    "recencia": {
+      "comparados": 19,
+      "excluidos_error": [
+        "d21"
+      ],
+      "diferencia_cobertura": -0.2631578947368421
+    },
+    "lexica": {
+      "comparados": 20,
+      "excluidos_error": [],
+      "diferencia_cobertura": -0.325
+    }
+  },
+  "detalle": [
+    {
+      "id": "d01",
+      "category": "vigente",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          1
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "id": "d02",
+      "category": "vigente",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          1
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "id": "d03",
+      "category": "vigente",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          1
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "id": "d04",
+      "category": "cadenas",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [
+        1
+      ],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          2
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "id": "d05",
+      "category": "cadenas",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [
+        1,
+        2
+      ],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          3
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2,
+            3
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            3
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            3
+          ]
+        }
+      }
+    },
+    {
+      "id": "d06",
+      "category": "cadenas",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [
+        1
+      ],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          3
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            3,
+            4
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            3
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            3
+          ]
+        }
+      }
+    },
+    {
+      "id": "d07",
+      "category": "claves",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [
+        1
+      ],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          3
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            3,
+            4
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            3
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            3
+          ]
+        }
+      }
+    },
+    {
+      "id": "d08",
+      "category": "claves",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          2
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            3,
+            4
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "id": "d09",
+      "category": "claves",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          2
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2,
+            3
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "id": "d10",
+      "category": "ambiguo",
+      "relevantes": [
+        1,
+        2
+      ],
+      "desactualizados": [],
+      "resoluble": false,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "evidencia_ambigua",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "estructurada": {
+          "estado": "evidencia_ambigua",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d11",
+      "category": "ambiguo",
+      "relevantes": [
+        1,
+        2
+      ],
+      "desactualizados": [],
+      "resoluble": false,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "evidencia_ambigua",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "estructurada": {
+          "estado": "evidencia_ambigua",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d12",
+      "category": "ambiguo",
+      "relevantes": [
+        2,
+        3
+      ],
+      "desactualizados": [
+        1
+      ],
+      "resoluble": false,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "evidencia_ambigua",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2,
+            3
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            3
+          ]
+        },
+        "estructurada": {
+          "estado": "evidencia_ambigua",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d13",
+      "category": "sin_respuesta",
+      "relevantes": [],
+      "desactualizados": [],
+      "resoluble": false,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "sin_evidencia_registrada",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "sin_evidencia_registrada",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d14",
+      "category": "sin_respuesta",
+      "relevantes": [],
+      "desactualizados": [],
+      "resoluble": false,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "sin_evidencia_registrada",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "sin_coincidencias",
+          "posiciones": []
+        },
+        "estructurada": {
+          "estado": "sin_evidencia_registrada",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d15",
+      "category": "sin_respuesta",
+      "relevantes": [],
+      "desactualizados": [],
+      "resoluble": false,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "sin_evidencia_registrada",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "sin_evidencia_registrada",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d16",
+      "category": "metadatos",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "resoluble": true,
+      "calidad_metadatos": "incompletos",
+      "resultado_esperado": {
+        "estado": "sin_evidencia_registrada",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "sin_evidencia_registrada",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d17",
+      "category": "metadatos",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [
+        2
+      ],
+      "resoluble": true,
+      "calidad_metadatos": "falsos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          2
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "id": "d18",
+      "category": "metadatos",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "intencion_no_soportada",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "intencion_no_soportada",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d19",
+      "category": "intencion_presupuesto",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "resoluble": false,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "intencion_no_soportada",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "sin_coincidencias",
+          "posiciones": []
+        },
+        "estructurada": {
+          "estado": "intencion_no_soportada",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d20",
+      "category": "intencion_presupuesto",
+      "relevantes": [
+        1,
+        2
+      ],
+      "desactualizados": [],
+      "resoluble": false,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "intencion_no_soportada",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "estructurada": {
+          "estado": "intencion_no_soportada",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d21",
+      "category": "intencion_presupuesto",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [
+        1
+      ],
+      "resoluble": false,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "presupuesto_insuficiente",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "ultimo_mensaje_supera_presupuesto",
+          "posiciones": null
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "presupuesto_insuficiente",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d22",
+      "category": "limites",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          1
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "id": "d23",
+      "category": "limites",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [],
+      "resoluble": false,
+      "calidad_metadatos": "invalidos",
+      "resultado_esperado": {
+        "estado": "entrada_invalida",
+        "posiciones": []
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1,
+            2
+          ]
+        },
+        "estructurada": {
+          "estado": "entrada_invalida",
+          "posiciones": []
+        }
+      }
+    },
+    {
+      "id": "d24",
+      "category": "limites",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "resoluble": true,
+      "calidad_metadatos": "correctos",
+      "resultado_esperado": {
+        "estado": "seleccionado",
+        "posiciones": [
+          1
+        ]
+      },
+      "metodos": {
+        "recencia": {
+          "estado": "seleccionado",
+          "posiciones": [
+            2
+          ]
+        },
+        "lexica": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        },
+        "estructurada": {
+          "estado": "seleccionado",
+          "posiciones": [
+            1
+          ]
+        }
+      }
+    }
+  ]
+}

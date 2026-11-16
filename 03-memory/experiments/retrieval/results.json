@@ -1,0 +1,2105 @@
+{
+  "version_corpus": 1,
+  "sha256_corpus": "cdcbf7076ef359bb20f780a9178ad774b8efa3734c58e020629e270636b86295",
+  "sha256_ejecutor": "ebd5d14f41fae876eec753d3cd963c4955a7d6fd7f748f5d874dc777d866ebb7",
+  "fecha_utc": "2026-11-16T15:37:15.466865+00:00",
+  "python": "3.10.11",
+  "plataforma": "Windows-10-10.0.26300-SP0",
+  "repeticiones_por_caso_y_metodo": 100,
+  "particiones": {
+    "desarrollo": {
+      "metodos": {
+        "recencia": {
+          "casos": 24,
+          "exitos": 23,
+          "errores": {
+            "ultimo_mensaje_supera_presupuesto": 1
+          },
+          "cobertura_media": {
+            "valor": 0.4473684210526316,
+            "denominador": 19
+          },
+          "precision_media": {
+            "valor": 0.1956521739130435,
+            "denominador": 23,
+            "salidas_vacias_excluidas": 0
+          },
+          "casos_completos": {
+            "numerador": 8,
+            "denominador": 19,
+            "valor": 0.42105263157894735
+          },
+          "con_desactualizados": {
+            "numerador": 0,
+            "denominador": 23,
+            "valor": 0.0
+          },
+          "sin_respuesta_con_salida": {
+            "numerador": 4,
+            "denominador": 4,
+            "valor": 1.0
+          },
+          "sin_respuesta_vacios": 0,
+          "mensajes_media": 1.9565217391304348,
+          "caracteres_media": 28.043478260869566,
+          "tiempo_microsegundos": {
+            "p50": 2.9,
+            "p95": 3.1,
+            "muestras": 2400
+          }
+        },
+        "lexica": {
+          "casos": 24,
+          "exitos": 24,
+          "errores": {},
+          "cobertura_media": {
+            "valor": 0.95,
+            "denominador": 20
+          },
+          "precision_media": {
+            "valor": 0.8,
+            "denominador": 20,
+            "salidas_vacias_excluidas": 4
+          },
+          "casos_completos": {
+            "numerador": 19,
+            "denominador": 20,
+            "valor": 0.95
+          },
+          "con_desactualizados": {
+            "numerador": 4,
+            "denominador": 24,
+            "valor": 0.16666666666666666
+          },
+          "sin_respuesta_con_salida": {
+            "numerador": 1,
+            "denominador": 4,
+            "valor": 0.25
+          },
+          "sin_respuesta_vacios": 3,
+          "mensajes_media": 1.125,
+          "caracteres_media": 25.458333333333332,
+          "tiempo_microsegundos": {
+            "p50": 10.2,
+            "p95": 13.6,
+            "muestras": 2400
+          }
+        }
+      },
+      "categorias": {
+        "antiguo": {
+          "recencia": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 0.0,
+              "denominador": 4
+            },
+            "precision_media": {
+              "valor": 0.0,
+              "denominador": 4,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 22.25,
+            "tiempo_microsegundos": {
+              "p50": 3.0,
+              "p95": 3.3,
+              "muestras": 400
+            }
+          },
+          "lexica": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 4
+            },
+            "precision_media": {
+              "valor": 1.0,
+              "denominador": 4,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 4,
+              "denominador": 4,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 1,
+            "caracteres_media": 19.75,
+            "tiempo_microsegundos": {
+              "p50": 10.5,
+              "p95": 11.4,
+              "muestras": 400
+            }
+          }
+        },
+        "correccion": {
+          "recencia": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 0.75,
+              "denominador": 4
+            },
+            "precision_media": {
+              "valor": 0.375,
+              "denominador": 4,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 3,
+              "denominador": 4,
+              "valor": 0.75
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 39.5,
+            "tiempo_microsegundos": {
+              "p50": 2.8,
+              "p95": 3.1,
+              "muestras": 400
+            }
+          },
+          "lexica": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 4
+            },
+            "precision_media": {
+              "valor": 0.5,
+              "denominador": 4,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 4,
+              "denominador": 4,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 4,
+              "denominador": 4,
+              "valor": 1.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 55.5,
+            "tiempo_microsegundos": {
+              "p50": 11.9,
+              "p95": 14.0,
+              "muestras": 400
+            }
+          }
+        },
+        "limites": {
+          "recencia": {
+            "casos": 4,
+            "exitos": 3,
+            "errores": {
+              "ultimo_mensaje_supera_presupuesto": 1
+            },
+            "cobertura_media": {
+              "valor": 0.5,
+              "denominador": 3
+            },
+            "precision_media": {
+              "valor": 0.3333333333333333,
+              "denominador": 3,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 1,
+              "denominador": 3,
+              "valor": 0.3333333333333333
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 3,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 1.6666666666666667,
+            "caracteres_media": 19.333333333333332,
+            "tiempo_microsegundos": {
+              "p50": 2.8,
+              "p95": 3.0,
+              "muestras": 400
+            }
+          },
+          "lexica": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 4
+            },
+            "precision_media": {
+              "valor": 1.0,
+              "denominador": 4,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 4,
+              "denominador": 4,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 1.25,
+            "caracteres_media": 20.75,
+            "tiempo_microsegundos": {
+              "p50": 9.0,
+              "p95": 11.0,
+              "muestras": 400
+            }
+          }
+        },
+        "reciente": {
+          "recencia": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 4
+            },
+            "precision_media": {
+              "valor": 0.5,
+              "denominador": 4,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 4,
+              "denominador": 4,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 30.25,
+            "tiempo_microsegundos": {
+              "p50": 2.9,
+              "p95": 3.1,
+              "muestras": 400
+            }
+          },
+          "lexica": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 4
+            },
+            "precision_media": {
+              "valor": 0.75,
+              "denominador": 4,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 4,
+              "denominador": 4,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 1.5,
+            "caracteres_media": 31.75,
+            "tiempo_microsegundos": {
+              "p50": 11.1,
+              "p95": 12.6,
+              "muestras": 400
+            }
+          }
+        },
+        "sin_respuesta": {
+          "recencia": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": null,
+              "denominador": 0
+            },
+            "precision_media": {
+              "valor": 0.0,
+              "denominador": 4,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 4,
+              "denominador": 4,
+              "valor": 1.0
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 27.25,
+            "tiempo_microsegundos": {
+              "p50": 2.9,
+              "p95": 3.0,
+              "muestras": 400
+            }
+          },
+          "lexica": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": null,
+              "denominador": 0
+            },
+            "precision_media": {
+              "valor": 0.0,
+              "denominador": 1,
+              "salidas_vacias_excluidas": 3
+            },
+            "casos_completos": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 1,
+              "denominador": 4,
+              "valor": 0.25
+            },
+            "sin_respuesta_vacios": 3,
+            "mensajes_media": 0.25,
+            "caracteres_media": 5.75,
+            "tiempo_microsegundos": {
+              "p50": 9.6,
+              "p95": 10.5,
+              "muestras": 400
+            }
+          }
+        },
+        "variacion": {
+          "recencia": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 0.0,
+              "denominador": 4
+            },
+            "precision_media": {
+              "valor": 0.0,
+              "denominador": 4,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 27.5,
+            "tiempo_microsegundos": {
+              "p50": 2.9,
+              "p95": 3.1,
+              "muestras": 400
+            }
+          },
+          "lexica": {
+            "casos": 4,
+            "exitos": 4,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 0.75,
+              "denominador": 4
+            },
+            "precision_media": {
+              "valor": 1.0,
+              "denominador": 3,
+              "salidas_vacias_excluidas": 1
+            },
+            "casos_completos": {
+              "numerador": 3,
+              "denominador": 4,
+              "valor": 0.75
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 4,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 0.75,
+            "caracteres_media": 19.25,
+            "tiempo_microsegundos": {
+              "p50": 10.2,
+              "p95": 10.6,
+              "muestras": 400
+            }
+          }
+        }
+      },
+      "comparacion_emparejada": {
+        "diferencia_media_lexica_menos_recencia": 0.5,
+        "casos_comparados": 19,
+        "casos_excluidos_por_error": [
+          "lim-dev-03"
+        ]
+      }
+    },
+    "reservado": {
+      "metodos": {
+        "recencia": {
+          "casos": 12,
+          "exitos": 12,
+          "errores": {},
+          "cobertura_media": {
+            "valor": 0.35,
+            "denominador": 10
+          },
+          "precision_media": {
+            "valor": 0.16666666666666666,
+            "denominador": 12,
+            "salidas_vacias_excluidas": 0
+          },
+          "casos_completos": {
+            "numerador": 3,
+            "denominador": 10,
+            "valor": 0.3
+          },
+          "con_desactualizados": {
+            "numerador": 0,
+            "denominador": 12,
+            "valor": 0.0
+          },
+          "sin_respuesta_con_salida": {
+            "numerador": 2,
+            "denominador": 2,
+            "valor": 1.0
+          },
+          "sin_respuesta_vacios": 0,
+          "mensajes_media": 2,
+          "caracteres_media": 26.583333333333332,
+          "tiempo_microsegundos": {
+            "p50": 2.9,
+            "p95": 3.1,
+            "muestras": 1200
+          }
+        },
+        "lexica": {
+          "casos": 12,
+          "exitos": 12,
+          "errores": {},
+          "cobertura_media": {
+            "valor": 0.9,
+            "denominador": 10
+          },
+          "precision_media": {
+            "valor": 0.75,
+            "denominador": 10,
+            "salidas_vacias_excluidas": 2
+          },
+          "casos_completos": {
+            "numerador": 9,
+            "denominador": 10,
+            "valor": 0.9
+          },
+          "con_desactualizados": {
+            "numerador": 2,
+            "denominador": 12,
+            "valor": 0.16666666666666666
+          },
+          "sin_respuesta_con_salida": {
+            "numerador": 1,
+            "denominador": 2,
+            "valor": 0.5
+          },
+          "sin_respuesta_vacios": 1,
+          "mensajes_media": 1.25,
+          "caracteres_media": 34.583333333333336,
+          "tiempo_microsegundos": {
+            "p50": 9.7,
+            "p95": 16.3,
+            "muestras": 1200
+          }
+        }
+      },
+      "categorias": {
+        "antiguo": {
+          "recencia": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 0.0,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 0.0,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 24.5,
+            "tiempo_microsegundos": {
+              "p50": 2.8,
+              "p95": 3.0,
+              "muestras": 200
+            }
+          },
+          "lexica": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 0.75,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 2,
+              "denominador": 2,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 1.5,
+            "caracteres_media": 36.5,
+            "tiempo_microsegundos": {
+              "p50": 11.3,
+              "p95": 12.7,
+              "muestras": 200
+            }
+          }
+        },
+        "correccion": {
+          "recencia": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 0.0,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 0.0,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 32,
+            "tiempo_microsegundos": {
+              "p50": 2.8,
+              "p95": 2.9,
+              "muestras": 200
+            }
+          },
+          "lexica": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 0.5,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 2,
+              "denominador": 2,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 2,
+              "denominador": 2,
+              "valor": 1.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 89.5,
+            "tiempo_microsegundos": {
+              "p50": 16.2,
+              "p95": 16.6,
+              "muestras": 200
+            }
+          }
+        },
+        "limites": {
+          "recencia": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 0.75,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 0.5,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 1,
+              "denominador": 2,
+              "valor": 0.5
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 14.5,
+            "tiempo_microsegundos": {
+              "p50": 2.9,
+              "p95": 3.0,
+              "muestras": 200
+            }
+          },
+          "lexica": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 1.0,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 2,
+              "denominador": 2,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 1.5,
+            "caracteres_media": 16.5,
+            "tiempo_microsegundos": {
+              "p50": 9.2,
+              "p95": 9.9,
+              "muestras": 200
+            }
+          }
+        },
+        "reciente": {
+          "recencia": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 0.5,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 2,
+              "denominador": 2,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 32.5,
+            "tiempo_microsegundos": {
+              "p50": 3.0,
+              "p95": 3.3,
+              "muestras": 200
+            }
+          },
+          "lexica": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 1.0,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 1.0,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 2,
+              "denominador": 2,
+              "valor": 1.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 1,
+            "caracteres_media": 25,
+            "tiempo_microsegundos": {
+              "p50": 9.5,
+              "p95": 10.5,
+              "muestras": 200
+            }
+          }
+        },
+        "sin_respuesta": {
+          "recencia": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": null,
+              "denominador": 0
+            },
+            "precision_media": {
+              "valor": 0.0,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 2,
+              "denominador": 2,
+              "valor": 1.0
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 28.5,
+            "tiempo_microsegundos": {
+              "p50": 3.0,
+              "p95": 3.1,
+              "muestras": 200
+            }
+          },
+          "lexica": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": null,
+              "denominador": 0
+            },
+            "precision_media": {
+              "valor": 0.0,
+              "denominador": 1,
+              "salidas_vacias_excluidas": 1
+            },
+            "casos_completos": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 1,
+              "denominador": 2,
+              "valor": 0.5
+            },
+            "sin_respuesta_vacios": 1,
+            "mensajes_media": 1,
+            "caracteres_media": 28,
+            "tiempo_microsegundos": {
+              "p50": 11.5,
+              "p95": 12.1,
+              "muestras": 200
+            }
+          }
+        },
+        "variacion": {
+          "recencia": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 0.0,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 0.0,
+              "denominador": 2,
+              "salidas_vacias_excluidas": 0
+            },
+            "casos_completos": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 2,
+            "caracteres_media": 27.5,
+            "tiempo_microsegundos": {
+              "p50": 2.9,
+              "p95": 3.0,
+              "muestras": 200
+            }
+          },
+          "lexica": {
+            "casos": 2,
+            "exitos": 2,
+            "errores": {},
+            "cobertura_media": {
+              "valor": 0.5,
+              "denominador": 2
+            },
+            "precision_media": {
+              "valor": 1.0,
+              "denominador": 1,
+              "salidas_vacias_excluidas": 1
+            },
+            "casos_completos": {
+              "numerador": 1,
+              "denominador": 2,
+              "valor": 0.5
+            },
+            "con_desactualizados": {
+              "numerador": 0,
+              "denominador": 2,
+              "valor": 0.0
+            },
+            "sin_respuesta_con_salida": {
+              "numerador": 0,
+              "denominador": 0,
+              "valor": null
+            },
+            "sin_respuesta_vacios": 0,
+            "mensajes_media": 0.5,
+            "caracteres_media": 12,
+            "tiempo_microsegundos": {
+              "p50": 9.3,
+              "p95": 9.6,
+              "muestras": 200
+            }
+          }
+        }
+      },
+      "comparacion_emparejada": {
+        "diferencia_media_lexica_menos_recencia": 0.55,
+        "casos_comparados": 10,
+        "casos_excluidos_por_error": []
+      }
+    }
+  },
+  "casos": [
+    {
+      "id": "rec-dev-01",
+      "split": "desarrollo",
+      "category": "reciente",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 26,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            3
+          ],
+          "characters": 36,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "rec-dev-02",
+      "split": "desarrollo",
+      "category": "reciente",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 35,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            3
+          ],
+          "characters": 46,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "rec-dev-03",
+      "split": "desarrollo",
+      "category": "reciente",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 33,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            3
+          ],
+          "characters": 23,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "rec-dev-04",
+      "split": "desarrollo",
+      "category": "reciente",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 27,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            3
+          ],
+          "characters": 22,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "rec-res-01",
+      "split": "reservado",
+      "category": "reciente",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 31,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            3
+          ],
+          "characters": 21,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "rec-res-02",
+      "split": "reservado",
+      "category": "reciente",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 34,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            3
+          ],
+          "characters": 29,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "ant-dev-01",
+      "split": "desarrollo",
+      "category": "antiguo",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            3,
+            4
+          ],
+          "characters": 20,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 16,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "ant-dev-02",
+      "split": "desarrollo",
+      "category": "antiguo",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            3,
+            4
+          ],
+          "characters": 29,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 14,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "ant-dev-03",
+      "split": "desarrollo",
+      "category": "antiguo",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            3,
+            4
+          ],
+          "characters": 24,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 24,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "ant-dev-04",
+      "split": "desarrollo",
+      "category": "antiguo",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            3,
+            4
+          ],
+          "characters": 16,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 25,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "ant-res-01",
+      "split": "reservado",
+      "category": "antiguo",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            3,
+            4
+          ],
+          "characters": 26,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            3
+          ],
+          "characters": 38,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "ant-res-02",
+      "split": "reservado",
+      "category": "antiguo",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            3,
+            4
+          ],
+          "characters": 23,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 35,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "cor-dev-01",
+      "split": "desarrollo",
+      "category": "correccion",
+      "relevantes": [
+        3
+      ],
+      "desactualizados": [
+        1
+      ],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            4,
+            5
+          ],
+          "characters": 26,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            3
+          ],
+          "characters": 44,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "cor-dev-02",
+      "split": "desarrollo",
+      "category": "correccion",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [
+        1
+      ],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 39,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            2
+          ],
+          "characters": 54,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "cor-dev-03",
+      "split": "desarrollo",
+      "category": "correccion",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [
+        1
+      ],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 46,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            2
+          ],
+          "characters": 60,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "cor-dev-04",
+      "split": "desarrollo",
+      "category": "correccion",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [
+        1
+      ],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 47,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            2
+          ],
+          "characters": 64,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "cor-res-01",
+      "split": "reservado",
+      "category": "correccion",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [
+        1
+      ],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            3,
+            4
+          ],
+          "characters": 29,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            2
+          ],
+          "characters": 84,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "cor-res-02",
+      "split": "reservado",
+      "category": "correccion",
+      "relevantes": [
+        2
+      ],
+      "desactualizados": [
+        1
+      ],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            3,
+            4
+          ],
+          "characters": 35,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            2
+          ],
+          "characters": 95,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "var-dev-01",
+      "split": "desarrollo",
+      "category": "variacion",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 25,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 27,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "var-dev-02",
+      "split": "desarrollo",
+      "category": "variacion",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 28,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [],
+          "characters": 0,
+          "message_count": 0
+        }
+      }
+    },
+    {
+      "id": "var-dev-03",
+      "split": "desarrollo",
+      "category": "variacion",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 31,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 24,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "var-dev-04",
+      "split": "desarrollo",
+      "category": "variacion",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 26,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 26,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "var-res-01",
+      "split": "reservado",
+      "category": "variacion",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 24,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 24,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "var-res-02",
+      "split": "reservado",
+      "category": "variacion",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 31,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [],
+          "characters": 0,
+          "message_count": 0
+        }
+      }
+    },
+    {
+      "id": "sin-dev-01",
+      "split": "desarrollo",
+      "category": "sin_respuesta",
+      "relevantes": [],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 23,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [],
+          "characters": 0,
+          "message_count": 0
+        }
+      }
+    },
+    {
+      "id": "sin-dev-02",
+      "split": "desarrollo",
+      "category": "sin_respuesta",
+      "relevantes": [],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 27,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [],
+          "characters": 0,
+          "message_count": 0
+        }
+      }
+    },
+    {
+      "id": "sin-dev-03",
+      "split": "desarrollo",
+      "category": "sin_respuesta",
+      "relevantes": [],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 31,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 23,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "sin-dev-04",
+      "split": "desarrollo",
+      "category": "sin_respuesta",
+      "relevantes": [],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 28,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [],
+          "characters": 0,
+          "message_count": 0
+        }
+      }
+    },
+    {
+      "id": "sin-res-01",
+      "split": "reservado",
+      "category": "sin_respuesta",
+      "relevantes": [],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 25,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [],
+          "characters": 0,
+          "message_count": 0
+        }
+      }
+    },
+    {
+      "id": "sin-res-02",
+      "split": "reservado",
+      "category": "sin_respuesta",
+      "relevantes": [],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 32,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            3
+          ],
+          "characters": 56,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "lim-dev-01",
+      "split": "desarrollo",
+      "category": "limites",
+      "relevantes": [
+        1,
+        2
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 29,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            2
+          ],
+          "characters": 46,
+          "message_count": 2
+        }
+      }
+    },
+    {
+      "id": "lim-dev-02",
+      "split": "desarrollo",
+      "category": "limites",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            1,
+            2
+          ],
+          "characters": 27,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 17,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "lim-dev-03",
+      "split": "desarrollo",
+      "category": "limites",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": "ultimo_mensaje_supera_presupuesto",
+          "positions": null
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 10,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "lim-dev-04",
+      "split": "desarrollo",
+      "category": "limites",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            3
+          ],
+          "characters": 2,
+          "message_count": 1
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 10,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "lim-res-01",
+      "split": "reservado",
+      "category": "limites",
+      "relevantes": [
+        1
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            1,
+            2
+          ],
+          "characters": 11,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1
+          ],
+          "characters": 9,
+          "message_count": 1
+        }
+      }
+    },
+    {
+      "id": "lim-res-02",
+      "split": "reservado",
+      "category": "limites",
+      "relevantes": [
+        1,
+        2
+      ],
+      "desactualizados": [],
+      "methods": {
+        "recencia": {
+          "error": null,
+          "positions": [
+            2,
+            3
+          ],
+          "characters": 18,
+          "message_count": 2
+        },
+        "lexica": {
+          "error": null,
+          "positions": [
+            1,
+            2
+          ],
+          "characters": 24,
+          "message_count": 2
+        }
+      }
+    }
+  ]
+}
