@@ -1,8 +1,9 @@
 # 03 — Memory: fundamentos y diseño
 
 **Estado: memoria en proceso y persistencia PostgreSQL implementadas.** La
-selección de contexto sigue siendo por recencia y no necesita un modelo. La
-recuperación por relevancia se evaluará en una etapa posterior.
+selección de contexto disponible sigue siendo por recencia y no necesita un
+modelo. La recuperación por relevancia se evaluó en experimentos sintéticos;
+las candidatas todavía no forman parte de la API de Memory.
 
 ## Qué problema resuelve
 
@@ -26,7 +27,7 @@ En este proyecto distinguiremos:
 | Historial conversacional | Conservar mensajes y su orden durante una sesión. | En memoria del proceso. |
 | Contexto de trabajo | Seleccionar una parte del historial para un uso concreto. | Una ventana de mensajes recientes, con límites explícitos. |
 | Memoria persistente | Recuperar información después de reiniciar o entre sesiones. | PostgreSQL opcional, con sesiones explícitas. |
-| Recuperación por relevancia | Encontrar información anterior relacionada con una consulta. | Posterior; primero se comparará con la selección por recencia. |
+| Recuperación por relevancia | Encontrar información anterior relacionada con una consulta. | Evaluada en experimentos sintéticos; no incorporada a la API. |
 
 La distinción entre almacenar información y gestionar lo que entra en una
 ventana de contexto aparece también en [MemGPT](https://arxiv.org/abs/2310.08560).
@@ -192,12 +193,12 @@ La suite comprueba:
 - Roles y parámetros inválidos, booleanos, cadenas vacías o de espacios,
   Unicode válido y caracteres sustitutos que no sean UTF-8 válidos.
 - El resultado de `context` no permite modificar el historial interno. Se
-  probará que el conteo de caracteres se aplica al contenido tal como se
+  comprueba que el conteo de caracteres se aplica al contenido tal como se
   guardó, sin normalizar espacios.
 
 La memoria en proceso es síncrona y supone un solo propietario de la instancia; no
-se promete seguridad ante acceso concurrente. La demostración usará datos
-sintéticos y mostrará deliberadamente el texto seleccionado.
+se promete seguridad ante acceso concurrente. La demostración usa datos
+sintéticos y muestra deliberadamente el texto seleccionado.
 
 ## Persistencia con PostgreSQL
 
@@ -233,7 +234,9 @@ este comando ejecuta la integración contra una base **temporal y aislada**:
 
 El laboratorio crea un contenedor con datos en memoria y credenciales
 sintéticas, inicializa el esquema con un rol administrador y usa otro rol para
-la aplicación. Al finalizar normalmente detiene y elimina el contenedor; no
+la aplicación. También ejecuta las pruebas del esquema experimental de
+[procedencia PostgreSQL](experiments/provenance/POSTGRES.md) con otro rol
+sintético. Al finalizar normalmente detiene y elimina el contenedor; no
 usa el volumen de desarrollo ni los datos de RAG. Una terminación forzada
 puede impedir la limpieza. Las pruebas cubren reinicio, Unicode y NUL,
 concurrencia, límites, rollback, lecturas durante escrituras y un fallo
@@ -337,8 +340,9 @@ laboratorio.
    afirmaciones atribuibles sin asumir que sus metadatos demuestran la verdad;
    la [demostración en proceso](experiments/provenance/README.md) usa una
    política simulada y no implementa autenticación ni persistencia reales. El
-   [diseño PostgreSQL experimental](docs/provenance-postgres-design.md) propone
-   pruebas temporales y una ruta de copia; todavía no está implementado.
+   [diseño PostgreSQL experimental](docs/provenance-postgres-design.md) incluye
+   una [copia de historiales sintéticos](tests/postgres_fixture/COPY-LAB.md)
+   probada únicamente en una base temporal con identidad simulada.
 2. **Considerar resúmenes y hechos persistentes.** Un resumen puede omitir o
    inventar información; harían falta procedencia, control de versiones,
    evaluación y una política explícita para correcciones y eliminación. No se
@@ -354,3 +358,6 @@ registrar contenido. En etapas persistentes habrá que definir permisos,
 retención, eliminación y tratamiento de copias de seguridad: borrar una fila
 activa no demuestra que haya desaparecido de todas las copias. La selección
 por recencia no resuelve inyección de instrucciones ni contradicciones.
+
+La [revisión de 03-Memory](docs/lab-review.md) resume los resultados, el alcance
+del laboratorio y las decisiones pendientes para una integración real.

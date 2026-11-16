@@ -13,13 +13,16 @@ from psycopg.conninfo import make_conninfo
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 from memory_lab.postgres import initialize
+sys.path.insert(0, str(ROOT / "experiments" / "provenance"))
+from postgres_lab import initialize as initialize_provenance
 
 IMAGE = "pgvector/pgvector:0.8.0-pg16"
 
 
 def main():
     name = "memory-pgtest-" + secrets.token_hex(8)
-    admin_password, runtime_password = secrets.token_hex(24), secrets.token_hex(24)
+    admin_password, runtime_password, provenance_password, copy_password = (secrets.token_hex(24) for _ in range(4))
+    fixture_marker = secrets.token_hex(32)
     docker_env = os.environ.copy()
     docker_env["POSTGRES_PASSWORD"] = admin_password
     started = False
@@ -41,6 +44,8 @@ def main():
         port = int(mapping.rsplit(":", 1)[1])
         admin_dsn = make_conninfo(host="127.0.0.1", port=port, dbname="memory_test", user="memory_admin", password=admin_password)
         runtime_dsn = make_conninfo(host="127.0.0.1", port=port, dbname="memory_test", user="memory_runtime", password=runtime_password)
+        provenance_dsn = make_conninfo(host="127.0.0.1", port=port, dbname="memory_test", user="provenance_runtime", password=provenance_password)
+        copy_dsn = make_conninfo(host="127.0.0.1", port=port, dbname="memory_test", user="provenance_copy_runtime", password=copy_password)
         deadline = time.monotonic() + 60
         while True:
             ready = docker("exec", name, "pg_isready", "-U", "memory_admin", "-d", "memory_test", check=False)
@@ -57,22 +62,38 @@ def main():
                 raise RuntimeError("PostgreSQL temporal no estuvo disponible.")
             time.sleep(0.5)
         initialize(admin_dsn)
+        initialize_provenance(admin_dsn)
         with psycopg.connect(admin_dsn, autocommit=True, connect_timeout=10) as conn:
             conn.execute(sql.SQL("CREATE ROLE memory_runtime LOGIN PASSWORD {} NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS").format(sql.Literal(runtime_password)))
+            conn.execute(sql.SQL("CREATE ROLE provenance_runtime LOGIN PASSWORD {} NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS").format(sql.Literal(provenance_password)))
+            conn.execute(sql.SQL("CREATE ROLE provenance_copy_runtime LOGIN PASSWORD {} NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS").format(sql.Literal(copy_password)))
             with conn.transaction():
+                conn.execute("CREATE SCHEMA memory_test_fixture")
+                conn.execute("CREATE TABLE memory_test_fixture.identity (singleton boolean PRIMARY KEY CHECK (singleton), nonce text NOT NULL)")
+                conn.execute("INSERT INTO memory_test_fixture.identity VALUES (true, %s)", (fixture_marker,))
+                conn.execute("""CREATE TABLE memory_test_fixture.synthetic_sessions (
+                    session_id uuid PRIMARY KEY REFERENCES memory_lab.sessions(session_id) ON DELETE CASCADE)""")
                 conn.execute((ROOT / "ops" / "grant_runtime.sql").read_text(encoding="utf-8"))
+                conn.execute((ROOT / "ops" / "grant_provenance_runtime.sql").read_text(encoding="utf-8"))
+                conn.execute((ROOT / "tests" / "postgres_fixture" / "grant_copy_runtime.sql").read_text(encoding="utf-8"))
         env = os.environ.copy()
         env["MEMORY_TEST_DATABASE_URL"] = runtime_dsn
         env["MEMORY_TEST_ADMIN_DATABASE_URL"] = admin_dsn
-        result = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "tests"),
-                                 "-p", "test_postgres_integration.py", "-v"], cwd=ROOT, env=env,
-                                capture_output=True, timeout=240)
-        report = (result.stdout + result.stderr).decode("utf-8", errors="replace")
-        for secret in (admin_password, runtime_password):
-            report = report.replace(secret, "[secret]")
-        print(report, end="")
-        if result.returncode:
-            raise RuntimeError("Fallaron las pruebas de integración de Memory.")
+        env["MEMORY_PROVENANCE_TEST_DATABASE_URL"] = provenance_dsn
+        env["MEMORY_PROVENANCE_TEST_ADMIN_DATABASE_URL"] = admin_dsn
+        env["MEMORY_PROVENANCE_TEMPORARY"] = "1"
+        env["MEMORY_COPY_TEST_DATABASE_URL"] = copy_dsn
+        env["MEMORY_COPY_TEST_MARKER"] = fixture_marker
+        for pattern in ("test_postgres_integration.py", "test_postgres_provenance_integration.py", "test_postgres_synthetic_copy_integration.py"):
+            result = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "tests"),
+                                     "-p", pattern, "-v"], cwd=ROOT, env=env,
+                                    capture_output=True, timeout=240)
+            report = (result.stdout + result.stderr).decode("utf-8", errors="replace")
+            for secret in (admin_password, runtime_password, provenance_password, copy_password, fixture_marker):
+                report = report.replace(secret, "[secret]")
+            print(report, end="")
+            if result.returncode:
+                raise RuntimeError("Fallaron las pruebas de integración de Memory.")
     finally:
         if started:
             result = docker("stop", "--time", "2", name, check=False)

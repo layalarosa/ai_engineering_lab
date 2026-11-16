@@ -1,0 +1,4 @@
+{"id":"ubicacion","input":"¿Dónde está la sede?","expected_output":"La Paz"}
+{"id":"estado","input":"Indica el estado.","expected_output":"OK"}
+{"id":"ausente","input":"Indica el dato ausente.","expected_output":"No disponible"}
+{"id":"vacio","input":"Devuelve una cadena vacía.","expected_output":""}

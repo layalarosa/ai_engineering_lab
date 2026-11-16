@@ -35,6 +35,11 @@ jobs:
         env:
           MEMORY_TEST_DATABASE_URL: ''
           MEMORY_TEST_ADMIN_DATABASE_URL: ''
+          MEMORY_PROVENANCE_TEST_DATABASE_URL: ''
+          MEMORY_PROVENANCE_TEST_ADMIN_DATABASE_URL: ''
+          MEMORY_PROVENANCE_TEMPORARY: ''
+          MEMORY_COPY_TEST_DATABASE_URL: ''
+          MEMORY_COPY_TEST_MARKER: ''
         run: python -m unittest discover -s tests -v
       - name: Integración con PostgreSQL temporal
         if: matrix.python == '3.12'

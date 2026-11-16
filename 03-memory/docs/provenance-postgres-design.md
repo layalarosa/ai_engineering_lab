@@ -1,9 +1,11 @@
 # Diseño: procedencia con PostgreSQL temporal
 
-**Estado: diseño, sin implementar.** La primera implementación propuesta se
-ejecutará solo contra una base PostgreSQL temporal y aislada. No altera el
-esquema `memory_lab`, sus volúmenes ni las sesiones actuales. La política de
-identidad seguirá siendo simulada; no es autenticación ni autorización real.
+**Estado: primera implementación experimental probada en una base temporal.**
+No altera el esquema `memory_lab`, sus volúmenes ni las sesiones actuales. La
+política de identidad sigue siendo simulada; no es autenticación ni autorización
+real. El [documento de ejecución](../experiments/provenance/POSTGRES.md) detalla
+lo implementado; la [copia sintética](../tests/postgres_fixture/COPY-LAB.md)
+se limita al fixture y no es una migración real.
 
 ## Objetivo y decisión de aislamiento
 
@@ -59,9 +61,9 @@ distintas, aunque por casualidad tengan el mismo UUID.
 
 ## Modelo de datos conceptual
 
-Los nombres y restricciones siguientes fijan la intención del primer esquema;
-el SQL aún debe implementarse y comprobarse con PostgreSQL 16. Los UUID los
-genera la aplicación, sin agregar extensiones. El contenido se conserva como
+Los nombres y restricciones siguientes describen la intención del primer esquema;
+la implementación experimental se ha comprobado con PostgreSQL 16 temporal.
+Los UUID los genera la aplicación, sin agregar extensiones. El contenido se conserva como
 `bytea` UTF-8, igual que en Memory, para no perder NUL en mensajes normales.
 La serialización JSON de afirmaciones escapa NUL; `bytea` no cifra datos.
 
@@ -79,7 +81,8 @@ generaciones o claves: un predecesor y el puntero vigente deben pertenecer a la
 misma clave y generación que la afirmación. Para ello se añadirán las claves
 únicas compuestas que PostgreSQL exige como destino de esas referencias. Un
 predecesor nulo indica una primera afirmación; el vínculo opcional usa la
-semántica de nulidad prevista y se probará explícitamente. Las restricciones
+semántica de nulidad prevista; las pruebas cubren una primera afirmación y una
+referencia entre claves inválida. Las restricciones
 de integridad no prueban que una afirmación sea verdadera ni que el actor
 simulado esté autenticado.
 
@@ -150,7 +153,7 @@ la generación activa y a los registros que todavía se conservan.
 
 ## Lecturas, vaciado y eliminación
 
-La lectura de contexto y la lectura de una afirmación vigente usarán una
+La lectura de contexto y la lectura de una afirmación vigente usan una
 transacción de solo lectura `REPEATABLE READ`: sesión, mensaje y procedencia
 deben provenir de una misma instantánea. En `READ COMMITTED`, distintas
 sentencias pueden ver commits distintos; [PostgreSQL documenta esa diferencia](https://www.postgresql.org/docs/16/transaction-iso.html).
@@ -221,10 +224,10 @@ Extender el *fixture* Docker existente para crear una base efímera exclusiva,
 con credenciales sintéticas nuevas y datos en `tmpfs`. Inicializar primero el
 esquema existente y después el experimental, con roles de ejecución separados;
 ejecutar sus suites por separado con sus propias variables de conexión. El
-*fixture* actual descubre solo `test_postgres_integration.py`, por lo que habrá
-que incluir explícitamente la nueva suite. No usar el volumen de desarrollo ni
-el de RAG. Al terminar normalmente se detiene y elimina el contenedor; una
-terminación forzada puede impedir esa limpieza.
+*fixture* ejecuta explícitamente las suites del esquema existente, procedencia
+y copia sintética. No usa el volumen de desarrollo ni el de RAG. Al terminar
+normalmente se detiene y elimina el contenedor; una terminación forzada puede
+impedir esa limpieza.
 
 Las pruebas propuestas deben cubrir, como mínimo:
 
@@ -261,11 +264,10 @@ estas operaciones y verificarse con el rol real de prueba. `SELECT ... FOR
 UPDATE` requiere privilegios de actualización apropiados; concederlos no
 impide por sí solo que el mismo rol intente SQL fuera del protocolo.
 
-## Primera fase de implementación propuesta
+## Estado y siguiente fase propuesta
 
-Tras aprobación, implementar **solo en la base temporal** el esquema
-experimental, la escritura y lectura mínimas con política simulada, y las
-pruebas de atomicidad, corrección y reintento. Mantener intactos el esquema y
-la API existentes. Dejar la utilidad de copia y las pruebas completas de
-migración para una fase posterior con aprobación propia, una vez verificado el
-nuevo esquema. No se propone desplegar, migrar ni usar datos reales.
+El esquema experimental, las operaciones mínimas y una copia de historiales
+sintéticos están implementados y probados en PostgreSQL temporal. El esquema y
+la API existentes siguen intactos. Una utilidad de migración real, sus
+permisos, la reconciliación y el cambio de tráfico requerirían otra fase y
+aprobación; no se propone desplegar ni usar datos reales.

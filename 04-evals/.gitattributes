@@ -1,0 +1,2 @@
+# Mantener los bytes de los ejemplos estables entre plataformas.
+examples/*.jsonl text eol=lf
