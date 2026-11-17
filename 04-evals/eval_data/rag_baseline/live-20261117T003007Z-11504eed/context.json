@@ -1,0 +1,1 @@
+{"corpus_revision":"sha256:bb2b76899d11aac36f620bd6f106f2aedcbf8f7f381e23013f15f1f245dc8091","embedding_model":"nomic-embed-text:latest","embedding_provider":"ollama","generation_model":"llama3.1:8b","generation_provider":"ollama","hardware_note":"unknown","min_score":null,"schema_version":1,"server_revision":"git:6e13905425e4130cd403a67ceef27a514d4d5f56+dirty"}

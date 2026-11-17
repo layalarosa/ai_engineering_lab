@@ -1,0 +1,4 @@
+{"id":"chunking","input":"¿Para qué sirve el solapamiento al fragmentar documentos?","relevant_document_ids":["fragmentacion"]}
+{"id":"embedding","input":"¿Qué representa un embedding de texto?","relevant_document_ids":["embeddings"]}
+{"id":"pgvector","input":"¿Qué permite hacer pgvector con embeddings?","relevant_document_ids":["persistencia"]}
+{"id":"sin_respuesta","input":"¿Cuál es la capital de Bolivia?","relevant_document_ids":[]}

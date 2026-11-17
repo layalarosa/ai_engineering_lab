@@ -1,2 +1,12 @@
 # Mantener los bytes de los ejemplos estables entre plataformas.
 examples/*.jsonl text eol=lf
+examples/rag_report.json text eol=lf
+examples/live_metrics_context.json text eol=lf
+eval_data/rag_baseline/*.jsonl text eol=lf
+# Los hashes de la ejecución identifican los bytes exactos conservados.
+eval_data/rag_baseline/run-*/*.json -text
+eval_data/rag_baseline/run-*/*.jsonl -text
+eval_data/rag_baseline/grounding-*/*.json -text
+eval_data/rag_baseline/grounding-*/*.jsonl -text
+eval_data/rag_baseline/live-*/*.json -text
+eval_data/rag_baseline/live-*/*.jsonl -text

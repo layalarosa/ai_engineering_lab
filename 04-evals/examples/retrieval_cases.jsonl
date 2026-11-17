@@ -1,0 +1,5 @@
+{"id":"q1","input":"Pregunta 1","relevant_document_ids":["DOC_A","DOC_B"]}
+{"id":"q2","input":"Pregunta 2","relevant_document_ids":["DOC_C"]}
+{"id":"q3","input":"Pregunta 3","relevant_document_ids":[]}
+{"id":"q4","input":"Pregunta 4","relevant_document_ids":[]}
+{"id":"q_missing","input":"Pregunta 5","relevant_document_ids":["DOC_E"]}

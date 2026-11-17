@@ -1,0 +1,1 @@
+{"id":"ejemplo","schema_version":1,"case_sha256":"5e7cd9e3b47f75be1c567a60dbdd8066809844672c49377e5f9c8f3c74062bd3","response_sha256":"e50ef270fe741d43c9549eb2b01d51675022df45ac1b2f4c3193c14489e40ac2","review_status":"complete","items":[{"item_id":"almacenar","verdict":"addressed","answer_spans":[{"start":0,"end":28}]},{"item_id":"buscar","verdict":"omitted","answer_spans":[]}]}

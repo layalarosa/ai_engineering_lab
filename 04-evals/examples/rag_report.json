@@ -1,0 +1,12 @@
+{
+  "limit": 4,
+  "positive_cases": 1,
+  "hit_at_k": 1.0,
+  "mrr_at_k": 0.3333333333333333,
+  "negative_cases": 1,
+  "negative_no_context": 1,
+  "cases": [
+    {"id":"q2","question":"Pregunta sin evidencia","expected_document_id":null,"expected_answer":"Sin evidencia.","rank":null,"status":"no_context","answer":"Sin contexto.","sources":[]},
+    {"id":"q1","question":"Pregunta positiva","expected_document_id":"B","expected_answer":"Respuesta ilustrativa.","rank":3,"status":"answered","answer":"Respuesta sintética.","sources":[{"label":"[1]","document_id":"A","chunk_index":0,"score":0.91,"text":"Fragmento sintético A1."},{"label":"[2]","document_id":"A","chunk_index":1,"score":0.89,"text":"Fragmento sintético A2."},{"label":"[3]","document_id":"B","chunk_index":0,"score":0.85,"text":"Fragmento sintético B."},{"label":"[4]","document_id":"C","chunk_index":0,"score":0.8,"text":"Fragmento sintético C."}]}
+  ]
+}

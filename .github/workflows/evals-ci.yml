@@ -1,0 +1,35 @@
+name: Evals CI
+
+on:
+  push:
+    paths: ['04-evals/**', '.github/workflows/evals-ci.yml']
+  pull_request:
+    paths: ['04-evals/**', '.github/workflows/evals-ci.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    defaults:
+      run:
+        working-directory: 04-evals
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Pruebas del evaluador sin paquetes externos
+        run: python -S -m unittest discover -s tests -v
+      - name: Construir y verificar la imagen Docker
+        if: matrix.python == '3.12'
+        run: |
+          docker build --pull=false -t ai-engineering-lab-evals:ci .
+          python -S tests/docker_smoke.py ai-engineering-lab-evals:ci
+          python -S tests/docker_context.py

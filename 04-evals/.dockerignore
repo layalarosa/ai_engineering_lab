@@ -1,0 +1,10 @@
+*
+!Dockerfile
+!src/
+src/*
+!src/evals_lab/
+src/evals_lab/*
+!src/evals_lab/*.py
+**/__pycache__/
+**/*.pyc
+**/*.pyo

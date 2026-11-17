@@ -1,0 +1,4 @@
+{"id":"chunking","retrieved_document_ids":["fragmentacion","persistencia"]}
+{"id":"embedding","retrieved_document_ids":["embeddings","persistencia"]}
+{"id":"pgvector","retrieved_document_ids":["persistencia","embeddings"]}
+{"id":"sin_respuesta","retrieved_document_ids":["embeddings","fragmentacion"]}

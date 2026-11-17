@@ -7,7 +7,7 @@ Monorepositorio de aprendizaje práctico de ingeniería de IA. Cada proyecto ser
 - `01-rag/`: ingesta, recuperación y generación aumentada.
 - `02-mcp/`: servidores y herramientas MCP.
 - `03-memory/`: memoria conversacional y persistente.
-- `04-evals/`: [evaluación local de coincidencia exacta](04-evals/README.md), con ejemplos sintéticos.
+- `04-evals/`: [evaluación local de coincidencia exacta](04-evals/README.md), con ejemplos sintéticos y ejecución en Docker.
 - `05-agent-harness/`: ejecución y observabilidad de agentes.
 
 Los proyectos posteriores se crearán cuando comience su desarrollo. La integración futura se realizará mediante contratos y APIs explícitos, evitando dependencias directas entre proyectos.

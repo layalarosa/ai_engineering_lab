@@ -1,8 +1,18 @@
 # 04 — Evals: fundamentos y diseño inicial
 
-**Estado: MVP local de coincidencia exacta implementado.** Trabaja con
-respuestas sintéticas ya registradas, sin llamar a un modelo ni a otro
-proyecto del monorepo. No evalúa todavía sustento, seguridad o latencia.
+**Estado: evaluadores locales de coincidencia exacta y recuperación, agregadores
+de sustento y cobertura, adaptadores offline y un cliente de latencia local.**
+Docker y CI están configurados. Los evaluadores de calidad usan datos ya
+registrados; el cliente de latencia se ha probado con un servidor simulado y
+una ejecución local controlada. Los
+agregadores no juzgan por sí mismos el contenido. El [evaluador de
+seguridad](docs/security-design.md) procesa revisiones de instrucciones en
+documentos y puede capturar respuestas de una API local simulada; sus ejemplos
+son ficticios y no miden la seguridad de RAG.
+El [protocolo para una futura prueba real local](docs/security-real-rag-protocol.md)
+está diseñado y su capturador está probado con una API simulada, pero el
+experimento real aún no se ha ejecutado. Un ensayo usa SQLite en memoria para
+practicar aislamiento, detención y limpieza sin utilizar PostgreSQL ni modelos.
 
 ## Qué problema resuelve
 
@@ -77,14 +87,16 @@ exacta**, no un verificador general de corrección, seguridad o sustento.
     __main__.py                 # ejecución local
   examples/                     # casos y respuestas sintéticos
   tests/                        # pruebas con unittest
+  Dockerfile                    # imagen ejecutable sin dependencias externas
+  .dockerignore                 # limita el contexto enviado a la construcción
 ```
 
 La división es modular y pequeña: lectura, cálculo y entrada por terminal
 tienen responsabilidades distintas. Usa la biblioteca estándar de Python
 3.10 o superior; no necesita framework, base de datos ni interfaz web. No se
 introduce una interfaz abstracta para proveedores hasta tener una segunda
-integración concreta. Docker y GitHub Actions se prepararán en una etapa
-posterior, cuando exista comportamiento que comprobar.
+integración concreta. Docker empaqueta la aplicación y GitHub Actions está
+configurado para ejecutar sus pruebas.
 
 ## Contrato del MVP
 
@@ -218,6 +230,220 @@ Las pruebas cubren coincidencias, ausencias, cadenas vacías, Unicode, límites
 de archivos y registros, errores de entrada, códigos de salida y que el informe
 no muestre texto ni rutas. También ejecutan el programa desde otro directorio.
 
+### Evaluación de recuperación
+
+El segundo comando evalúa listas de **documentos únicos** ya recuperados. Lee
+un inventario de documentos, casos etiquetados y resultados ordenados; calcula
+Hit@k y MRR@k para los casos positivos con respuesta válida. Los casos sin
+documentos relevantes y las respuestas ausentes se informan por separado.
+El [contrato de recuperación](docs/retrieval-design.md) explica los formatos,
+límites, denominadores y la diferencia frente al rango por fragmentos de RAG.
+
+Desde `04-evals`, tras definir `PYTHONPATH` como en la sección anterior:
+
+```powershell
+python -m evals_lab.retrieval --corpus examples/retrieval_corpus.jsonl --cases examples/retrieval_cases.jsonl --outputs examples/retrieval_outputs.jsonl --k 3
+```
+
+El ejemplo sintético produce Hit@3 de `0.5`, MRR@3 de `0.25` y cobertura
+positiva de `2/3`. Entre dos negativos evaluables, uno devuelve documentos. Hay
+dos casos aprobados, dos fallidos y una respuesta ausente, por lo que el comando
+termina con código `1`. Los datos y etiquetas son ilustrativos, no demuestran
+calidad de recuperación real ni corrección de una respuesta generada.
+
+### Conversión de un informe RAG registrado
+
+El adaptador `evals_lab.rag_adapter` lee un informe JSON ya producido por el
+evaluador de API de `01-rag`, junto con un inventario y casos JSONL preparados
+para `04-evals`. Elimina los documentos repetidos preservando el orden y emite
+el JSONL que consume el evaluador de recuperación. No llama a la API ni
+comprueba si las etiquetas o el corpus reflejan correctamente la ejecución.
+Los requisitos y límites se explican en [integración con RAG](docs/rag-integration-design.md).
+
+Para probar el flujo desde `04-evals`, con `PYTHONPATH` definido como antes:
+
+```powershell
+@'
+import subprocess, sys
+result = subprocess.run([sys.executable, "-S", "-m", "evals_lab.rag_adapter",
+    "--report", "examples/rag_report.json", "--corpus", "examples/rag_corpus.jsonl",
+    "--cases", "examples/rag_cases.jsonl", "--k", "2"], stdout=subprocess.PIPE)
+if result.returncode:
+    raise SystemExit(result.returncode)
+with open("rag_outputs.local.jsonl", "xb") as output:
+    output.write(result.stdout)
+'@ | python -S -
+```
+
+El archivo local se crea solo si la conversión termina con código `0`; el modo
+`xb` evita sobrescribir uno existente. Se escribe en bytes para conservar UTF-8
+sin BOM y finales LF también en distintas versiones de PowerShell. El informe
+de ejemplo es sintético y tiene un caso ausente; no es una ejecución real.
+Evalúa el archivo con el mismo `k` de conversión:
+
+```powershell
+python -S -m evals_lab.retrieval --corpus examples/rag_corpus.jsonl --cases examples/rag_cases.jsonl --outputs rag_outputs.local.jsonl --k 2
+```
+
+La conversión devuelve `0`; la evaluación devuelve `1` por la respuesta
+ausente. Entre los positivos evaluados, Hit@2 es `1`, MRR@2 es `0.5` y la
+cobertura es `0.5`. El resultado es didáctico: el documento relevante `B` es
+el tercero entre fragmentos y el segundo entre documentos únicos. El JSONL
+convertido no guarda `k`; usa siempre el mismo valor o uno menor que en la
+conversión. El archivo creado permanece en el directorio actual.
+
+### Agregación de revisiones de sustento
+
+El módulo `evals_lab.grounding` valida y agrega anotaciones existentes: distingue
+afirmaciones sustentadas, contradichas, con evidencia insuficiente o en
+conflicto. Las revisiones incompletas y las respuestas ausentes no entran en el
+denominador de afirmaciones. Los intervalos son índices de puntos de código
+Unicode; cada revisión incluye hashes de la línea de su pregunta y de su
+respuesta para detectar cambios. El [contrato de sustento](docs/grounding-design.md) explica
+qué se valida y qué requiere juicio humano.
+
+Desde `04-evals`, tras definir `PYTHONPATH` como antes:
+
+```powershell
+python -S -m evals_lab.grounding --cases examples/grounding_cases.jsonl --outputs examples/grounding_outputs.jsonl --reviews examples/grounding_reviews.jsonl
+```
+
+El ejemplo devuelve código `0`: hay una revisión completa con una afirmación
+anotada como sustentada y otra con evidencia insuficiente; la proporción es
+`1/2`. El código `0` solo indica que respuestas y revisiones están completas,
+no que todas las afirmaciones estén sustentadas. El ejemplo y sus juicios son
+sintéticos, sin revisión humana independiente. El programa comprueba formato y
+referencias, no si un intervalo realmente demuestra una afirmación.
+
+Las revisiones usan el formato versión 2. Una revisión antigua sin hash de la
+pregunta se rechaza por defecto; la opción `--allow-unbound-reviews` permite
+inspeccionarla como `review_unbound`, excluida de las métricas, con código `1`.
+El informe de sustento también usa `schema_version: 2`; sus consumidores deben
+admitir el nuevo formato. Los hashes identifican bytes, no prueban que una
+revisión sea correcta o auténtica.
+
+Para convertir el informe RAG sintético de ejemplo a este formato:
+
+```powershell
+python -S -m evals_lab.rag_grounding_adapter --report examples/rag_report.json --cases examples/rag_grounding_cases.jsonl
+```
+
+La salida conserva los textos y asigna `s1`, `s2`, etc. a los fragmentos de
+cada respuesta. Un caso ausente no genera una línea; el agregador lo registrará
+como `missing_output`. La conversión no crea revisiones. El JSONL de salida
+contiene respuestas y fuentes, por lo que debe protegerse según su contenido;
+para guardarlo en PowerShell, conserva los bytes sin BOM ni transformación de
+saltos, como en el ejemplo de captura de la sección anterior. Consulta la
+[integración de RAG con sustento](docs/rag-grounding-integration-design.md)
+para límites y trazabilidad.
+
+### Cobertura de información esperada
+
+El módulo `evals_lab.completeness` agrega juicios registrados sobre puntos
+esperados: `addressed`, `omitted` o `uncertain`. No juzga si las respuestas son
+verdaderas ni si están sustentadas; una negación incorrecta puede abordar un
+tema. Los casos sin criterios, las revisiones incompletas y los juicios
+inciertos se muestran por separado. El [contrato](docs/completeness-design.md)
+detalla denominadores, intervalos y vínculos mediante hashes.
+
+Desde `04-evals`, tras definir `PYTHONPATH` como antes:
+
+```powershell
+python -S -m evals_lab.completeness --cases examples/completeness_cases.jsonl --outputs examples/completeness_outputs.jsonl --reviews examples/completeness_reviews.jsonl
+```
+
+El ejemplo sintético devuelve cobertura `1/2`: se anotó un punto como
+abordado y otro como omitido. Termina con código `0` porque la revisión está
+completa, aunque haya una omisión. El código no declara que la respuesta sea
+correcta. Las anotaciones son ilustrativas y no tienen revisión humana
+independiente.
+
+### Latencia y fallos de una API local
+
+`evals_lab.live_metrics` mide llamadas secuenciales a `127.0.0.1` y clasifica
+respuestas completas, errores y tiempos de espera. Informa percentiles solo de
+respuestas exitosas, separa `answered` de `no_context` y muestra los intentos
+no iniciados. El [contrato](docs/latency-reliability-design.md) explica los
+denominadores, el límite de socket y la política de detención. Un timeout no
+garantiza la cancelación del trabajo remoto.
+
+Para ejecutar únicamente las pruebas contra el servidor simulado incluido,
+desde `04-evals`:
+
+```powershell
+python -S -m unittest discover -s tests -p test_live_metrics.py -v
+```
+
+El cliente requiere un puerto local, casos y contexto declarados, y
+`RAG_READ_TOKEN` por entorno. La API local podría llamar a un proveedor
+externo: el cliente no puede verificar esa configuración. La medición local
+con Ollama se documenta [aquí](eval_data/rag_baseline/live-20261117T003007Z-11504eed/README.md).
+El contexto de ejemplo describe un servidor simulado y no debe presentarse como
+configuración verificada.
+
+### Docker e integración continua
+
+Desde `04-evals`, con Docker Desktop activo, construye la imagen local y monta
+los ejemplos en modo de solo lectura:
+
+```powershell
+docker build --pull=false -t ai-engineering-lab-evals:local .
+$evalsExamples = Join-Path (Get-Location) 'examples'
+docker run --rm --network none --read-only --mount "type=bind,source=$evalsExamples,target=/data,readonly" ai-engineering-lab-evals:local --cases /data/cases.jsonl --outputs /data/outputs.jsonl
+```
+
+La imagen contiene el código Python, no los ejemplos ni los archivos de pruebas;
+se ejecuta con el UID y GID `10001`. El comando anterior deshabilita la red y
+usa un sistema de archivos raíz de solo lectura. El montaje debe contener
+archivos legibles por ese usuario. Como en la ejecución local, los ejemplos
+terminan con código `1` porque incluyen un fallo y una respuesta ausente.
+Docker interpreta `--mount` como una lista separada por comas: una ruta que
+contenga comas requiere el escape correspondiente de Docker.
+
+Para ejecutar recuperación con la misma imagen y el montaje anterior:
+
+```powershell
+docker run --rm --network none --read-only --mount "type=bind,source=$evalsExamples,target=/data,readonly" --entrypoint python ai-engineering-lab-evals:local -S -m evals_lab.retrieval --corpus /data/retrieval_corpus.jsonl --cases /data/retrieval_cases.jsonl --outputs /data/retrieval_outputs.jsonl --k 3
+```
+
+Para agregar las revisiones sintéticas en Docker:
+
+```powershell
+docker run --rm --network none --read-only --mount "type=bind,source=$evalsExamples,target=/data,readonly" --entrypoint python ai-engineering-lab-evals:local -S -m evals_lab.grounding --cases /data/grounding_cases.jsonl --outputs /data/grounding_outputs.jsonl --reviews /data/grounding_reviews.jsonl
+```
+
+Para agregar el ejemplo de cobertura de información:
+
+```powershell
+docker run --rm --network none --read-only --mount "type=bind,source=$evalsExamples,target=/data,readonly" --entrypoint python ai-engineering-lab-evals:local -S -m evals_lab.completeness --cases /data/completeness_cases.jsonl --outputs /data/completeness_outputs.jsonl --reviews /data/completeness_reviews.jsonl
+```
+
+Para comparar la imagen con la ejecución local usando casos sintéticos, desde
+el mismo directorio:
+
+```powershell
+python -S tests/docker_smoke.py ai-engineering-lab-evals:local
+python -S tests/docker_context.py
+```
+
+La comprobación ejecuta la imagen sin red y con archivos temporales de solo
+lectura. Compara los informes y códigos `0`, `1` y `2` con la ejecución local,
+incluidos los ejemplos del proyecto, y verifica el usuario y el contenido
+esperado de la imagen. La segunda comprobación construye una imagen temporal
+con archivos ajenos y cachés sintéticos para verificar que `.dockerignore` los
+excluye; al terminar normalmente elimina esa imagen y los archivos temporales.
+Una interrupción forzada puede impedir la limpieza.
+
+El flujo [Evals CI](../.github/workflows/evals-ci.yml) se activa por cambios en
+`04-evals` o en el propio flujo, para `push` y `pull_request`, y admite ejecución
+manual. Ejecuta las pruebas en Python 3.10 y 3.12; con Python 3.12 construye la
+imagen y ejecuta la comprobación anterior. No necesita claves ni modelos y no
+publica imágenes. La imagen base `python:3.12-slim` se referencia por etiqueta,
+no por digest, por lo que una reconstrucción posterior puede usar otros bytes;
+si no está disponible localmente, Docker puede descargarla.
+El flujo debe ejecutarse en GitHub para verificar el resultado remoto. No se
+necesita Compose: el evaluador es un comando de corta duración sin servicios.
+
 ## Conjuntos y calidad de la evaluación
 
 El conjunto inicial es pequeño y sintético, con casos que demuestran
@@ -238,10 +464,10 @@ desgloses por categoría.
 1. **MVP local — implementado.** Coincidencia exacta, ejemplos sintéticos y
    pruebas de validación, denominadores, errores y códigos de salida. No llama
    a modelos ni necesita datos reales.
-2. **Pruebas y distribución.** Una vez probado el MVP, preparar CI y una forma
-   de ejecución en Docker si aportan valor. No publicar ni desplegar por defecto.
-3. **Medidas e integración.** Añadir métricas de recuperación y un adaptador
-   para un contrato real de RAG o Memory solo después de definir sus entradas y
+2. **Pruebas y distribución — configurados.** CI y una imagen Docker ejecutable,
+   con comprobación local de sus contratos. No se publica ni despliega por defecto.
+3. **Medidas e integración.** Hit@k y MRR@k offline para documentos y adaptador
+   offline de informes RAG implementados; estudiar otras integraciones solo después de definir sus entradas y
    denominadores. Medir latencia con llamadas reales y reloj monotónico; registrar
    configuración y errores. Tokens y coste solo cuando se disponga de datos y
    precios explícitos de la ejecución.
@@ -252,5 +478,21 @@ desgloses por categoría.
    Evaluar RAGAS u otro framework únicamente frente a una necesidad medida,
    conservando casos y resultados revisables.
 
-Cada etapa necesita aprobación antes de comenzar. La siguiente etapa propuesta
-es preparar las pruebas automatizadas y la distribución del punto 2.
+Cada etapa necesita aprobación antes de comenzar. Se completó una
+[ejecución local controlada](eval_data/rag_baseline/run-2026-11-16-2315z/results.md)
+con corpus sintético y etiquetas revisadas por el asistente, sin revisión humana
+independiente. La [guía](docs/rag-live-runbook.md) documenta cómo repetirla. El
+[diseño de sustento](docs/grounding-design.md) describe el agregador implementado.
+El [adaptador de RAG con sustento](docs/rag-grounding-integration-design.md)
+convierte informes offline y preserva los fragmentos para su revisión.
+La [vinculación de revisiones](docs/review-binding-design.md) detecta cambios
+en la línea de la pregunta y documenta la compatibilidad con registros antiguos.
+La [revisión didáctica de la línea base](eval_data/rag_baseline/grounding-2026-11-16-2315z/README.md)
+contiene anotaciones del asistente sin revisión humana independiente; una
+revisión quedó incompleta por una atribución ambigua.
+El [agregador de cobertura de información](docs/completeness-design.md) separa
+las omisiones del sustento y procesa revisiones offline.
+El [cliente de latencia y fallos](docs/latency-reliability-design.md) mide desde
+el cliente y conserva sus resultados separados de la calidad de respuesta.
+Hay una [medición local con cuatro preguntas sintéticas](eval_data/rag_baseline/live-20261117T003007Z-11504eed/README.md),
+con una muestra demasiado pequeña para estimar p95 o capacidad general.

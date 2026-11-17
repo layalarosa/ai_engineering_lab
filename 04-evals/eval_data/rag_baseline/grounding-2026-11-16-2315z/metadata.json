@@ -1,0 +1,23 @@
+{
+  "artifact_sha256": {
+    "cases.jsonl": "ab0f3061688491e62e878dc9051992612e1fc743d8478fa9f92d2926a630a457",
+    "grounding-report.json": "62db3af15d978cc8aacf2b94eb7e630cc9c9a9a71ee6571d2f10c781b1a19fe8",
+    "outputs.jsonl": "9d2c51738a8bb8b94f783efdc293c74a9eaad3807db4a10e4aa5637a18a99c85",
+    "reviews.jsonl": "39457019b7887c8083dd5dd4c7fc9743d488c1c1ce794d85e9aa60bf40044d18"
+  },
+  "git_head": "6e13905425e4130cd403a67ceef27a514d4d5f56",
+  "implementation_sha256": {
+    "04-evals/src/evals_lab/cases.py": "dbf1ac6fdbdd1eae244eae57354c939a63c75abb0bb695cd1b66674096178e84",
+    "04-evals/src/evals_lab/grounding.py": "09a9306bb934c5c3a96a5412c6245c5933d0f8015514e50ba938dbe3ac00ff0e",
+    "04-evals/src/evals_lab/rag_adapter.py": "44f28739e7008440943e9b2a2c5c3d961f278cd3c48d4e889db940b992b51067",
+    "04-evals/src/evals_lab/rag_grounding_adapter.py": "6695bee798da5df5810267ee7fa02dffaf0fe1d0180d096b6fc2203b6e3bf451",
+    "04-evals/src/evals_lab/retrieval.py": "e9ab98998393dc121e7121a0d3679265900c697bc28d1421d51d820fd73ae555"
+  },
+  "external_models_called_for_review": false,
+  "review_method": "juicios did\u00e1cticos del asistente; pgvector incompleto por atribuci\u00f3n ambigua",
+  "reviewed_at_utc": "2026-11-16T23:51:43.249677+00:00",
+  "reviewer": "asistente; sin revisi\u00f3n humana independiente",
+  "source_report_sha256": "e3d7e3f0f7189d67ca02f6da2e5965fc6a26b87735e006db02e642fedf0b7ba9",
+  "source_retrieval_cases_sha256": "d283b3ec703ddd45bd72b6553ae832e5a5e97c529e7208bdd00786b3ce86fdd9",
+  "worktree_dirty": true
+}

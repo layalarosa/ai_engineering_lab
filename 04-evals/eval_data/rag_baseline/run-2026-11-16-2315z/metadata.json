@@ -1,0 +1,35 @@
+{
+  "timestamp_utc": "2026-11-16T23:15:07.702241+00:00",
+  "git_head": "6e13905425e4130cd403a67ceef27a514d4d5f56",
+  "worktree_dirty": true,
+  "models": {
+    "nomic-embed-text:latest": "0a109f422b47",
+    "llama3.1:8b": "46e0c10c039e"
+  },
+  "postgres_image_id": "sha256:a132765ec351c65111b5b675928a3a0515a466a40f97277329db8b8209ad8bc9",
+  "limit": 2,
+  "k": 2,
+  "min_score": null,
+  "hashes": {
+    "01-rag/eval_data/fragmentacion.txt": "07539e7e726ebfafc8052ee02307663f1a31247add3e98e4f265b119df971a90",
+    "01-rag/eval_data/embeddings.txt": "cb0735913c28cf24c0e48ffb1376e20560f48b75cad0c0e8363c6cf088f9f1c5",
+    "01-rag/eval_data/persistencia.txt": "ad5b48809917447b9219e233f4ecceb933ab139cafc71d0076b6716727c2a935",
+    "01-rag/eval_data/api_cases.json": "28db44a03feec8b67fc0375921db091e5a0332751fc459374e494a3d4a53e974",
+    "04-evals/eval_data/rag_baseline/corpus.jsonl": "1784c175713daafa2c065f26335b9bd4e9d2bc073c415a8126c8bb08dc1440c5",
+    "04-evals/eval_data/rag_baseline/cases.jsonl": "d283b3ec703ddd45bd72b6553ae832e5a5e97c529e7208bdd00786b3ce86fdd9",
+    "04-evals/eval_data/rag_baseline/labels.md": "7a17441c9c12d348d7323044b39f67303e5a89dc0d6010a79f9c3b03e7205a39",
+    "01-rag/src/rag/api.py": "a8397492ac38480bab5dc65d6892f0961b3185de73ff4388127a801bd83a03e0",
+    "01-rag/src/rag/answer.py": "3b6c395b91552f98fffa4aedeecf5bb40afd0eab338cac12ec99578444b41867",
+    "01-rag/src/rag/ingestion.py": "26fe0136bf308a1ad34694aba9cb75dd391cf1f9476b56d7192a0f3e919029e3",
+    "01-rag/src/rag/store.py": "d23ed67671d3b59ef8557c9fef4b6c1946674c11adf975e3d8d391a7a01e75f9",
+    "01-rag/src/rag/evaluate_api.py": "af879e9df425dcfe828cfe68c7a34592db614c35ad9d114394037001db1ba0a0",
+    "04-evals/src/evals_lab/cases.py": "d5d6c337e6332ae119fefae6c69b295529bdef10281650e7930befc3ba7b0235",
+    "04-evals/src/evals_lab/retrieval.py": "e9ab98998393dc121e7121a0d3679265900c697bc28d1421d51d820fd73ae555",
+    "04-evals/src/evals_lab/rag_adapter.py": "44f28739e7008440943e9b2a2c5c3d961f278cd3c48d4e889db940b992b51067"
+  },
+  "artifact_hashes": {
+    "rag-report.json": "e3d7e3f0f7189d67ca02f6da2e5965fc6a26b87735e006db02e642fedf0b7ba9",
+    "outputs.jsonl": "a8b6de1505bec1373a124235db9f61d51bbc250f3cf14589dd235af8c6ffe9a1",
+    "eval-report.json": "6749946386b9eb930f13a06bc8554e8b40c9390011d41e94c1feab8a9265e374"
+  }
+}

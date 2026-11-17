@@ -1,0 +1,3 @@
+{"id":"q1","input":"Pregunta positiva","relevant_document_ids":["B"]}
+{"id":"q2","input":"Pregunta sin evidencia","relevant_document_ids":[]}
+{"id":"q_missing","input":"Pregunta sin respuesta registrada","relevant_document_ids":["C"]}

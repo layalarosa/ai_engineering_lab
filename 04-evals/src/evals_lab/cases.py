@@ -29,7 +29,15 @@ def _reject_number(_value):
     raise ValueError("number is not allowed")
 
 
-def _read_jsonl(path, *, kind, keys, allow_empty):
+def _bounded_integer(value):
+    # Índices de texto pequeños; evita convertir enteros arbitrariamente grandes.
+    if len(value) > 10:
+        raise ValueError("integer is too long")
+    return int(value)
+
+
+def _read_jsonl(path, *, kind, keys, allow_empty, id_field="id", validate=None,
+                allow_integers=False, line_hashes=None, alternative_keys=()):
     try:
         with Path(path).open("rb") as stream:
             raw = stream.read(MAX_FILE_BYTES + 1)
@@ -58,22 +66,29 @@ def _read_jsonl(path, *, kind, keys, allow_empty):
             raise InputError(f"Línea inválida en {kind}, línea {index}.")
         try:
             record = json.loads(line.decode("utf-8"), object_pairs_hook=_object_without_duplicates,
-                                parse_int=_reject_number, parse_float=_reject_number, parse_constant=_reject_number)
-            if not isinstance(record, dict) or set(record) != keys:
+                                parse_int=_bounded_integer if allow_integers else _reject_number,
+                                parse_float=_reject_number, parse_constant=_reject_number)
+            if not isinstance(record, dict) or (set(record) != keys and
+                                                not any(set(record) == other for other in alternative_keys)):
                 raise ValueError
-            if not isinstance(record["id"], str) or ID_PATTERN.fullmatch(record["id"]) is None:
-                raise ValueError
-            for key in keys - {"id"}:
-                value = record[key]
-                if not isinstance(value, str) or len(value) > MAX_TEXT_CHARS:
+            if validate is None:
+                if not isinstance(record["id"], str) or ID_PATTERN.fullmatch(record["id"]) is None:
                     raise ValueError
-                value.encode("utf-8")
+                for key in keys - {"id"}:
+                    value = record[key]
+                    if not isinstance(value, str) or len(value) > MAX_TEXT_CHARS:
+                        raise ValueError
+                    value.encode("utf-8")
+            else:
+                validate(record)
         except (ValueError, UnicodeError, RecursionError):
             raise InputError(f"Registro inválido en {kind}, línea {index}.") from None
-        if record["id"] in seen:
+        if record[id_field] in seen:
             raise InputError(f"ID duplicado en {kind}, línea {index}.")
-        seen.add(record["id"])
+        seen.add(record[id_field])
         records.append(record)
+        if line_hashes is not None:
+            line_hashes[record[id_field]] = hashlib.sha256(line).hexdigest()
     return records, digest
 
 

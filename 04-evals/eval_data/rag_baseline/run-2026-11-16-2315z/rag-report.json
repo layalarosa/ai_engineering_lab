@@ -1,0 +1,110 @@
+{
+  "limit": 2,
+  "positive_cases": 3,
+  "hit_at_k": 1.0,
+  "mrr_at_k": 1.0,
+  "negative_cases": 1,
+  "negative_no_context": 0,
+  "cases": [
+    {
+      "id": "chunking",
+      "question": "¿Para qué sirve el solapamiento al fragmentar documentos?",
+      "expected_document_id": "fragmentacion",
+      "expected_answer": "Conserva contexto entre fragmentos y ayuda con información situada en los límites.",
+      "rank": 1,
+      "status": "answered",
+      "answer": "La respuesta a la pregunta es: El solapamiento al fragmentar documentos ayuda a conservar parte del contexto entre fragmentos consecutivos y puede ayudar a recuperar información situada en sus límites.",
+      "sources": [
+        {
+          "label": "[1]",
+          "document_id": "fragmentacion",
+          "chunk_index": 0,
+          "score": 0.8064616668590917,
+          "text": "La fragmentación divide documentos largos en fragmentos más pequeños. El solapamiento conserva parte del contexto entre fragmentos consecutivos y puede ayudar a recuperar información situada en sus límites.\n"
+        },
+        {
+          "label": "[2]",
+          "document_id": "persistencia",
+          "chunk_index": 0,
+          "score": 0.594032624584843,
+          "text": "PostgreSQL con la extensión pgvector puede almacenar embeddings y ejecutar búsquedas por distancia vectorial. La persistencia permite reutilizar vectores sin calcularlos de nuevo para cada consulta.\n"
+        }
+      ]
+    },
+    {
+      "id": "embedding",
+      "question": "¿Qué representa un embedding de texto?",
+      "expected_document_id": "embeddings",
+      "expected_answer": "Una representación numérica del texto producida por un modelo.",
+      "rank": 1,
+      "status": "answered",
+      "answer": "Un embedding de texto es una representación numérica de texto generada por un modelo.",
+      "sources": [
+        {
+          "label": "[1]",
+          "document_id": "embeddings",
+          "chunk_index": 0,
+          "score": 0.8493468834976682,
+          "text": "Un embedding es una representación numérica de texto generada por un modelo. La similitud coseno compara la dirección de dos vectores y permite ordenar candidatos por cercanía.\n"
+        },
+        {
+          "label": "[2]",
+          "document_id": "persistencia",
+          "chunk_index": 0,
+          "score": 0.6007166919743709,
+          "text": "PostgreSQL con la extensión pgvector puede almacenar embeddings y ejecutar búsquedas por distancia vectorial. La persistencia permite reutilizar vectores sin calcularlos de nuevo para cada consulta.\n"
+        }
+      ]
+    },
+    {
+      "id": "pgvector",
+      "question": "¿Qué permite hacer pgvector con embeddings?",
+      "expected_document_id": "persistencia",
+      "expected_answer": "Almacenarlos y buscar por distancia vectorial en PostgreSQL.",
+      "rank": 1,
+      "status": "answered",
+      "answer": "Permite realizar búsquedas por distancia vectorial y reutilizar vectores sin calcularlos de nuevo para cada consulta.",
+      "sources": [
+        {
+          "label": "[1]",
+          "document_id": "persistencia",
+          "chunk_index": 0,
+          "score": 0.792879513745604,
+          "text": "PostgreSQL con la extensión pgvector puede almacenar embeddings y ejecutar búsquedas por distancia vectorial. La persistencia permite reutilizar vectores sin calcularlos de nuevo para cada consulta.\n"
+        },
+        {
+          "label": "[2]",
+          "document_id": "embeddings",
+          "chunk_index": 0,
+          "score": 0.7433915887241728,
+          "text": "Un embedding es una representación numérica de texto generada por un modelo. La similitud coseno compara la dirección de dos vectores y permite ordenar candidatos por cercanía.\n"
+        }
+      ]
+    },
+    {
+      "id": "sin_respuesta",
+      "question": "¿Cuál es la capital de Bolivia?",
+      "expected_document_id": null,
+      "expected_answer": "El corpus no contiene esa información; debe reconocer que no puede responder con el contexto.",
+      "rank": null,
+      "status": "answered",
+      "answer": "No hay información suficiente en los fragmentos proporcionados para responder a la pregunta sobre la capital de Bolivia.",
+      "sources": [
+        {
+          "label": "[1]",
+          "document_id": "embeddings",
+          "chunk_index": 0,
+          "score": 0.43154242634773565,
+          "text": "Un embedding es una representación numérica de texto generada por un modelo. La similitud coseno compara la dirección de dos vectores y permite ordenar candidatos por cercanía.\n"
+        },
+        {
+          "label": "[2]",
+          "document_id": "fragmentacion",
+          "chunk_index": 0,
+          "score": 0.40640498323381147,
+          "text": "La fragmentación divide documentos largos en fragmentos más pequeños. El solapamiento conserva parte del contexto entre fragmentos consecutivos y puede ayudar a recuperar información situada en sus límites.\n"
+        }
+      ]
+    }
+  ]
+}
