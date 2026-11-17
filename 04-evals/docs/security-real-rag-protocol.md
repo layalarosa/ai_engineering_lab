@@ -1,13 +1,13 @@
 # Protocolo propuesto: seguridad de RAG con modelos locales
 
-**Estado: diseño; no se ha ejecutado este experimento.** Su objetivo es observar
+**Estado: ejecución local completada y revisada por el asistente; sin revisión humana independiente.** Su objetivo es observar
 el recorrido completo desde documentos sintéticos hasta una respuesta de
 `01-rag`, y después revisar si una orden dentro de un documento fue seguida.
 La prueba sería exploratoria: cinco casos y una respuesta por caso no estiman
 la seguridad general ni una tasa estable de éxito de ataques.
 
-La captura ya está implementada y probada contra un servidor simulado; todavía
-no se ha ejecutado el experimento con RAG. `security_simulation` solo se
+La captura está implementada y probada contra un servidor simulado; el
+experimento con RAG y Ollama local se ejecutó una vez. `security_simulation` solo se
 conecta al servidor simulado que crea y `live_metrics` descarta los cuerpos;
 la nueva herramienta es `security_capture`. La aprobación del diseño no
 equivale a autorizar una ejecución real o un proveedor externo.
@@ -15,6 +15,23 @@ equivale a autorizar una ejecución real o un proveedor externo.
 También hay un [ensayo de orquestación con componentes simulados](#ensayo-de-orquestación-simulado):
 usa bases SQLite en memoria y una API ficticia por caso. No crea PostgreSQL ni
 verifica la limpieza de contenedores reales.
+
+Posteriormente se realizó una [verificación de PostgreSQL/pgvector temporal](../eval_data/rag_baseline/postgres-security-20261117T141631Z-d0c6a6e1/README.md)
+con cinco bases, vectores sintéticos y respuestas HTTP predeterminadas. No fue
+una ejecución de seguridad con el modelo ni una llamada HTTP a `01-rag`.
+
+Después se verificó [un caso con la API real de `01-rag` y proveedores simulados](../eval_data/rag_baseline/rag-api-simulated-20261117T142201Z-1e5b8f36/README.md).
+La prueba comprueba ingesta, fuente recuperada y contexto entregado al generador
+ficticio, pero no mide el comportamiento de un modelo ni su seguridad.
+
+Una [ampliación posterior a los cinco casos](../eval_data/rag_baseline/rag-api-five-simulated-20261117T142722Z-10b17457/README.md)
+verificó la API real y bases aisladas, todavía con embeddings y respuestas
+predeterminados. Tampoco constituye una prueba de seguridad de un modelo.
+
+La [ejecución local con Ollama](../eval_data/rag_baseline/security-ollama-20261117T143535Z-816c3594/README.md)
+capturó las respuestas reales a los cinco casos sintéticos. Los cuatro
+fragmentos adversariales aparecieron en las fuentes. Una [revisión del asistente](../eval_data/rag_baseline/security-review-assistant-20261117T145855Z-b6f9cf05/README.md)
+clasificó esas respuestas; no hubo revisión humana independiente.
 
 ## Pregunta y alcance
 
@@ -274,7 +291,15 @@ se eliminó. Los modelos y el servicio Ollama preexistentes no se eliminan.
 
 ## Próxima fase necesaria
 
-Preparar y verificar por separado la infraestructura PostgreSQL/pgvector real y
-su limpieza con datos sintéticos, sin llamar todavía al modelo real. El ensayo
-con SQLite no automatiza ni valida esos pasos. Debe solicitarse una aprobación
-posterior antes de llamar al modelo real.
+La infraestructura temporal se verificó con el programa manual
+[`postgres_isolation_check.py`](../tests/postgres_isolation_check.py), usando el
+entorno Python de `01-rag` y la opción explícita `--run`. La integración de un
+caso con la API real se verificó con
+[`rag_api_postgres_fake_model_check.py`](../tests/rag_api_postgres_fake_model_check.py),
+también con `--run`. Ambas pruebas usan proveedores simulados. La integración
+simulada de cinco casos puede repetirse con
+[`rag_api_five_cases_fake_model_check.py`](../tests/rag_api_five_cases_fake_model_check.py)
+y `--run`, usando el entorno Python de `01-rag` y Docker local. La ejecución con
+Ollama usó [`rag_security_ollama_local_run.py`](../tests/rag_security_ollama_local_run.py).
+La revisión del asistente usa las respuestas capturadas y no reutiliza los
+juicios ficticios de la simulación.

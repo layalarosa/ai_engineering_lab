@@ -1,0 +1,39 @@
+{"timestamp": "2026-11-17T14:35:38.538728+00:00", "run_id": "5d51e965c8958f1d05638186dd689f40", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T14:35:41.211624+00:00", "run_id": "5d51e965c8958f1d05638186dd689f40", "stage": "embed", "status": "ok", "duration_ms": 2672.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:35:41.243342+00:00", "run_id": "5d51e965c8958f1d05638186dd689f40", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T14:35:41.319997+00:00", "run_id": "f1ebd894331e3447d87e400b2364c33c", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:35:41.348424+00:00", "run_id": "f1ebd894331e3447d87e400b2364c33c", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T14:36:04.496816+00:00", "run_id": "f1ebd894331e3447d87e400b2364c33c", "stage": "answer", "status": "ok", "duration_ms": 23156.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:04.675483+00:00", "run_id": "e7e022734c14e8b62532d9ea284e7c81", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T14:36:04.753727+00:00", "run_id": "e7e022734c14e8b62532d9ea284e7c81", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:04.791077+00:00", "run_id": "e7e022734c14e8b62532d9ea284e7c81", "stage": "persist", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T14:36:04.794304+00:00", "run_id": "11b237465c85ff5df7bab5f9b9e534b4", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T14:36:04.849583+00:00", "run_id": "11b237465c85ff5df7bab5f9b9e534b4", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:04.887599+00:00", "run_id": "11b237465c85ff5df7bab5f9b9e534b4", "stage": "persist", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T14:36:04.969382+00:00", "run_id": "4e336d1be5edacac14b79fb9dd7cada1", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:05.001723+00:00", "run_id": "4e336d1be5edacac14b79fb9dd7cada1", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T14:36:10.203620+00:00", "run_id": "4e336d1be5edacac14b79fb9dd7cada1", "stage": "answer", "status": "ok", "duration_ms": 5203.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:10.373542+00:00", "run_id": "fd0276de21c93c444f26e0d99f3a0695", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T14:36:10.429298+00:00", "run_id": "fd0276de21c93c444f26e0d99f3a0695", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:10.465528+00:00", "run_id": "fd0276de21c93c444f26e0d99f3a0695", "stage": "persist", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T14:36:10.468344+00:00", "run_id": "a1dfd7040366f664748171aef7b51409", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T14:36:10.535473+00:00", "run_id": "a1dfd7040366f664748171aef7b51409", "stage": "embed", "status": "ok", "duration_ms": 62.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:10.569609+00:00", "run_id": "a1dfd7040366f664748171aef7b51409", "stage": "persist", "status": "ok", "duration_ms": 32.0}
+{"timestamp": "2026-11-17T14:36:10.652514+00:00", "run_id": "1034d29dc0d34e6a3c0957d5b8700f56", "stage": "embed", "status": "ok", "duration_ms": 62.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:10.682037+00:00", "run_id": "1034d29dc0d34e6a3c0957d5b8700f56", "stage": "retrieve", "status": "ok", "duration_ms": 32.0}
+{"timestamp": "2026-11-17T14:36:23.713314+00:00", "run_id": "1034d29dc0d34e6a3c0957d5b8700f56", "stage": "answer", "status": "ok", "duration_ms": 13031.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:23.899821+00:00", "run_id": "05da76fdd67a01165a0f9ed4f735f8b3", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T14:36:23.972997+00:00", "run_id": "05da76fdd67a01165a0f9ed4f735f8b3", "stage": "embed", "status": "ok", "duration_ms": 63.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:24.013101+00:00", "run_id": "05da76fdd67a01165a0f9ed4f735f8b3", "stage": "persist", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T14:36:24.100429+00:00", "run_id": "ebe346ac4e45c619226f0afb6a841097", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:24.131170+00:00", "run_id": "ebe346ac4e45c619226f0afb6a841097", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T14:36:37.142260+00:00", "run_id": "ebe346ac4e45c619226f0afb6a841097", "stage": "answer", "status": "ok", "duration_ms": 13016.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:37.409108+00:00", "run_id": "2133efb09ed4a213806ce157a0be9509", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T14:36:37.468972+00:00", "run_id": "2133efb09ed4a213806ce157a0be9509", "stage": "embed", "status": "ok", "duration_ms": 63.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:37.508100+00:00", "run_id": "2133efb09ed4a213806ce157a0be9509", "stage": "persist", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T14:36:37.511830+00:00", "run_id": "3a61ea3988cb88687a83882119786457", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T14:36:37.580376+00:00", "run_id": "3a61ea3988cb88687a83882119786457", "stage": "embed", "status": "ok", "duration_ms": 62.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:37.617817+00:00", "run_id": "3a61ea3988cb88687a83882119786457", "stage": "persist", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T14:36:37.718981+00:00", "run_id": "03bb142fce4a40a484348b0f78bc8535", "stage": "embed", "status": "ok", "duration_ms": 63.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T14:36:37.752923+00:00", "run_id": "03bb142fce4a40a484348b0f78bc8535", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T14:36:42.975050+00:00", "run_id": "03bb142fce4a40a484348b0f78bc8535", "stage": "answer", "status": "ok", "duration_ms": 5234.0, "provider": "ollama"}

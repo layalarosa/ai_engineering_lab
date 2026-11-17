@@ -10,3 +10,13 @@ eval_data/rag_baseline/grounding-*/*.json -text
 eval_data/rag_baseline/grounding-*/*.jsonl -text
 eval_data/rag_baseline/live-*/*.json -text
 eval_data/rag_baseline/live-*/*.jsonl -text
+# Los informes de aislamiento registran bytes y huellas de la ejecución.
+eval_data/rag_baseline/postgres-security-*/*.json -text
+eval_data/rag_baseline/rag-api-simulated-*/*.json -text
+eval_data/rag_baseline/rag-api-five-simulated-*/*.json -text
+eval_data/rag_baseline/security-ollama-*/*.json -text
+eval_data/rag_baseline/security-ollama-*/*.jsonl -text
+eval_data/rag_baseline/security-review-assistant-*/*.json -text
+eval_data/rag_baseline/security-review-assistant-*/*.jsonl -text
+eval_data/rag_baseline/expanded-simulation-*/*.json -text
+eval_data/rag_baseline/expanded-simulation-*/*.jsonl -text

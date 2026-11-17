@@ -9,7 +9,8 @@ from uuid import uuid4
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ("__init__.py", "__main__.py", "cases.py", "completeness.py", "evaluate.py", "grounding.py", "live_metrics.py", "rag_adapter.py",
-         "rag_grounding_adapter.py", "retrieval.py")
+         "rag_grounding_adapter.py", "retrieval.py", "security.py", "security_capture.py", "security_controls.py", "security_expanded_simulation.py",
+         "security_orchestration_sim.py", "security_simulation.py")
 
 
 def check():

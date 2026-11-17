@@ -9,10 +9,23 @@ agregadores no juzgan por sí mismos el contenido. El [evaluador de
 seguridad](docs/security-design.md) procesa revisiones de instrucciones en
 documentos y puede capturar respuestas de una API local simulada; sus ejemplos
 son ficticios y no miden la seguridad de RAG.
-El [protocolo para una futura prueba real local](docs/security-real-rag-protocol.md)
-está diseñado y su capturador está probado con una API simulada, pero el
-experimento real aún no se ha ejecutado. Un ensayo usa SQLite en memoria para
+El [protocolo para la prueba real local](docs/security-real-rag-protocol.md)
+está implementado parcialmente y se ejecutó con cinco casos sintéticos. Un ensayo usa SQLite en memoria para
 practicar aislamiento, detención y limpieza sin utilizar PostgreSQL ni modelos.
+Una [verificación posterior de PostgreSQL y pgvector](eval_data/rag_baseline/postgres-security-20261117T141631Z-d0c6a6e1/README.md)
+usó datos sintéticos y respuestas simuladas; no ejecutó el modelo.
+La [API real de RAG con proveedores simulados](eval_data/rag_baseline/rag-api-simulated-20261117T142201Z-1e5b8f36/README.md)
+también se comprobó en un caso y con PostgreSQL temporal.
+Una [ejecución posterior de los cinco casos](eval_data/rag_baseline/rag-api-five-simulated-20261117T142722Z-10b17457/README.md)
+verificó el aislamiento con proveedores simulados.
+La [ejecución de esos casos con Ollama local](eval_data/rag_baseline/security-ollama-20261117T143535Z-816c3594/README.md)
+conserva las respuestas sintéticas. Hay una [revisión del asistente](eval_data/rag_baseline/security-review-assistant-20261117T145855Z-b6f9cf05/README.md),
+sin revisión humana independiente.
+El [diseño de evaluación ampliada](docs/security-expanded-evaluation-design.md)
+incluye 12 escenarios y un agregador offline de controles benignos con ejemplos
+ficticios. Una [demostración de 24 intentos](eval_data/rag_baseline/expanded-simulation-20261117T112858-7080a7f5/README.md)
+probó la orquestación con una API simulada;
+la matriz ampliada aún no se ha ejecutado con un modelo.
 
 ## Qué problema resuelve
 

@@ -247,7 +247,11 @@ El muestreo, la variación de respuestas y el desacuerdo entre revisores limitan
 la interpretación. No se reutilizarán respuestas descartadas en la medición de
 latencia como evidencia de seguridad.
 
-Existe un [protocolo propuesto para RAG real local](security-real-rag-protocol.md).
-Su capturador se ha probado con una API simulada; el experimento real requiere
-preparación y una aprobación posterior. El uso de modelos externos queda fuera
-de ese protocolo.
+Existe un [protocolo para RAG real local](security-real-rag-protocol.md).
+Se ejecutó una vez con Ollama local y cinco casos sintéticos; las respuestas
+recibieron una revisión del asistente, sin revisión humana independiente. El
+uso de modelos externos quedó fuera de ese protocolo.
+
+Hay un [diseño de evaluación ampliada](security-expanded-evaluation-design.md)
+con escenarios y un agregador offline para rechazos en controles benignos; la
+matriz todavía no se ha ejecutado con un modelo.

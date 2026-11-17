@@ -42,6 +42,10 @@ def check(image):
             (folder / name).write_bytes((ROOT / "examples" / name).read_bytes())
         for name in ("completeness_cases.jsonl", "completeness_outputs.jsonl", "completeness_reviews.jsonl"):
             (folder / name).write_bytes((ROOT / "examples" / name).read_bytes())
+        for name in ("security_expanded_cases.jsonl", "security_control_expectations.jsonl",
+                     "security_control_outputs.jsonl", "security_control_reviews.jsonl",
+                     "security_expanded_corpus.jsonl", "security_expanded_simulated_outputs.jsonl"):
+            (folder / name).write_bytes((ROOT / "examples" / name).read_bytes())
         for name in ("live_metrics_cases.jsonl", "live_metrics_context.json"):
             (folder / name).write_bytes((ROOT / "examples" / name).read_bytes())
         (folder / "completeness_empty_reviews.jsonl").write_bytes(b"")
@@ -162,6 +166,33 @@ def check(image):
                 raise RuntimeError("La cobertura de información difiere entre ejecución local y Docker.")
             if expected_code == 0 and json.loads(container.stdout)["addressed_fraction"] != .5:
                 raise RuntimeError("La imagen no calculó la cobertura esperada.")
+        arguments = ["--cases", "security_expanded_cases.jsonl", "--expectations", "security_control_expectations.jsonl",
+                     "--outputs", "security_control_outputs.jsonl", "--reviews", "security_control_reviews.jsonl"]
+        def control_paths(base):
+            return [base + "/" + value if value.endswith(".jsonl") else value for value in arguments]
+        local = command([sys.executable, "-S", "-m", "evals_lab.security_controls", *control_paths(folder.as_posix())], env=env)
+        container = command(["docker", "run", "--rm", "--network", "none", "--read-only", "--mount", mount,
+                             "--entrypoint", "python", image, "-S", "-m", "evals_lab.security_controls", *control_paths('/data')])
+        if (local.returncode != 1 or container.returncode != 1 or local.stdout != container.stdout or
+                local.stderr.replace(b"\r\n", b"\n") != container.stderr.replace(b"\r\n", b"\n")):
+            raise RuntimeError("La revisión de controles difiere entre ejecución local y Docker.")
+        if (json.loads(container.stdout)["unreviewed"], json.loads(container.stdout)["uncertain"]) != (1, 1):
+            raise RuntimeError("La imagen no conservó las revisiones pendientes e inciertas.")
+        arguments = ["--cases", "security_expanded_cases.jsonl", "--corpus", "security_expanded_corpus.jsonl",
+                     "--expectations", "security_control_expectations.jsonl", "--fixtures", "security_expanded_simulated_outputs.jsonl"]
+        def simulation_paths(base):
+            return [base + "/" + value if value.endswith(".jsonl") else value for value in arguments]
+        local = command([sys.executable, "-S", "-m", "evals_lab.security_expanded_simulation",
+                         *simulation_paths(folder.as_posix()), "--output-dir", str(folder / "simulated-run")], env=env)
+        container = command(["docker", "run", "--rm", "--network", "none", "--read-only", "--tmpfs", "/tmp:rw,mode=1777",
+                             "--mount", mount, "--entrypoint", "python", image, "-S", "-m", "evals_lab.security_expanded_simulation",
+                             *simulation_paths('/data'), "--output-dir", "/tmp/simulated-run"])
+        if (local.returncode or container.returncode or local.stdout != container.stdout or
+                local.stderr.replace(b"\r\n", b"\n") != container.stderr.replace(b"\r\n", b"\n")):
+            raise RuntimeError("La simulación ampliada difiere entre ejecución local y Docker.")
+        simulated = json.loads(container.stdout)
+        if (simulated["planned"], simulated["attempted"], simulated["completed"], simulated["not_started"]) != (24, 24, 24, 0):
+            raise RuntimeError("La imagen no completó los 24 intentos simulados.")
         for case_name, expected_code in (("rag_grounding_cases.jsonl", 0), ("rag_grounding_bad_cases.jsonl", 2)):
             arguments = ["--report", "rag_report.json", "--cases", case_name]
             def rag_grounding_paths(base):
@@ -229,7 +260,9 @@ raise SystemExit(code)
         expected_files = ["src/evals_lab/__init__.py", "src/evals_lab/__main__.py",
                           "src/evals_lab/cases.py", "src/evals_lab/completeness.py", "src/evals_lab/evaluate.py", "src/evals_lab/grounding.py", "src/evals_lab/live_metrics.py", "src/evals_lab/rag_adapter.py",
                           "src/evals_lab/rag_grounding_adapter.py",
-                          "src/evals_lab/retrieval.py"]
+                          "src/evals_lab/retrieval.py", "src/evals_lab/security.py", "src/evals_lab/security_capture.py",
+                          "src/evals_lab/security_controls.py", "src/evals_lab/security_expanded_simulation.py", "src/evals_lab/security_orchestration_sim.py",
+                          "src/evals_lab/security_simulation.py"]
         if result.returncode or json.loads(result.stdout) != {"uid": 10001, "files": expected_files}:
             raise RuntimeError("La imagen no cumple el usuario o contenido esperado.")
         print("Imagen verificada: códigos 0/1/2, paridad local y usuario sin privilegios.")
