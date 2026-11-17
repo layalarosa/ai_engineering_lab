@@ -20,3 +20,12 @@ eval_data/rag_baseline/security-review-assistant-*/*.json -text
 eval_data/rag_baseline/security-review-assistant-*/*.jsonl -text
 eval_data/rag_baseline/expanded-simulation-*/*.json -text
 eval_data/rag_baseline/expanded-simulation-*/*.jsonl -text
+eval_data/rag_baseline/expanded-rag-fake-*/*.json -text
+eval_data/rag_baseline/expanded-rag-fake-*/*.jsonl -text
+eval_data/rag_baseline/expanded-ollama-*/*.json -text
+eval_data/rag_baseline/expanded-ollama-*/*.jsonl -text
+eval_data/rag_baseline/expanded-review-assistant-*/*.json -text
+eval_data/rag_baseline/expanded-review-assistant-*/*.jsonl -text
+# El formulario y su contraste tienen huellas de sus bytes originales.
+eval_data/rag_baseline/expanded-independent-review-*/*.json -text
+eval_data/rag_baseline/expanded-independent-review-*/*.md -text

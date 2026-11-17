@@ -1,0 +1,129 @@
+{"timestamp": "2026-11-17T15:49:05.964926+00:00", "run_id": "a3de781e71ede850124a1cdd57cb4789", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:06.525733+00:00", "run_id": "a3de781e71ede850124a1cdd57cb4789", "stage": "embed", "status": "ok", "duration_ms": 563.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:06.553216+00:00", "run_id": "a3de781e71ede850124a1cdd57cb4789", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:06.555330+00:00", "run_id": "d18271e49c03aeda594237a0120e5100", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:06.601887+00:00", "run_id": "d18271e49c03aeda594237a0120e5100", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:06.627659+00:00", "run_id": "d18271e49c03aeda594237a0120e5100", "stage": "persist", "status": "ok", "duration_ms": 15.0}
+{"timestamp": "2026-11-17T15:49:06.685148+00:00", "run_id": "25bffe4c545d176e45455fa2012d2634", "stage": "embed", "status": "ok", "duration_ms": 31.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:06.708199+00:00", "run_id": "25bffe4c545d176e45455fa2012d2634", "stage": "retrieve", "status": "ok", "duration_ms": 15.0}
+{"timestamp": "2026-11-17T15:49:24.149769+00:00", "run_id": "25bffe4c545d176e45455fa2012d2634", "stage": "answer", "status": "ok", "duration_ms": 17454.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:24.262688+00:00", "run_id": "13bb27b5a3aa3fa50637133ef1a6eb1f", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:24.305325+00:00", "run_id": "13bb27b5a3aa3fa50637133ef1a6eb1f", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:24.337330+00:00", "run_id": "13bb27b5a3aa3fa50637133ef1a6eb1f", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:24.341238+00:00", "run_id": "8b23b1a050b01467fe1d6d20d92acf63", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:24.392517+00:00", "run_id": "8b23b1a050b01467fe1d6d20d92acf63", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:24.420568+00:00", "run_id": "8b23b1a050b01467fe1d6d20d92acf63", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:24.482194+00:00", "run_id": "c0aaeffd80df89963299c0ca50ecaf8c", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:24.505586+00:00", "run_id": "c0aaeffd80df89963299c0ca50ecaf8c", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:27.142705+00:00", "run_id": "c0aaeffd80df89963299c0ca50ecaf8c", "stage": "answer", "status": "ok", "duration_ms": 2625.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:27.294708+00:00", "run_id": "b07fdd7948c56331e2b4e22f462856c3", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:27.338535+00:00", "run_id": "b07fdd7948c56331e2b4e22f462856c3", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:27.372803+00:00", "run_id": "b07fdd7948c56331e2b4e22f462856c3", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:27.376359+00:00", "run_id": "53cf327ed4f2ecca291e81f7ceeae935", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:27.435668+00:00", "run_id": "53cf327ed4f2ecca291e81f7ceeae935", "stage": "embed", "status": "ok", "duration_ms": 63.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:27.467896+00:00", "run_id": "53cf327ed4f2ecca291e81f7ceeae935", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:27.537372+00:00", "run_id": "d9d438e1734e6cf0270f0b8a603583bb", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:27.563709+00:00", "run_id": "d9d438e1734e6cf0270f0b8a603583bb", "stage": "retrieve", "status": "ok", "duration_ms": 16.0}
+{"timestamp": "2026-11-17T15:49:30.282146+00:00", "run_id": "d9d438e1734e6cf0270f0b8a603583bb", "stage": "answer", "status": "ok", "duration_ms": 2719.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:30.429568+00:00", "run_id": "6a007270d734aa726d1b9156c88160b1", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:30.488031+00:00", "run_id": "6a007270d734aa726d1b9156c88160b1", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:30.521246+00:00", "run_id": "6a007270d734aa726d1b9156c88160b1", "stage": "persist", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T15:49:30.585799+00:00", "run_id": "e0d2595376ad02d91b91b8cbeb04fadd", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:30.612072+00:00", "run_id": "e0d2595376ad02d91b91b8cbeb04fadd", "stage": "retrieve", "status": "ok", "duration_ms": 16.0}
+{"timestamp": "2026-11-17T15:49:37.627923+00:00", "run_id": "e0d2595376ad02d91b91b8cbeb04fadd", "stage": "answer", "status": "ok", "duration_ms": 7015.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:37.750982+00:00", "run_id": "9d687301ffe374ca67e3ea2424f63f30", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:37.805166+00:00", "run_id": "9d687301ffe374ca67e3ea2424f63f30", "stage": "embed", "status": "ok", "duration_ms": 63.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:37.839112+00:00", "run_id": "9d687301ffe374ca67e3ea2424f63f30", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:37.841776+00:00", "run_id": "0237f530ead7646f77b86281a4ba65a3", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:37.905700+00:00", "run_id": "0237f530ead7646f77b86281a4ba65a3", "stage": "embed", "status": "ok", "duration_ms": 63.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:37.937011+00:00", "run_id": "0237f530ead7646f77b86281a4ba65a3", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:38.001172+00:00", "run_id": "e0789f65b6de6e9f8e479508ad8a8d93", "stage": "embed", "status": "ok", "duration_ms": 31.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:38.025483+00:00", "run_id": "e0789f65b6de6e9f8e479508ad8a8d93", "stage": "retrieve", "status": "ok", "duration_ms": 32.0}
+{"timestamp": "2026-11-17T15:49:44.850213+00:00", "run_id": "e0789f65b6de6e9f8e479508ad8a8d93", "stage": "answer", "status": "ok", "duration_ms": 6828.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:45.018431+00:00", "run_id": "ec1e6f367708d0b8d433dc613c9440b8", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:45.110867+00:00", "run_id": "ec1e6f367708d0b8d433dc613c9440b8", "stage": "embed", "status": "ok", "duration_ms": 94.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:45.146210+00:00", "run_id": "ec1e6f367708d0b8d433dc613c9440b8", "stage": "persist", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T15:49:45.149289+00:00", "run_id": "2333379ddbe32452b214fc94bbecebc9", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:45.236139+00:00", "run_id": "2333379ddbe32452b214fc94bbecebc9", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:45.268047+00:00", "run_id": "2333379ddbe32452b214fc94bbecebc9", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:45.343485+00:00", "run_id": "4f9639a26f68f280cfcf107c9f95de1d", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:45.369092+00:00", "run_id": "4f9639a26f68f280cfcf107c9f95de1d", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:51.453696+00:00", "run_id": "4f9639a26f68f280cfcf107c9f95de1d", "stage": "answer", "status": "ok", "duration_ms": 6078.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:51.608170+00:00", "run_id": "9b7b9959c491813a0967b91c3dd1e6ec", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:51.679278+00:00", "run_id": "9b7b9959c491813a0967b91c3dd1e6ec", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:51.714064+00:00", "run_id": "9b7b9959c491813a0967b91c3dd1e6ec", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:51.788678+00:00", "run_id": "ebfaa8479be2e3fc5e0096b648d29783", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:51.816808+00:00", "run_id": "ebfaa8479be2e3fc5e0096b648d29783", "stage": "retrieve", "status": "ok", "duration_ms": 16.0}
+{"timestamp": "2026-11-17T15:49:57.940029+00:00", "run_id": "ebfaa8479be2e3fc5e0096b648d29783", "stage": "answer", "status": "ok", "duration_ms": 6125.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:58.100448+00:00", "run_id": "5f4a8ec30acdddef0c3575ca66f11080", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:49:58.212868+00:00", "run_id": "5f4a8ec30acdddef0c3575ca66f11080", "stage": "embed", "status": "ok", "duration_ms": 109.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:58.249982+00:00", "run_id": "5f4a8ec30acdddef0c3575ca66f11080", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:49:58.325581+00:00", "run_id": "b6fd49fbc9bb01a62a577c2dd4c831fa", "stage": "embed", "status": "ok", "duration_ms": 46.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:49:58.355007+00:00", "run_id": "b6fd49fbc9bb01a62a577c2dd4c831fa", "stage": "retrieve", "status": "ok", "duration_ms": 32.0}
+{"timestamp": "2026-11-17T15:50:04.088962+00:00", "run_id": "b6fd49fbc9bb01a62a577c2dd4c831fa", "stage": "answer", "status": "ok", "duration_ms": 5734.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:04.231634+00:00", "run_id": "99700d0cb38cf0c118551aadc58977a7", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:50:04.344813+00:00", "run_id": "99700d0cb38cf0c118551aadc58977a7", "stage": "embed", "status": "ok", "duration_ms": 109.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:04.382422+00:00", "run_id": "99700d0cb38cf0c118551aadc58977a7", "stage": "persist", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T15:50:04.460612+00:00", "run_id": "bf906bd45696efbd6790d484e8c32f07", "stage": "embed", "status": "ok", "duration_ms": 62.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:04.489632+00:00", "run_id": "bf906bd45696efbd6790d484e8c32f07", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:50:09.455026+00:00", "run_id": "bf906bd45696efbd6790d484e8c32f07", "stage": "answer", "status": "ok", "duration_ms": 4953.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:09.631388+00:00", "run_id": "ae7c7c04e819393f2c1602e6f127a606", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:50:09.698591+00:00", "run_id": "ae7c7c04e819393f2c1602e6f127a606", "stage": "embed", "status": "ok", "duration_ms": 62.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:09.733406+00:00", "run_id": "ae7c7c04e819393f2c1602e6f127a606", "stage": "persist", "status": "ok", "duration_ms": 32.0}
+{"timestamp": "2026-11-17T15:50:09.816598+00:00", "run_id": "9df7932f9a223e946b34c16f930678e9", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:09.847173+00:00", "run_id": "9df7932f9a223e946b34c16f930678e9", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:50:15.212646+00:00", "run_id": "9df7932f9a223e946b34c16f930678e9", "stage": "answer", "status": "ok", "duration_ms": 5375.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:15.463869+00:00", "run_id": "71904c0a16f81dd113920f256ac60692", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:50:15.543454+00:00", "run_id": "71904c0a16f81dd113920f256ac60692", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:15.580299+00:00", "run_id": "71904c0a16f81dd113920f256ac60692", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:50:15.582955+00:00", "run_id": "01046efc94dc6e27e9eaa661446bbeaa", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:50:15.634283+00:00", "run_id": "01046efc94dc6e27e9eaa661446bbeaa", "stage": "embed", "status": "ok", "duration_ms": 47.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:15.664242+00:00", "run_id": "01046efc94dc6e27e9eaa661446bbeaa", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:50:15.741690+00:00", "run_id": "042b279c8b1bf60999f5bc9e341e04f9", "stage": "embed", "status": "ok", "duration_ms": 62.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:15.769065+00:00", "run_id": "042b279c8b1bf60999f5bc9e341e04f9", "stage": "retrieve", "status": "ok", "duration_ms": 16.0}
+{"timestamp": "2026-11-17T15:50:21.443670+00:00", "run_id": "042b279c8b1bf60999f5bc9e341e04f9", "stage": "answer", "status": "ok", "duration_ms": 5687.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:21.597347+00:00", "run_id": "60e9a0bcdfd5b3b400d58871daf14605", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:50:21.663305+00:00", "run_id": "60e9a0bcdfd5b3b400d58871daf14605", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:21.700110+00:00", "run_id": "60e9a0bcdfd5b3b400d58871daf14605", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:50:21.703058+00:00", "run_id": "6e8cd7775fde26c61d13db5badd70f08", "stage": "ingest", "status": "ok", "duration_ms": 0.0}
+{"timestamp": "2026-11-17T15:50:21.774363+00:00", "run_id": "6e8cd7775fde26c61d13db5badd70f08", "stage": "embed", "status": "ok", "duration_ms": 79.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:21.811640+00:00", "run_id": "6e8cd7775fde26c61d13db5badd70f08", "stage": "persist", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:50:21.906744+00:00", "run_id": "7750955952bb313012811d5030d0d7ae", "stage": "embed", "status": "ok", "duration_ms": 63.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:21.934514+00:00", "run_id": "7750955952bb313012811d5030d0d7ae", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:50:27.780408+00:00", "run_id": "7750955952bb313012811d5030d0d7ae", "stage": "answer", "status": "ok", "duration_ms": 5844.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:27.896114+00:00", "run_id": "ddf1996963d06a2ab1899c76638d17a3", "stage": "embed", "status": "ok", "duration_ms": 63.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:27.929965+00:00", "run_id": "ddf1996963d06a2ab1899c76638d17a3", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:50:33.717966+00:00", "run_id": "ddf1996963d06a2ab1899c76638d17a3", "stage": "answer", "status": "ok", "duration_ms": 5781.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:33.861056+00:00", "run_id": "ee42020fc215ae2c4331bb9237c223b3", "stage": "embed", "status": "ok", "duration_ms": 94.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:33.901054+00:00", "run_id": "ee42020fc215ae2c4331bb9237c223b3", "stage": "retrieve", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T15:50:37.660079+00:00", "run_id": "ee42020fc215ae2c4331bb9237c223b3", "stage": "answer", "status": "ok", "duration_ms": 3750.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:37.804669+00:00", "run_id": "768ed0e14f458c97895246654e730710", "stage": "embed", "status": "ok", "duration_ms": 94.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:37.852039+00:00", "run_id": "768ed0e14f458c97895246654e730710", "stage": "retrieve", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T15:50:41.614900+00:00", "run_id": "768ed0e14f458c97895246654e730710", "stage": "answer", "status": "ok", "duration_ms": 3765.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:41.754811+00:00", "run_id": "9d91f3b8a15e5710aa547bc715f57448", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:41.796705+00:00", "run_id": "9d91f3b8a15e5710aa547bc715f57448", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:50:49.224322+00:00", "run_id": "9d91f3b8a15e5710aa547bc715f57448", "stage": "answer", "status": "ok", "duration_ms": 7438.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:49.369481+00:00", "run_id": "91fc1d6fe9c093f26db76e829609f584", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:49.437002+00:00", "run_id": "91fc1d6fe9c093f26db76e829609f584", "stage": "retrieve", "status": "ok", "duration_ms": 63.0}
+{"timestamp": "2026-11-17T15:50:56.844057+00:00", "run_id": "91fc1d6fe9c093f26db76e829609f584", "stage": "answer", "status": "ok", "duration_ms": 7406.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:56.980514+00:00", "run_id": "41b7e612edba65013b2d6e735a659e2c", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:50:57.068176+00:00", "run_id": "41b7e612edba65013b2d6e735a659e2c", "stage": "retrieve", "status": "ok", "duration_ms": 93.0}
+{"timestamp": "2026-11-17T15:51:04.319475+00:00", "run_id": "41b7e612edba65013b2d6e735a659e2c", "stage": "answer", "status": "ok", "duration_ms": 7250.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:04.460068+00:00", "run_id": "9c9798169d692fec0369635ea6f74226", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:04.530562+00:00", "run_id": "9c9798169d692fec0369635ea6f74226", "stage": "retrieve", "status": "ok", "duration_ms": 63.0}
+{"timestamp": "2026-11-17T15:51:10.923371+00:00", "run_id": "9c9798169d692fec0369635ea6f74226", "stage": "answer", "status": "ok", "duration_ms": 6390.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:11.052059+00:00", "run_id": "f2f02821b2756fa03915bea240fe94e8", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:11.094724+00:00", "run_id": "f2f02821b2756fa03915bea240fe94e8", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:51:16.705470+00:00", "run_id": "f2f02821b2756fa03915bea240fe94e8", "stage": "answer", "status": "ok", "duration_ms": 5609.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:16.827352+00:00", "run_id": "75f26034d0e31e8547277124f29c19dd", "stage": "embed", "status": "ok", "duration_ms": 62.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:16.862301+00:00", "run_id": "75f26034d0e31e8547277124f29c19dd", "stage": "retrieve", "status": "ok", "duration_ms": 32.0}
+{"timestamp": "2026-11-17T15:51:20.625540+00:00", "run_id": "75f26034d0e31e8547277124f29c19dd", "stage": "answer", "status": "ok", "duration_ms": 3765.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:20.752733+00:00", "run_id": "332c98b02b653e592502ceed134c94e2", "stage": "embed", "status": "ok", "duration_ms": 62.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:20.787425+00:00", "run_id": "332c98b02b653e592502ceed134c94e2", "stage": "retrieve", "status": "ok", "duration_ms": 47.0}
+{"timestamp": "2026-11-17T15:51:28.682923+00:00", "run_id": "332c98b02b653e592502ceed134c94e2", "stage": "answer", "status": "ok", "duration_ms": 7891.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:28.817543+00:00", "run_id": "de3f68f729b65f6e95a47fa86f221c4b", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:28.855133+00:00", "run_id": "de3f68f729b65f6e95a47fa86f221c4b", "stage": "retrieve", "status": "ok", "duration_ms": 32.0}
+{"timestamp": "2026-11-17T15:51:34.536249+00:00", "run_id": "de3f68f729b65f6e95a47fa86f221c4b", "stage": "answer", "status": "ok", "duration_ms": 5687.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:34.663213+00:00", "run_id": "6009dd9f467491d15731efd9f9ac0f10", "stage": "embed", "status": "ok", "duration_ms": 78.0, "provider": "ollama"}
+{"timestamp": "2026-11-17T15:51:34.695144+00:00", "run_id": "6009dd9f467491d15731efd9f9ac0f10", "stage": "retrieve", "status": "ok", "duration_ms": 31.0}
+{"timestamp": "2026-11-17T15:51:41.552174+00:00", "run_id": "6009dd9f467491d15731efd9f9ac0f10", "stage": "answer", "status": "ok", "duration_ms": 6860.0, "provider": "ollama"}

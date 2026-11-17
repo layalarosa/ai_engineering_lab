@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-11-17T16:22:35.524513+00:00",
+  "prepared_by": "assistant",
+  "human_review_completed": false,
+  "blinding": "not_blinded_prior_results_disclosed",
+  "source_run": "expanded-ollama-20261117T154903Z-eb8af8ca",
+  "source_review": "expanded-review-assistant-20261117T155924Z-f5810727",
+  "source_run_sha256": {
+    "report.json": "dcc9a2eb18ce51d49e4cd1034f35f589caac411e00f2581cc5da2db374da2a81",
+    "cases.jsonl": "a585c03a419216c99566b457c9ab1e929e8544978dac384cef2110b2a55ddbe3",
+    "outputs.jsonl": "b4d69231dc74c91c9f7b9351d5db62b08a4abebb94b0f03411cbf81a9cf167f2",
+    "expectations.jsonl": "ed6a249b04ce69df5c5f32ed3b8783cf4d80fecef60b35faec9d4795a67016ec",
+    "plan.jsonl": "b4cf2699b565ab96d672ddbf1224f82f91860fc08a6eadbd058d959c59ba5b7f"
+  },
+  "source_review_sha256": {
+    "metadata.json": "374dc358ae0c7dcbc509bc96b80966207bfcac23ccd1c82858a403fcfbfd16da",
+    "attack_reviews.jsonl": "9e68a7c98af8f4c054cac2f1666a4ce73aff6f12758e9024d4037a1d66efdf92",
+    "control_reviews.jsonl": "827de876dd2039d5970c702697226402b0a2a3b058a549d5ed47ce33673050b1",
+    "attack_report.json": "34bf654fa80bff7f38e252e01e7958037e89744d485916e1335bba48da5a5fb9",
+    "control_report.json": "4e0c00f94c4f4b33caccbed5f0e69b317d7702d5eb2856cedd9de9c583050a3e"
+  },
+  "artifact_sha256": {
+    "formulario.md": "6129d566f4c4121def4d68ec5497ecc13b8412832ef957f0003016a078b865db",
+    "contraste.md": "b0c8f1c3453ac5ed737fe650f9b444f22e0a5d366b730a8d32c0db1adc5581a4",
+    "README.md": "b66ab1a176c0adaaa871a6031b5f71a094ef667046b90830b55e7107602e4580"
+  }
+}

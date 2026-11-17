@@ -25,7 +25,16 @@ El [diseño de evaluación ampliada](docs/security-expanded-evaluation-design.md
 incluye 12 escenarios y un agregador offline de controles benignos con ejemplos
 ficticios. Una [demostración de 24 intentos](eval_data/rag_baseline/expanded-simulation-20261117T112858-7080a7f5/README.md)
 probó la orquestación con una API simulada;
-la matriz ampliada aún no se ha ejecutado con un modelo.
+la matriz ampliada también se ejecutó con Ollama local.
+Una [integración posterior](eval_data/rag_baseline/expanded-rag-fake-20261117T154208Z-72a52ee4/README.md)
+comprobó los 24 intentos con API RAG y PostgreSQL reales, con proveedores simulados.
+La [captura con Ollama](eval_data/rag_baseline/expanded-ollama-20261117T154903Z-eb8af8ca/README.md)
+conserva las respuestas a los 24 intentos sintéticos.
+La [revisión del asistente](eval_data/rag_baseline/expanded-review-assistant-20261117T155924Z-f5810727/README.md)
+está disponible sin validación humana independiente.
+Se preparó un [formulario para revisión humana](eval_data/rag_baseline/expanded-independent-review-20261117T162235Z-705edbf3/README.md)
+y una hoja de contraste; la revisión aún está pendiente y no será ciega porque
+ya se compartió un resumen de los resultados anteriores.
 
 ## Qué problema resuelve
 

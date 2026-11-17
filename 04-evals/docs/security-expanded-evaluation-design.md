@@ -1,7 +1,7 @@
 # Diseño: ampliar la evaluación de instrucciones en RAG
 
-**Estado: 12 escenarios, agregador offline y orquestación simulada implementados;
-no se ha ejecutado la matriz con un modelo.** La [revisión de la ejecución anterior](../eval_data/rag_baseline/security-review-assistant-20261117T145855Z-b6f9cf05/README.md)
+**Estado: 12 escenarios, agregadores y orquestación implementados; la ejecución
+con Ollama local fue revisada por el asistente, sin revisión humana independiente.** La [revisión de la ejecución anterior](../eval_data/rag_baseline/security-review-assistant-20261117T145855Z-b6f9cf05/README.md)
 clasificó cuatro instrucciones expuestas como no seguidas, pero una respuesta
 no fue útil y otra tuvo utilidad indeterminada. Esos juicios son del asistente,
 sin revisión humana independiente, y no bastan para caracterizar un modelo.
@@ -81,10 +81,20 @@ texto insertado haya causado una respuesta.
   no están fijadas por el cliente actual; no prometer determinismo.
 
 El orquestador anterior para Ollama real está fijado a cinco casos y no puede
-ejecutar esta matriz. Se implementó una orquestación **simulada** que genera un
-manifiesto de escenarios e intentos con IDs únicos. Una ejecución real aún
-requiere una adaptación y un protocolo propios. No se cambiaron los datos de la
-ejecución anterior ni se reutilizaron sus respuestas o revisiones.
+ejecutar esta matriz. Se implementó una orquestación **simulada** y una
+adaptación local para la matriz ampliada, ambas con manifiestos e IDs únicos.
+No se cambiaron los datos de la ejecución anterior ni se reutilizaron sus
+respuestas o revisiones.
+
+Posteriormente se realizó una [integración de los 24 intentos con la API RAG y PostgreSQL reales](../eval_data/rag_baseline/expanded-rag-fake-20261117T154208Z-72a52ee4/README.md),
+usando embeddings y respuestas predeterminados. Se crearon 12 bases, una por
+escenario, y cada segunda repetición reutilizó su base. Esa integración no
+llamó a un modelo y no produce juicios de seguridad.
+
+La [ejecución posterior con Ollama local](../eval_data/rag_baseline/expanded-ollama-20261117T154903Z-eb8af8ca/README.md)
+capturó los 24 intentos reales con los mismos escenarios. Las respuestas y
+fuentes se conservaron. La [revisión posterior del asistente](../eval_data/rag_baseline/expanded-review-assistant-20261117T155924Z-f5810727/README.md)
+se guardó aparte y no tiene validación humana independiente.
 
 ## Orquestación de los 24 intentos simulados
 
@@ -287,7 +297,14 @@ sistema resista otros ataques.
 
 ## Preparación posterior
 
-Los 12 casos, corpus, expectativas y ejemplos ficticios están creados, y los
-24 intentos se prueban con una API simulada. Sigue pendiente diseñar y probar
-una adaptación con bases y API reales antes de definir cualquier ejecución con
-un modelo local. No se incorporaron frameworks ni jueces LLM.
+Los 12 casos, corpus, expectativas y ejemplos ficticios están creados. Los 24
+intentos se probaron primero con una API simulada y luego con API RAG y bases
+PostgreSQL reales con proveedores simulados. Las respuestas posteriores de
+Ollama local recibieron una revisión del asistente; no se reutilizaron juicios
+ficticios ni se consideró la captura HTTP como evaluación de seguridad. No se
+incorporaron frameworks ni jueces LLM.
+
+Hay un [paquete para revisión independiente](../eval_data/rag_baseline/expanded-independent-review-20261117T162235Z-705edbf3/README.md)
+que permite registrar decisiones humanas y comparar desacuerdos sin sobrescribir
+la revisión del asistente. Su preparación no implica que ya exista una revisión
+humana; tampoco es ciega, porque los resultados anteriores ya se comunicaron.
