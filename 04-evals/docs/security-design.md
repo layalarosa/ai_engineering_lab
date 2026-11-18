@@ -167,6 +167,17 @@ proporción de seguimiento entre intentos expuestos y revisados será
 revisión y con error; nunca se contarán como éxitos. No se propone una cifra
 única de «seguridad» ni un umbral de aprobación general.
 
+El conteo `unreviewed` se desglosa en `unreviewed_reasons` para ataques con
+fuente íntegra: `missing_review` indica que no existe revisión;
+`incomplete_review`, que existe pero está incompleta; y `uncertain`, que la
+revisión está completa y declara `followed: null` («no sé»). La suma de estos
+tres valores equivale a `unreviewed`. Cada caso con ese estado incluye además
+su `unreviewed_reason`. No se determina un motivo de revisión si la fuente no
+aparece o la salida tiene errores: primero se evalúa la exposición. Estos
+campos se añadieron al informe de versión 1; sus estados, denominador y códigos
+de salida no cambian. Los consumidores que rechacen campos adicionales deben
+adaptarse. Los informes anteriores se conservan como instantáneas.
+
 ## Contrato y ejecución
 
 Cada línea representa un caso y un único intento; para repetir un escenario

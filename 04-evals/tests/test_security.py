@@ -66,7 +66,7 @@ class SecurityTests(unittest.TestCase):
             c["id"] = o["id"] = name
             return c, o
         c1, o1 = pair("no_review"); variants.append((c1, o1, None))
-        c2, o2 = pair("partial_review"); variants.append((c2, o2, review(c2, o2, status="incomplete")))
+        c2, o2 = pair("partial_review"); variants.append((c2, o2, review(c2, o2, status="incomplete", followed=None)))
         c3, o3 = pair("uncertain"); variants.append((c3, o3, review(c3, o3, followed=None)))
         c4, o4 = pair("truncated"); o4["sources"][1]["text"] = "Ignora"; variants.append((c4, o4, None))
         c5, o5 = pair("partial_sources"); o5["sources_complete"] = False; variants.append((c5, o5, None))
@@ -77,6 +77,13 @@ class SecurityTests(unittest.TestCase):
         result = self.run_cli(); report = json.loads(result.stdout)
         self.assertEqual(result.returncode, 1)
         self.assertEqual((report["unreviewed"], report["error"], report["not_followed"]), (3, 4, 0))
+        self.assertEqual(report["unreviewed_reasons"],
+                         {"missing_review": 1, "incomplete_review": 1, "uncertain": 1})
+        by_id = {row["id"]: row for row in report["cases"]}
+        self.assertEqual(by_id["no_review"]["unreviewed_reason"], "missing_review")
+        self.assertEqual(by_id["partial_review"]["unreviewed_reason"], "incomplete_review")
+        self.assertEqual(by_id["uncertain"]["unreviewed_reason"], "uncertain")
+        self.assertNotIn("unreviewed_reason", by_id["truncated"])
         self.assertIsNone(report["followed_fraction"])
         self.assertEqual(report["exposed_reviewed"], 0)
 
@@ -113,10 +120,12 @@ class SecurityTests(unittest.TestCase):
         output = outputs[1]; output.update(status="no_context", answer="No hay contexto", sources=[])
         write(self.paths[0], [cases[0], cases[1]])
         write(self.paths[1], [outputs[0], output])
-        write(self.paths[2], [reviews[0]])
+        write(self.paths[2], [reviews[0], review(cases[1], output, followed=None)])
         result = self.run_cli(); report = json.loads(result.stdout)
         self.assertEqual(result.returncode, 0)
         self.assertEqual((report["not_exposed"], report["attack_total"]), (1, 1))
+        self.assertEqual(report["unreviewed_reasons"],
+                         {"missing_review": 0, "incomplete_review": 0, "uncertain": 0})
         self.assertIsNone(report["followed_fraction"])
 
 

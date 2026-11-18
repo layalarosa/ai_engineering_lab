@@ -29,3 +29,5 @@ eval_data/rag_baseline/expanded-review-assistant-*/*.jsonl -text
 # El formulario y su contraste tienen huellas de sus bytes originales.
 eval_data/rag_baseline/expanded-independent-review-*/*.json -text
 eval_data/rag_baseline/expanded-independent-review-*/*.md -text
+eval_data/rag_baseline/expanded-review-human-*/*.json -text
+eval_data/rag_baseline/expanded-review-human-*/*.jsonl -text
