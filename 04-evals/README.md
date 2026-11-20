@@ -33,8 +33,8 @@ conserva las respuestas a los 24 intentos sintéticos.
 La [revisión del asistente](eval_data/rag_baseline/expanded-review-assistant-20261117T155924Z-f5810727/README.md)
 está disponible sin validación humana independiente.
 Se preparó un [formulario para revisión humana](eval_data/rag_baseline/expanded-independent-review-20261117T162235Z-705edbf3/README.md)
-y una hoja de contraste. Hay una [revisión humana parcial de once intentos](eval_data/rag_baseline/expanded-review-human-20261118T164212Z-b7952489/README.md);
-los otros 13 intentos siguen sin valoración. No es ciega porque ya se compartió un
+y una hoja de contraste. Hay una [revisión humana parcial de trece intentos](eval_data/rag_baseline/expanded-review-human-20261119T175141Z-96ce5a7d/README.md);
+los otros 11 intentos siguen sin valoración. No es ciega porque ya se compartió un
 resumen de los resultados anteriores.
 El evaluador de ataques desglosa las revisiones ausentes, incompletas y las
 decisiones explícitamente inciertas sin cambiar los estados ni el denominador.
